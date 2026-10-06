@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import CartePiece from '../components/CartePiece.astro';
+import Coulisses from '../components/Coulisses.astro';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { episodesDe, annexesDe, formatDe, universDe, urlPiece, urlSerie, media, type Serie } from '../lib/content';
+import { serieObject, breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang; serie: Serie }
+const { lang, serie } = Astro.props;
+const d = ui(lang);
+const s = serie.data;
+const url = urlSerie(lang, serie);
+const alt = { fr: urlSerie('fr', serie), en: urlSerie('en', serie) };
+const eps = await episodesDe(serie.id);
+const annexes = await annexesDe(serie.id);
+const saisons = [...new Set(eps.map((e) => e.data.saison ?? 1))].sort();
+const premier = eps[0];
+const statut = s.statut === 'en-cours' ? d.serie.en_cours : s.statut === 'terminee' ? d.serie.terminee : d.serie.en_preparation;
+const jsonld = [serieObject(lang, serie, url, eps.length), breadcrumb([{ name: d.nav.series, url: route(lang, 'series') }, { name: t(lang, s.titre), url }])];
+const couverture = premier ? media(premier, premier.data.media.poster) + '.jpg' : undefined;
+---
+<Base lang={lang} titre={t(lang, s.titre)} description={t(lang, s.pitch)} alt={alt} image={couverture} jsonld={jsonld} current="series">
+  <div class="container">
+    <header class:list={['serie-hero', `serie-${s.slug}`, { 'serie-hero--accent': !!s.identite.accent }]}>
+      <div class="serie-hero__text">
+        <h1>{t(lang, s.titre)}</h1>
+        <p class="serie-hero__sub">{t(lang, s.sous_titre)}</p>
+        <p class="lede">{t(lang, s.pitch)}</p>
+        {s.mention && <p class="block__note">{t(lang, s.mention)}</p>}
+        <div class="feature__actions">
+          {premier && <a class="btn btn--primary" href={urlPiece(lang, premier, serie)}>{d.serie.commencer}</a>}
+          <a class="btn btn--ghost" href={route(lang, 'contact')}>{d.nav.contact}</a>
+        </div>
+      </div>
+      <dl class="serie-hero__facts">
+        <div><dt>{lang === 'fr' ? 'Statut' : 'Status'}</dt><dd>{statut}{s.rythme && s.statut === 'en-cours' ? ` · ${t(lang, s.rythme)}` : ''}</dd></div>
+        <div><dt>{d.fiche.format}</dt><dd>{t(lang, formatDe(s.format_defaut).nom)}</dd></div>
+        <div><dt>{d.fiche.univers}</dt><dd>{t(lang, universDe(s.univers).nom)}</dd></div>
+        {eps.length > 0 && <div><dt>{d.serie.episodes}</dt><dd class="num">{eps.length}</dd></div>}
+        {s.reseaux.hashtags.length > 0 && <div><dt>{d.serie.reseaux}</dt><dd><a href="https://www.instagram.com/studio.madigitalagency/" rel="noopener">@studio.madigitalagency</a> · {s.reseaux.hashtags.join(' ')}</dd></div>}
+      </dl>
+    </header>
+
+    {saisons.map((n) => {
+      const liste = eps.filter((e) => (e.data.saison ?? 1) === n);
+      return (
+        <section class="section" aria-labelledby={`saison-${n}`}>
+          <div class="season-title"><h2 id={`saison-${n}`}>{d.serie.saison} {n}</h2><span class="label num">{liste.length} {d.serie.episodes.toLowerCase()}</span></div>
+          <div class="grid-cards">
+            {liste.map((e) => <CartePiece piece={e} serie={serie} lang={lang} />)}
+          </div>
+        </section>
+      );
+    })}
+
+    {annexes.length > 0 && (
+      <section class="section" aria-labelledby="docs-titre">
+        <div class="section__head"><h2 id="docs-titre">{d.serie.documents}</h2><p>{lang === 'fr' ? 'Articles, publications et publicités qui existent dans la fiction, pas ailleurs.' : 'Articles, posts and ads that exist inside the fiction, nowhere else.'}</p></div>
+        <div class="docs">
+          {annexes.map((a) => (
+            <figure class="doc">
+              <span class="doc__img"><img src={media(a, a.data.media.poster) + '.webp'} alt={t(lang, a.data.titre)} loading="lazy" decoding="async" width={1080} height={1350} /></span>
+              <figcaption><span class="doc__stamp">{d.serie.document_fictif}</span><br />{t(lang, a.data.titre)}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {s.coulisses && (
+      <section class="section" aria-labelledby="coulisses-serie-titre">
+        <div class="section__head"><h2 id="coulisses-serie-titre">{d.serie.coulisses}</h2></div>
+        <div class="coulisses-serie">
+          <Coulisses lang={lang} coulisses={s.coulisses} notions={s.notions} vitrine={false} id="coulisses-serie" />
+          {s.coulisses.images && (
+            <div style={undefined}>
+              {s.coulisses.images.map((im) => 'image' in im && (
+                <figure><img src={im.image} alt="" loading="lazy" decoding="async" /><figcaption>{t(lang, im.legende)}</figcaption></figure>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+  </div>
+  <script src="../scripts/cards.ts"></script>
+</Base>

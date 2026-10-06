@@ -1,0 +1,58 @@
+{
+  "slug": "s1e02-les-chiffres",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 2,
+  "titre": {
+    "fr": "Les chiffres",
+    "en": "The numbers"
+  },
+  "pitch": {
+    "fr": "Réunion hebdomadaire chez Saulène. L'équipe n'est pas convaincue par le calendrier. Éléna écoute, et ne change pas d'avis.",
+    "en": "Weekly meeting at Saulène. The team is not convinced by the timing. Éléna listens, and does not change her mind."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-10-06",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": true
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/varenne_ep2_reel.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/carrousel-tiktok/"
+  },
+  "notions": [],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": "https://www.instagram.com/studio.madigitalagency/",
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images générées par IA. Fiction : personnes, marques et médias n'existent pas.",
+    "en": "AI-generated images. Fiction: people, brands and media do not exist."
+  }
+}

@@ -1,0 +1,7 @@
+---
+import SeriePage from '../../../../routes/SeriePage.astro';
+import { cheminsSeries } from '../../../../lib/paths';
+export const getStaticPaths = cheminsSeries;
+const { serie } = Astro.props;
+---
+<SeriePage lang="en" serie={serie} />

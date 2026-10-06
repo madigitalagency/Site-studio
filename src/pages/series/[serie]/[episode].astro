@@ -1,0 +1,7 @@
+---
+import EpisodePage from '../../../routes/EpisodePage.astro';
+import { cheminsEpisodes } from '../../../lib/paths';
+export const getStaticPaths = cheminsEpisodes;
+const { piece, serie } = Astro.props;
+---
+<EpisodePage lang="fr" piece={piece} serie={serie} />

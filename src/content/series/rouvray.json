@@ -1,0 +1,28 @@
+{
+  "slug": "rouvray",
+  "titre": { "fr": "ROUVRAY", "en": "ROUVRAY" },
+  "sous_titre": { "fr": "Les archives d'une compagnie aérienne qui n'a jamais existé", "en": "Archives of an airline that never existed" },
+  "pitch": {
+    "fr": "Des bobines retrouvées, des faits vrais. ROUVRAY est une compagnie fictive de l'aviation commerciale des années 1950 et 1960 ; chaque épisode reconstitue un fait réel et documenté, sous la forme d'une archive narrée de moins d'une minute.",
+    "en": "Rediscovered reels, true facts. ROUVRAY is a fictional airline from the commercial aviation of the 1950s and 1960s; each episode reconstructs a real, documented fact as a narrated archive under one minute."
+  },
+  "mention": { "fr": "Compagnie fictive, faits réels.", "en": "Fictional airline, true facts." },
+  "univers": "histoire-archives",
+  "format_defaut": "archive-narree",
+  "rendu": "archive-reconstituee",
+  "statut": "en-cours",
+  "rythme": { "fr": "Un épisode le dimanche", "en": "A new episode every Sunday" },
+  "identite": { "accent": "#C9A961", "logo": "/media/series-rouvray/monogramme-or.svg" },
+  "reseaux": { "hashtags": ["#ROUVRAY", "#histoireaviation"] },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Raconter l'aviation commerciale d'avant comme on ouvre une boîte d'archives : une compagnie inventée, ROUVRAY, pour pouvoir tout montrer sans jamais imiter une vraie marque, et des faits réels, sourcés, pour que chaque épisode apprenne quelque chose.\n\n**Ce qui était difficile.** Tenir une identité d'époque d'un épisode à l'autre : un monogramme qui existe sur les dérives, les cartons et la plaque d'archive, un personnage récurrent dont le visage ne dérive pas, et un rendu 8 mm qui se décide au montage, pas à la génération.\n\n**Ce qu'on a appris.** Une charte de série vaut une bible : bleu nuit, ivoire, une touche d'or, un seul signe. C'est elle qui fait croire à la compagnie.",
+      "en": "**The idea.** Tell the story of early commercial aviation the way you open a box of archives: an invented airline, ROUVRAY, so that everything can be shown without imitating a real brand, and true, sourced facts so that every episode teaches something.\n\n**What was hard.** Holding a period identity from one episode to the next: a monogram that lives on tail fins, title cards and the archive plate, a recurring character whose face does not drift, and an 8 mm look decided in the edit, not at generation.\n\n**What we learned.** A series charter is worth a bible: midnight blue, ivory, a touch of gold, one single sign. That is what makes the airline believable."
+    },
+    "images": [
+      { "image": "/media/series-rouvray/planche-monogrammes.webp", "legende": { "fr": "Le monogramme de la compagnie, décliné sur les dérives, les cartons et la plaque d'archive.", "en": "The airline's monogram, declined on tail fins, title cards and the archive plate." } },
+      { "image": "/media/series-rouvray/lucien-ferrat.webp", "legende": { "fr": "Lucien Ferrat, personnage récurrent : la planche qui fixe son visage d'un épisode à l'autre.", "en": "Lucien Ferrat, recurring character: the sheet that locks his face from one episode to the next." } }
+    ]
+  },
+  "notions": ["planche-de-casting", "look-d-archive"]
+}

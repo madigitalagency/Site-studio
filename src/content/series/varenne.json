@@ -1,0 +1,24 @@
+{
+  "slug": "varenne",
+  "titre": { "fr": "VARENNE", "en": "VARENNE" },
+  "sous_titre": { "fr": "Un roman-photo en douze épisodes", "en": "A photo-novel in twelve episodes" },
+  "pitch": {
+    "fr": "Éléna Varenne a fondé Saulène, une marque de soins, après des années d'influence. Un article pose la question qu'on ne poserait pas à un fondateur : influenceuse ou entrepreneure ? Sa sœur Clara est journaliste. Douze épisodes, une minute chacun, en roman-photo.",
+    "en": "Éléna Varenne founded Saulène, a skincare brand, after years as an influencer. An article asks the question nobody would ask a male founder: influencer or entrepreneur? Her sister Clara is a journalist. Twelve one-minute episodes, as a photo-novel."
+  },
+  "mention": { "fr": "Fiction. Les personnes, les marques et les médias n'existent pas.", "en": "Fiction. The people, brands and media do not exist." },
+  "univers": "drame-pouvoir",
+  "format_defaut": "roman-photo",
+  "rendu": "roman-photo",
+  "statut": "en-cours",
+  "rythme": { "fr": "Un épisode le mardi et le vendredi", "en": "A new episode on Tuesdays and Fridays" },
+  "identite": { "accent": "#9CC3A5" },
+  "reseaux": { "hashtags": ["#VARENNE", "#romanphoto"] },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Le roman-photo est le format le plus honnête pour l'image générée : une image fixe par case, du texte posé au montage, et le temps de lecture laissé au spectateur.\n\n**Ce qui était difficile.** Deux sœurs reconnaissables sur douze épisodes et une centaine d'images, sans jamais passer par un visage réel. Et une marque fictive, Saulène, assez crédible pour avoir un logo, des pubs et une crise.\n\n**Ce qu'on a appris.** Le texte généré dans l'image ne tient pas ; les bulles, les récitatifs et les coupures de presse se posent après, dans un gabarit. Et un épisode ne porte qu'un seul retournement.",
+      "en": "**The idea.** The photo-novel is the most honest format for generated images: one still per panel, text set in the edit, and reading time left to the viewer.\n\n**What was hard.** Two recognisable sisters across twelve episodes and a hundred images, without ever using a real face. And a fictional brand, Saulène, credible enough to have a logo, ads and a crisis.\n\n**What we learned.** Text generated inside the image does not hold; speech balloons, captions and press clippings are set afterwards, in a template. And one episode carries one single turn."
+    }
+  },
+  "notions": ["coherence-de-personnage", "planche-de-casting"]
+}

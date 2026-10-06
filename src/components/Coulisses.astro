@@ -1,0 +1,47 @@
+---
+import { ui, t, tl, route, type Lang } from '../lib/i18n';
+import Comparateur from './Comparateur.astro';
+import { marked } from '../lib/marked';
+interface Props {
+  lang: Lang;
+  coulisses: NonNullable<import('../lib/content').Piece['data']['coulisses']>;
+  notions?: string[];
+  vitrine?: boolean;
+  id: string;
+}
+const { lang, coulisses, notions = [], vitrine = false, id } = Astro.props;
+const d = ui(lang);
+const texte = marked(t(lang, coulisses.texte));
+const genere = tl(lang, coulisses.genere);
+const manuel = tl(lang, coulisses.manuel);
+const images = vitrine ? coulisses.images ?? [] : [];
+---
+<section class="block" aria-labelledby={`${id}-titre`}>
+  <h2 id={`${id}-titre`}>{d.fiche.coulisses}</h2>
+  <div class="prose steps" set:html={texte} />
+  {(genere.length || manuel.length) > 0 && (
+    <div class="split">
+      {genere.length > 0 && <div><h3>{d.fiche.genere}</h3><ul>{genere.map((g) => <li>{g}</li>)}</ul></div>}
+      {manuel.length > 0 && <div><h3>{d.fiche.manuel}</h3><ul>{manuel.map((m) => <li>{m}</li>)}</ul></div>}
+    </div>
+  )}
+  {images.map((im, i) =>
+    'avant' in im ? (
+      <Comparateur lang={lang} id={`${id}-cmp-${i}`} avant={im.avant} apres={typeof im.apres === 'string' ? im.apres : im.avant} legende={im.legende} />
+    ) : (
+      <figure class="compare">
+        <img src={im.image} alt="" loading="lazy" decoding="async" />
+        <figcaption class="compare__legend">{t(lang, im.legende)}</figcaption>
+      </figure>
+    )
+  )}
+  {vitrine && coulisses.chiffre && <p class="chiffre">{t(lang, coulisses.chiffre)}</p>}
+  {notions.length > 0 && (
+    <div>
+      <h3 class="label" style={undefined}>{d.fiche.aller_plus_loin}</h3>
+      <ul class="notions">
+        {notions.map((n) => <li><a href={route(lang, 'lexique', `${n}/`)}>{n.replace(/-/g, ' ')}</a></li>)}
+      </ul>
+    </div>
+  )}
+</section>

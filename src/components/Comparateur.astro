@@ -1,0 +1,22 @@
+---
+import { ui, t, type Lang } from '../lib/i18n';
+interface Props { avant: string; apres: string; legende: { fr: string; en?: string }; lang: Lang; id: string }
+const { avant, apres, legende, lang, id } = Astro.props;
+const d = ui(lang);
+---
+<div class="compare" data-compare>
+  <div class="compare__pair">
+    <figure>
+      <img src={avant} alt="" width={1080} height={806} loading="lazy" decoding="async" />
+      <figcaption>{d.fiche.avant}</figcaption>
+    </figure>
+    <figure>
+      <img src={apres} alt="" width={1080} height={806} loading="lazy" decoding="async" />
+      <figcaption>{d.fiche.apres}</figcaption>
+    </figure>
+    <input class="compare__range" type="range" min="0" max="100" value="50" id={id} aria-label={`${d.fiche.avant} / ${d.fiche.apres}`} hidden />
+    <span class="compare__handle" hidden></span>
+  </div>
+  <p class="compare__legend">{t(lang, legende)}</p>
+</div>
+<script src="../scripts/compare.ts"></script>

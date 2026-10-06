@@ -1,0 +1,37 @@
+---
+import { ui, route, href, type Lang } from '../lib/i18n';
+interface Props { lang: Lang; alt: { fr: string; en: string }; current?: string }
+const { lang, alt, current } = Astro.props;
+const d = ui(lang);
+const liens = [
+  ['films', d.nav.films],
+  ['series', d.nav.series],
+  ['univers', d.nav.univers],
+  ['coulisses', d.nav.coulisses],
+  ['prestations', d.nav.prestations],
+  ['roger', d.nav.roger],
+] as const;
+---
+<header class="header">
+  <div class="container header__row">
+    <a class="brand" href={href(lang, '/')}>
+      <span class="brand__agence">{d.site.agence}</span>
+      <span class="brand__studio">{d.site.nom}</span>
+    </a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav" data-nav-toggle>{d.nav.menu}</button>
+    <nav class="nav" id="nav" aria-label="Navigation" data-nav>
+      <ul class="nav__links">
+        {liens.map(([key, label]) => (
+          <li><a href={route(lang, key)} aria-current={current === key ? 'page' : undefined}>{label}</a></li>
+        ))}
+      </ul>
+      <div class="lang" aria-label="Langue">
+        <a href={alt.fr} lang="fr" aria-current={lang === 'fr' ? 'true' : undefined} hreflang="fr">FR</a>
+        <span aria-hidden="true">/</span>
+        <a href={alt.en} lang="en" aria-current={lang === 'en' ? 'true' : undefined} hreflang="en">EN</a>
+      </div>
+      <a class="btn btn--primary" href={route(lang, 'contact')}>{d.nav.contact}</a>
+    </nav>
+  </div>
+</header>
+<script src="../scripts/nav.ts"></script>

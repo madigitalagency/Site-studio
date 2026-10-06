@@ -1,0 +1,27 @@
+---
+import { t, duree, numero, ui, type Lang } from '../lib/i18n';
+import { formatDe, urlPiece, media, type Piece, type Serie } from '../lib/content';
+interface Props { piece: Piece; serie?: Serie; lang: Lang; loading?: 'lazy' | 'eager' }
+const { piece, serie, lang, loading = 'lazy' } = Astro.props;
+const d = ui(lang);
+const p = piece.data;
+const wide = !p.orientations.includes('9:16');
+const poster = media(piece, p.media.poster);
+const teaser = p.media.teaser ? media(piece, p.media.teaser) : undefined;
+const ligne = serie ? `${t(lang, serie.data.titre)} · ${numero(p.saison, p.episode)}` : t(lang, formatDe(p.format).nom);
+---
+<a class="card" href={urlPiece(lang, piece, serie)} data-card>
+  <span class:list={['card__poster', { 'card__poster--wide': wide }]} data-teaser={teaser}>
+    <picture>
+      <source srcset={poster + '.avif'} type="image/avif" />
+      <source srcset={poster + '.webp'} type="image/webp" />
+      <img src={poster + '.jpg'} alt="" width={wide ? 1920 : 1080} height={wide ? 1080 : 1920} loading={loading} decoding="async" />
+    </picture>
+    <span class="card__duree num">{duree(lang, p.duree_s.fr)}</span>
+  </span>
+  <span class="card__meta">
+    <span class="card__serie">{ligne}</span>
+    <span class="card__titre">{t(lang, p.titre)}</span>
+    {serie && <span class="card__format">{t(lang, formatDe(p.format).nom)}</span>}
+  </span>
+</a>

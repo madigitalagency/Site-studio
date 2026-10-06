@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import Lecteur from '../components/Lecteur.astro';
+import Coulisses from '../components/Coulisses.astro';
+import { ui, t, duree, numero, dateLongue, route, type Lang } from '../lib/i18n';
+import { episodesDe, formatDe, universDe, urlPiece, urlSerie, media, type Piece, type Serie } from '../lib/content';
+import { videoObject, breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang; piece: Piece; serie?: Serie }
+const { lang, piece, serie } = Astro.props;
+const d = ui(lang);
+const p = piece.data;
+const url = urlPiece(lang, piece, serie);
+const alt = { fr: urlPiece('fr', piece, serie), en: urlPiece('en', piece, serie) };
+const enDispo = lang === 'fr' || !!p.titre.en;
+const eps = serie ? await episodesDe(serie.id) : [];
+const idx = eps.findIndex((e) => e.id === piece.id);
+const prev = idx > 0 ? eps[idx - 1] : undefined;
+const next = idx >= 0 && idx < eps.length - 1 ? eps[idx + 1] : undefined;
+const format = formatDe(p.format);
+const poster = media(piece, p.media.poster) + '.jpg';
+const videoUrl = p.media.v916?.fr ? media(piece, `${p.media.v916.fr}-1080.mp4`) : undefined;
+const transcription = t(lang, p.transcription);
+const crumbs = [{ name: d.nav.films, url: route(lang, 'films') }];
+if (serie) crumbs.push({ name: t(lang, serie.data.titre), url: urlSerie(lang, serie) });
+crumbs.push({ name: t(lang, p.titre), url });
+const jsonld = [videoObject(lang, piece, url, serie), breadcrumb(crumbs)];
+const titreMeta = serie ? `${t(lang, p.titre)} · ${t(lang, serie.data.titre)}` : t(lang, p.titre);
+---
+<Base lang={lang} titre={titreMeta} description={t(lang, p.pitch)} alt={alt} image={poster} video={videoUrl} type="video.other" jsonld={jsonld} current={serie ? 'series' : 'films'}>
+  <article class="section container fiche">
+    <div class="fiche__player">
+      <Lecteur piece={piece} lang={lang} />
+    </div>
+    <div class="fiche__body">
+      <header class="fiche__head">
+        <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}>
+          {serie ? <a href={urlSerie(lang, serie)}>{t(lang, serie.data.titre)}</a> : <a href={route(lang, 'films')}>{d.nav.films}</a>}
+          {serie && p.saison && p.episode && <><span aria-hidden="true">/</span><span class="num">{numero(p.saison, p.episode)}</span></>}
+        </nav>
+        <h1>{t(lang, p.titre)}</h1>
+        {!enDispo && <p class="block__note">{d.fiche.version_fr_seulement} · <a href={alt.fr}>{d.fiche.voir_fr}</a></p>}
+        <p class="lede">{t(lang, p.pitch)}</p>
+        <ul class="badges">
+          <li class="num">{duree(lang, (lang === 'en' && p.duree_s.en) || p.duree_s.fr)}</li>
+          <li>{t(lang, format.nom)}</li>
+          {p.univers.map((u) => <li>{t(lang, universDe(u).nom)}</li>)}
+          <li>{d.rendus[p.rendu]}</li>
+          <li>{p.langues.map((l) => l.toUpperCase()).join(' · ')}</li>
+          <li class="num">{dateLongue(lang, p.date_publication)}</li>
+        </ul>
+      </header>
+
+      {p.sources.length > 0 && (
+        <section class="block block--sources" aria-labelledby="sources-titre">
+          <h2 id="sources-titre">{d.fiche.fait_reel}</h2>
+          {serie?.data.mention && <p class="block__note">{t(lang, serie.data.mention)}</p>}
+          <ul>
+            {p.sources.map((s) => (
+              <li>
+                {s.url ? <a href={s.url} rel="noopener">{s.titre}</a> : s.titre}
+                {s.note && <> — {t(lang, s.note)}</>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {p.coulisses && <Coulisses lang={lang} coulisses={p.coulisses} notions={p.notions} vitrine={p.vitrine} id="coulisses" />}
+
+      {transcription && (
+        <details class="block">
+          <summary>{d.fiche.transcription}</summary>
+          <p class="transcript">{transcription}</p>
+        </details>
+      )}
+
+      <section class="block" aria-label={d.fiche.mention_ia}>
+        <p class="block__note">{t(lang, p.mention_ia)}</p>
+        {(p.liens.instagram || p.liens.tiktok) && (
+          <p class="block__note">{d.fiche.reseaux} : {p.liens.instagram && <a href={p.liens.instagram} rel="noopener">Instagram</a>}{p.liens.instagram && p.liens.tiktok && ' · '}{p.liens.tiktok && <a href={p.liens.tiktok} rel="noopener">TikTok</a>}</p>
+        )}
+      </section>
+
+      <div class="cta-band">
+        <h2 class="card__titre">{d.fiche.cta}</h2>
+        <p>{lang === 'fr' ? 'Même méthode, même exigence, votre sujet. On en parle en une demi-heure.' : 'Same method, same standard, your subject. Thirty minutes to talk it through.'}</p>
+        <div><a class="btn btn--primary" href={route(lang, 'contact', `?piece=${piece.id}`)}>{d.nav.contact}</a></div>
+      </div>
+
+      {(prev || next) && (
+        <nav class="episode-nav" aria-label={lang === 'fr' ? 'Épisodes voisins' : 'Neighbouring episodes'}>
+          {prev ? <a href={urlPiece(lang, prev, serie)}><span class="label">{d.fiche.precedent} · {numero(prev.data.saison, prev.data.episode)}</span><span class="card__titre">{t(lang, prev.data.titre)}</span></a> : <span></span>}
+          {next ? <a href={urlPiece(lang, next, serie)}><span class="label">{d.fiche.suivant} · {numero(next.data.saison, next.data.episode)}</span><span class="card__titre">{t(lang, next.data.titre)}</span></a> : <span></span>}
+        </nav>
+      )}
+    </div>
+  </article>
+</Base>

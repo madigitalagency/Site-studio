@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+# Médias publiés : reconstruits par `npm run media`, jamais versionnés (CDC v2 §8.1)
+public/media/
+# Matière de travail (posters bruts, images de coulisses avant conversion)
+work/
+.env
+.env.*
+.impeccable/review/
+.DS_Store
+Thumbs.db

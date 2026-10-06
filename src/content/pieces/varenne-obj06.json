@@ -1,0 +1,51 @@
+{
+  "slug": "objet-06",
+  "serie": "varenne",
+  "saison": 1,
+  "titre": {
+    "fr": "Story d'Éléna",
+    "en": "Éléna's story"
+  },
+  "pitch": {
+    "fr": "Document fictif de l'univers VARENNE.",
+    "en": "Fictional document from the VARENNE world."
+  },
+  "format": "objet-in-universe",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 0
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-10-21",
+  "statut": "programme",
+  "une": false,
+  "roger": false,
+  "annexe": true,
+  "fiche": false,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916"
+  },
+  "sources_media": {
+    "image": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/In-universe/06-*.jpg"
+  },
+  "notions": [],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Document fictif · image générée par IA",
+    "en": "Fictional document · AI-generated image"
+  }
+}

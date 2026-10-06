@@ -1,0 +1,58 @@
+{
+  "slug": "s1e04-trente-minutes",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 4,
+  "titre": {
+    "fr": "Trente minutes",
+    "en": "Thirty minutes"
+  },
+  "pitch": {
+    "fr": "La réunion devait durer trente minutes. Éléna n'ouvre pas son ordinateur. Au même moment, à Gennevilliers, l'entrepôt de Saulène sature.",
+    "en": "The meeting was meant to last thirty minutes. Éléna does not open her laptop. Meanwhile, in Gennevilliers, Saulène's warehouse is overflowing."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-10-13",
+  "statut": "programme",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": true
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-04/varenne_ep4_reel.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-04/carrousel-tiktok/"
+  },
+  "notions": [],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": "https://www.instagram.com/studio.madigitalagency/",
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images générées par IA. Fiction : personnes, marques et médias n'existent pas.",
+    "en": "AI-generated images. Fiction: people, brands and media do not exist."
+  }
+}

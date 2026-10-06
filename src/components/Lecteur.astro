@@ -1,0 +1,28 @@
+---
+import { ui, type Lang } from '../lib/i18n';
+import { media, videoSrc, type Piece } from '../lib/content';
+interface Props { piece: Piece; lang: Lang }
+const { piece, lang } = Astro.props;
+const d = ui(lang);
+const p = piece.data;
+const poster = media(piece, p.media.poster);
+const src = videoSrc(piece, lang);
+const wide = !p.orientations.includes('9:16');
+---
+<div class="player">
+  <div class:list={['player__frame', { 'player__frame--wide': wide }]}>
+    {src ? (
+      <video controls playsinline preload="none" poster={poster + '.jpg'} lang={src.lang} width={wide ? 1920 : 1080} height={wide ? 1080 : 1920}>
+        <source src={src.l1080} type="video/mp4" media="(min-width: 700px)" />
+        <source src={src.l720} type="video/mp4" />
+      </video>
+    ) : (
+      <img src={poster + '.jpg'} alt="" width={1080} height={1920} />
+    )}
+  </div>
+  <div class="player__tools">
+    <span class="ia">{d.fiche.mention_ia}</span>
+    {p.media.muet && <span class="player__note">{d.fiche.muet}</span>}
+    {src && src.lang !== lang && <span class="player__note">{d.fiche.version_fr_seulement}</span>}
+  </div>
+</div>

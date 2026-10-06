@@ -1,0 +1,58 @@
+{
+  "slug": "s1e07-quelques-mois-plus-tard",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 7,
+  "titre": {
+    "fr": "Quelques mois plus tard",
+    "en": "A few months later"
+  },
+  "pitch": {
+    "fr": "Trois mois plus tard, le deuxième entrepôt tourne depuis six semaines. Clara obtient son premier direct, sur un sujet qui n'a rien à voir avec sa sœur.",
+    "en": "Three months later, the second warehouse has been running for six weeks. Clara gets her first live report, on a subject that has nothing to do with her sister."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-10-23",
+  "statut": "programme",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": true
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-07/varenne_ep7_reel.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-07/carrousel-tiktok/"
+  },
+  "notions": [],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": "https://www.instagram.com/studio.madigitalagency/",
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images générées par IA. Fiction : personnes, marques et médias n'existent pas.",
+    "en": "AI-generated images. Fiction: people, brands and media do not exist."
+  }
+}

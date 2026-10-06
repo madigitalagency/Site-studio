@@ -1,0 +1,63 @@
+---
+import '../styles/fonts.css';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { ui, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  titre: string;
+  description: string;
+  /** Chemin de la même page dans l'autre langue (pour hreflang et le sélecteur). */
+  alt: { fr: string; en: string };
+  image?: string;
+  video?: string;
+  type?: 'website' | 'video.other';
+  jsonld?: Record<string, unknown> | Record<string, unknown>[];
+  current?: string;
+}
+const { lang, titre, description, alt, image, video, type = 'website', jsonld, current } = Astro.props;
+const site = Astro.site!.toString().replace(/\/$/, '');
+const d = ui(lang);
+const canonical = site + Astro.url.pathname;
+const ogImage = site + (image ?? '/partage-1200x630.jpg');
+const titrePage = `${titre} · ${d.site.signature}`;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titrePage}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="fr" href={site + alt.fr} />
+    <link rel="alternate" hreflang="en" href={site + alt.en} />
+    <link rel="alternate" hreflang="x-default" href={site + alt.fr} />
+    <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/series.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#2A0A4A" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={d.site.signature} />
+    <meta property="og:title" content={titrePage} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
+    {video && <meta property="og:video" content={site + video} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
+  </head>
+  <body>
+    <a class="skip" href="#contenu">{d.nav.aller_contenu}</a>
+    <Header lang={lang} alt={alt} current={current} />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

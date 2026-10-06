@@ -1,0 +1,89 @@
+{
+  "slug": "s1e01-influenceuse-ou-entrepreneure",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 1,
+  "titre": {
+    "fr": "Influenceuse ou entrepreneure ?",
+    "en": "Influencer or entrepreneur?"
+  },
+  "pitch": {
+    "fr": "Un article pose la question qu'on ne poserait pas à un fondateur. Éléna répond qu'il ne la touche pas. Le soir même, elle ouvre un dossier qu'elle n'avait pas prévu d'ouvrir cette année.",
+    "en": "An article asks the question nobody would ask a male founder. Éléna says it does not touch her. That same night, she opens a file she had not planned to open this year."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-10-06",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": true
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-01/varenne_ep1_reel.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-01/carrousel-tiktok/"
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Ouvrir la saison sur un mensonge que le spectateur voit : Éléna dit que l'article ne la touche pas, et le soir même elle ouvre le dossier de la levée de fonds.\n\n**Ce qui était difficile.** Garder le haut de chaque image vide pour les bulles, et une peau réelle, sans lissage, pour que le roman-photo ne ressemble pas à une publicité. Le premier Reel a servi de test : le texte posé au montage, le rythme des apparitions, le temps de pose entre deux bulles.\n\n**Ce qu'on a appris.** Un épisode porte un seul retournement ; tout le reste est une respiration. C'est la règle de toute la saison.",
+      "en": "**The idea.** Open the season on a lie the viewer can see: Éléna says the article does not touch her, and that same night she opens the fundraising file.\n\n**What was hard.** Keeping the top of every image empty for the balloons, and real, unsmoothed skin so the photo-novel does not look like an advert. The first Reel served as a test: text set in the edit, the rhythm of appearances, the pause between two balloons.\n\n**What we learned.** One episode carries one single turn; everything else is breathing room. It is the rule for the whole season."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "planches et bulles",
+        "montage",
+        "habillage"
+      ],
+      "en": [
+        "writing",
+        "panels and balloons",
+        "editing",
+        "design"
+      ]
+    }
+  },
+  "notions": [
+    "coherence-de-personnage",
+    "planche-de-casting"
+  ],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": "https://www.instagram.com/studio.madigitalagency/",
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images générées par IA. Fiction : personnes, marques et médias n'existent pas.",
+    "en": "AI-generated images. Fiction: people, brands and media do not exist."
+  }
+}

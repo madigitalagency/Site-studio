@@ -1,0 +1,23 @@
+{
+  "slug": "hors-jeu",
+  "titre": { "fr": "Hors-Jeu", "en": "Hors-Jeu" },
+  "sous_titre": { "fr": "Un feuilleton sur le football français, l'argent et une parole donnée", "en": "A serial about French football, money and a promise made" },
+  "pitch": {
+    "fr": "Le FC Verchamps, club historique d'une ville portuaire, doit passer devant la commission qui contrôle les comptes des clubs. Le soir de la clôture du mercato, son numéro 10 découvre que son transfert sert à autre chose qu'à sa carrière.",
+    "en": "FC Verchamps, the historic club of a port city, must face the commission that audits club finances. On the night the transfer window closes, its number 10 discovers that his transfer serves something other than his career."
+  },
+  "mention": { "fr": "Fiction. Club, ville, personnes et médias n'existent pas.", "en": "Fiction. The club, city, people and media do not exist." },
+  "univers": "drame-pouvoir",
+  "format_defaut": "micro-serie",
+  "rendu": "cinematographique",
+  "statut": "en-preparation",
+  "identite": { "accent": "#F29A86" },
+  "reseaux": { "hashtags": ["#HorsJeu", "#serie"] },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Un drame d'argent et de loyauté, dans le football, avec un club et une ville inventés pour pouvoir tout dire.\n\n**Ce qui était difficile.** Un stade, une tribune, un maillot sans aucun sponsor réel : les modèles proposent spontanément de vrais clubs. Tout se décrit, à chaque image. Et les dialogues : seules trois répliques courtes sont synchronisées sur les lèvres ; le reste se joue de dos, de profil, ou en voix off.\n\n**Ce qu'on a appris.** Dix-sept plans pour vingt secondes de teaser, trente-deux images et trente et un clips conservés : le tri est le vrai travail.",
+      "en": "**The idea.** A drama of money and loyalty, in football, with an invented club and city so that everything can be said.\n\n**What was hard.** A stadium, a stand, a kit with no real sponsor: the models spontaneously offer real clubs. Everything has to be described, in every image. And the dialogue: only three short lines are lip-synced; the rest plays from behind, in profile, or in voice-over.\n\n**What we learned.** Seventeen shots for a twenty-second teaser, thirty-two images and thirty-one clips kept: the sorting is the real work."
+    }
+  },
+  "notions": ["synchronisation-labiale", "coherence-de-personnage"]
+}

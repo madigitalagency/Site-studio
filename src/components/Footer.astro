@@ -1,0 +1,39 @@
+---
+import { ui, route, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <h2>{d.site.nom}</h2>
+        <ul>
+          <li><a href="https://madigitalagency.net/" rel="noopener">{d.pied.activite}</a></li>
+          <li><a href="mailto:contact@madigitalagency.net">contact@madigitalagency.net</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>{d.nav.coulisses}</h2>
+        <ul>
+          <li><a href={route(lang, 'methode')}>{d.pied.methode}</a></li>
+          <li><a href={route(lang, 'lexique')}>{d.pied.lexique}</a></li>
+          <li><a href={route(lang, 'carnet')}>Carnet</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Instagram · TikTok</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/studio.madigitalagency/" rel="noopener">@studio.madigitalagency</a></li>
+          <li><a href={route(lang, 'mentions')}>{d.pied.mentions}</a></li>
+          <li><a href={route(lang, 'confidentialite')}>{d.pied.confidentialite}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__rappel">
+      <span>{d.pied.rappel}</span>
+      <span>© {new Date().getFullYear()} M&amp;A Digital Agency</span>
+    </div>
+  </div>
+</footer>
