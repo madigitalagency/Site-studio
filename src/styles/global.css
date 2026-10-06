@@ -326,3 +326,33 @@ details.block[open] summary::after { content: "–"; }
 .notion .page-head { padding-bottom: 32px; }
 .notion__grid { display: grid; grid-template-columns: 2fr 1fr; gap: clamp(32px, 5vw, 64px); }
 @media (max-width: 860px) { .notion__grid { grid-template-columns: 1fr; } }
+
+/* Catalogue : filtres */
+.filtres { display: grid; gap: 14px; padding: 20px 0 8px; border-top: 1px solid var(--line); }
+.filtres__groupe { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filtres__groupe legend { float: left; margin-right: 10px; padding: 0; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: 3px; padding: 6px 10px; font-size: 14px; color: var(--ink-2); cursor: pointer; }
+.chip:has(input:checked) { border-color: var(--accent); color: var(--ink); background: var(--surface); }
+.chip input { accent-color: var(--accent); margin: 0; }
+.filtres__etat { color: var(--muted); font-size: 14px; display: flex; gap: 8px; align-items: center; }
+.filtres__reset { background: none; border: 0; color: var(--accent-ink); cursor: pointer; padding: 0; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+[data-piece][hidden] { display: none; }
+
+/* Index des univers et des séries : blocs avec affiches */
+.univers-index, .series-index { display: grid; border-top: 1px solid var(--line); }
+.univers-bloc, .serie-bloc { display: grid; grid-template-columns: 1fr minmax(200px, 320px); gap: clamp(24px, 4vw, 56px); align-items: center; padding: 32px 0; border-bottom: 1px solid var(--line); text-decoration: none; color: inherit; }
+.serie-bloc { grid-template-columns: minmax(200px, 320px) 1fr; }
+.univers-bloc__text, .serie-bloc__text { display: grid; gap: 10px; min-width: 0; }
+.univers-bloc__text p, .serie-bloc__text p { color: var(--ink-2); max-width: 60ch; }
+.serie-bloc h2 { letter-spacing: 0.04em; color: var(--serie-accent, var(--ink)); }
+.serie-bloc__sub { font-family: var(--display); font-style: italic; font-size: 20px; font-variation-settings: 'opsz' 36; }
+.univers-bloc:hover h2, .serie-bloc:hover h2 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; text-decoration-color: var(--accent); }
+.univers-bloc__affiches, .serie-bloc__affiches { display: flex; gap: 8px; justify-content: flex-end; }
+.univers-bloc__affiches img, .serie-bloc__affiches img { width: 25%; max-width: 96px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 4px; background: var(--night-deep); }
+.serie-bloc__affiches { justify-content: flex-start; }
+.serie-bloc__affiches img { width: 30%; max-width: 100px; }
+.serie-bloc__text .badges { margin-top: 4px; }
+@media (max-width: 720px) {
+  .univers-bloc, .serie-bloc { grid-template-columns: 1fr; }
+  .univers-bloc__affiches { justify-content: flex-start; }
+}

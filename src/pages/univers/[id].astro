@@ -1,0 +1,9 @@
+---
+import UniversPage from '../../routes/UniversPage.astro';
+import { universActifs } from '../../lib/content';
+export async function getStaticPaths() {
+  return (await universActifs()).map((u) => ({ params: { id: u.id }, props: { id: u.id } }));
+}
+const { id } = Astro.props;
+---
+<UniversPage lang="fr" id={id} />

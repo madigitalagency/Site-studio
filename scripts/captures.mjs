@@ -9,6 +9,9 @@ const pages = [
   ['accueil', '/'],
   ['serie-rouvray', '/series/rouvray/'],
   ['fiche-rouvray-2', '/series/rouvray/02-un-dimanche-a-orly/'],
+  ['films', '/films/'],
+  ['series', '/series/'],
+  ['univers', '/univers/'],
   ['lexique', '/lexique/'],
   ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];

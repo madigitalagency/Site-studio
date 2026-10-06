@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { seriesActives, urlSerie, media, formatDe } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const series = await seriesActives();
+const alt = { fr: route('fr', 'series'), en: route('en', 'series') };
+const jsonld = breadcrumb([{ name: d.nav.series, url: route(lang, 'series') }]);
+---
+<Base lang={lang} titre={d.nav.series} description={d.series_page.description} alt={alt} jsonld={jsonld} current="series">
+  <div class="container">
+    <header class="page-head">
+      <h1>{d.nav.series}</h1>
+      <p class="lede">{d.series_page.intro}</p>
+    </header>
+    <section class="section series-index" aria-label={d.nav.series}>
+      {series.map(({ serie, episodes, dernier }) => (
+        <a class:list={['serie-bloc', `serie-${serie.data.slug}`]} href={urlSerie(lang, serie)}>
+          <span class="serie-bloc__affiches">
+            {episodes.slice(-3).reverse().map((e) => <img src={media(e, e.data.media.poster) + '.webp'} alt="" width={1080} height={1920} loading="lazy" decoding="async" />)}
+            {!episodes.length && <span class="serie-row__mark"><span class="mono">{t(lang, serie.data.titre).charAt(0)}</span></span>}
+          </span>
+          <span class="serie-bloc__text">
+            <h2>{t(lang, serie.data.titre)}</h2>
+            <p class="serie-bloc__sub">{t(lang, serie.data.sous_titre)}</p>
+            <p>{t(lang, serie.data.pitch)}</p>
+            <span class="badges">
+              <span class="label label--ink">{episodes.length ? `${episodes.length} ${lang === 'fr' ? 'épisode' : 'episode'}${episodes.length > 1 ? 's' : ''}` : d.serie.en_preparation}</span>
+              <span class="label">{t(lang, formatDe(serie.data.format_defaut).nom)}</span>
+              {serie.data.rythme && serie.data.statut === 'en-cours' && <span class="label">{t(lang, serie.data.rythme)}</span>}
+            </span>
+          </span>
+        </a>
+      ))}
+    </section>
+  </div>
+</Base>

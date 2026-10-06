@@ -124,5 +124,21 @@
       "produire-diffuser": "Produire et diffuser",
       "grammaire": "Grammaire de l’image"
     }
+  },
+  "catalogue": {
+    "titre": "Films",
+    "description": "Tous les films courts du Studio, générés par IA : séries, archives reconstituées, teasers. Filtrez par univers, format et rendu.",
+    "intro": "Tout ce que le Studio a mis en ligne, du plus récent au plus ancien. Chaque film a sa fiche, ses coulisses et sa mention.",
+    "tout": "Tout afficher",
+    "aucun": "Aucun film ne correspond à ces filtres.",
+    "toutes_series": "Toutes les séries"
+  },
+  "univers": {
+    "description": "Les univers du Studio : les registres dans lesquels nos films jouent.",
+    "intro": "Un univers, c’est un registre : un ton, une façon de raconter. Il n’apparaît ici que lorsqu’un film y existe."
+  },
+  "series_page": {
+    "description": "Les séries du Studio, génériques et à épisodes, entièrement générées par IA.",
+    "intro": "Des fictions à épisodes, publiées au rythme des réseaux. Commencez au début, chaque série a sa page."
   }
 }

@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+import CartePiece from '../components/CartePiece.astro';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { catalogue, seriesActives, serieDe, universDe, formatDe, urlSerie } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const pieces = await catalogue();
+const series = await Promise.all(pieces.map(serieDe));
+const toutesSeries = await seriesActives();
+const universUtilises = [...new Set(pieces.flatMap((p) => p.data.univers))].map(universDe).sort((a, b) => a.ordre - b.ordre);
+const formatsUtilises = [...new Set(pieces.map((p) => p.data.format))].map(formatDe);
+const rendusUtilises = [...new Set(pieces.map((p) => p.data.rendu))];
+const alt = { fr: route('fr', 'films'), en: route('en', 'films') };
+const jsonld = breadcrumb([{ name: d.nav.films, url: route(lang, 'films') }]);
+---
+<Base lang={lang} titre={d.catalogue.titre} description={d.catalogue.description} alt={alt} jsonld={jsonld} current="films">
+  <div class="container">
+    <header class="page-head">
+      <h1>{d.catalogue.titre}</h1>
+      <p class="lede">{d.catalogue.intro}</p>
+    </header>
+
+    <div class="filtres" data-filtres hidden>
+      <fieldset class="filtres__groupe"><legend class="label">{d.fiche.univers}</legend>
+        {universUtilises.map((u) => <label class="chip"><input type="checkbox" name="univers" value={u.id} /> {t(lang, u.nom)}</label>)}
+      </fieldset>
+      <fieldset class="filtres__groupe"><legend class="label">{d.fiche.format}</legend>
+        {formatsUtilises.map((f) => <label class="chip"><input type="checkbox" name="format" value={f.id} /> {t(lang, f.nom)}</label>)}
+      </fieldset>
+      <fieldset class="filtres__groupe"><legend class="label">{d.fiche.rendu}</legend>
+        {rendusUtilises.map((r) => <label class="chip"><input type="checkbox" name="rendu" value={r} /> {d.rendus[r]}</label>)}
+      </fieldset>
+      <p class="filtres__etat"><span data-filtres-compte>{pieces.length}</span> {d.accueil.films} · <button type="button" class="filtres__reset" data-filtres-reset>{d.catalogue.tout}</button></p>
+    </div>
+
+    <section class="section" aria-label={d.catalogue.titre}>
+      <div class="grid-cards" data-filtres-grille>
+        {pieces.map((p, i) => (
+          <div data-piece data-univers={p.data.univers.join(' ')} data-format={p.data.format} data-rendu={p.data.rendu}>
+            <CartePiece piece={p} serie={series[i]} lang={lang} />
+          </div>
+        ))}
+      </div>
+      <p class="lex-vide" data-filtres-vide hidden>{d.catalogue.aucun}</p>
+    </section>
+
+    {toutesSeries.length > 0 && (
+      <section class="section" aria-labelledby="films-series-titre">
+        <div class="section__head"><h2 id="films-series-titre">{d.nav.series}</h2><a class="section__link" href={route(lang, 'series')}>{d.catalogue.toutes_series}</a></div>
+        <div class="series-list">
+          {toutesSeries.map(({ serie, episodes }) => (
+            <a class:list={['serie-row', `serie-${serie.data.slug}`]} href={urlSerie(lang, serie)}>
+              <span class="serie-row__mark">{serie.data.identite.logo ? <img src={serie.data.identite.logo} alt="" width={96} height={96} /> : <span class="mono">{t(lang, serie.data.titre).charAt(0)}</span>}</span>
+              <span class="serie-row__text"><h3>{t(lang, serie.data.titre)}</h3><p>{t(lang, serie.data.sous_titre)}</p></span>
+              <span class="serie-row__status"><span class="label label--ink">{episodes.length ? `${episodes.length} ${lang === 'fr' ? 'épisode' : 'episode'}${episodes.length > 1 ? 's' : ''}` : d.serie.en_preparation}</span></span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+  <script src="../scripts/cards.ts"></script>
+  <script src="../scripts/filtres.ts"></script>
+</Base>

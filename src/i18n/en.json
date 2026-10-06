@@ -124,5 +124,21 @@
       "produire-diffuser": "Produce and publish",
       "grammaire": "Image grammar"
     }
+  },
+  "catalogue": {
+    "titre": "Films",
+    "description": "All the Studio’s short AI-generated films: series, reconstructed archives, teasers. Filter by world, format and look.",
+    "intro": "Everything the Studio has published, newest first. Every film has its page, its behind-the-scenes and its disclosure.",
+    "tout": "Show all",
+    "aucun": "No film matches these filters.",
+    "toutes_series": "All series"
+  },
+  "univers": {
+    "description": "The Studio’s worlds: the registers our films play in.",
+    "intro": "A world is a register: a tone, a way of telling. It only appears here once a film exists in it."
+  },
+  "series_page": {
+    "description": "The Studio’s series, fully AI-generated, episode by episode.",
+    "intro": "Serial fiction, released at the pace of social media. Start from the beginning; every series has its page."
   }
 }

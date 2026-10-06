@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { universActifs, catalogue, serieDe, media } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const univers = await universActifs();
+const pieces = await catalogue();
+const alt = { fr: route('fr', 'univers'), en: route('en', 'univers') };
+const jsonld = breadcrumb([{ name: d.nav.univers, url: route(lang, 'univers') }]);
+---
+<Base lang={lang} titre={d.nav.univers} description={d.univers.description} alt={alt} jsonld={jsonld} current="univers">
+  <div class="container">
+    <header class="page-head">
+      <h1>{d.nav.univers}</h1>
+      <p class="lede">{d.univers.intro}</p>
+    </header>
+    <section class="section univers-index" aria-label={d.nav.univers}>
+      {univers.map((u) => {
+        const siennes = pieces.filter((p) => p.data.univers.includes(u.id)).slice(0, 4);
+        return (
+          <a class="univers-bloc" href={route(lang, 'univers', `${u.id}/`)}>
+            <span class="univers-bloc__text">
+              <h2>{t(lang, u.nom)}</h2>
+              <p>{t(lang, u.description)}</p>
+              <span class="label num">{u.n} {u.n > 1 ? d.accueil.films : 'film'}</span>
+            </span>
+            <span class="univers-bloc__affiches">
+              {siennes.map((p) => <img src={media(p, p.data.media.poster) + '.webp'} alt="" width={1080} height={1920} loading="lazy" decoding="async" />)}
+            </span>
+          </a>
+        );
+      })}
+    </section>
+  </div>
+</Base>
