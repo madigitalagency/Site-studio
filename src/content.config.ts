@@ -115,7 +115,8 @@ const carnet = defineCollection({
   schema: z.object({
     titre: z.string(),
     description: z.string(),
-    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    // YAML lit 2026-10-07 comme une date : on la ramène à une chaîne AAAA-MM-JJ
+    date: z.union([z.string(), z.date()]).transform((d) => (typeof d === 'string' ? d : d.toISOString().slice(0, 10))),
     etiquettes: z.array(z.string()).default([]),
     notions: z.array(z.string()).default([]),
     pieces: z.array(z.string()).default([]),
