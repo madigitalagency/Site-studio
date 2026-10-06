@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import Comparateur from '../components/Comparateur.astro';
+import { getCollection } from 'astro:content';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { catalogue, serieDe, urlPiece } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+import methode from '../data/methode.json';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const notions = await getCollection('notions');
+const familles = ['grammaire', 'generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser'] as const;
+const notes = (await getCollection('carnet')).filter((n) => n.data.statut === 'publie').sort((a, b) => (a.data.date < b.data.date ? 1 : -1)).slice(0, 3);
+const pieces = await catalogue();
+const vitrine = pieces.find((p) => p.data.vitrine && p.data.coulisses?.images?.some((i) => 'avant' in i));
+const paire = vitrine?.data.coulisses?.images?.find((i) => 'avant' in i) as { avant: string; apres: string; legende: { fr: string; en?: string } } | undefined;
+const vitrineSerie = vitrine ? await serieDe(vitrine) : undefined;
+const alt = { fr: route('fr', 'coulisses'), en: route('en', 'coulisses') };
+const jsonld = breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }]);
+---
+<Base lang={lang} titre={d.nav.coulisses} description={d.coulisses.description} alt={alt} jsonld={jsonld} current="coulisses">
+  <div class="container">
+    <header class="page-head">
+      <h1>{d.nav.coulisses}</h1>
+      <p class="lede">{d.coulisses.intro}</p>
+    </header>
+
+    <section class="section" aria-labelledby="c-methode">
+      <div class="section__head"><h2 id="c-methode">{d.methode.titre}</h2><a class="section__link" href={route(lang, 'methode')}>{d.accueil.comment_lien}</a></div>
+      <ol class="frise">
+        {methode.etapes.map((e, i) => <li><a href={`${route(lang, 'methode')}#${e.id}`}><span class="num">{String(i + 1).padStart(2, '0')}</span><span>{t(lang, e.titre)}</span></a></li>)}
+      </ol>
+    </section>
+
+    {vitrine && paire && (
+      <section class="section" aria-labelledby="c-avant">
+        <div class="howto">
+          <Comparateur lang={lang} id="coulisses-cmp" avant={paire.avant} apres={paire.apres} legende={paire.legende} />
+          <div class="howto__text">
+            <h2 id="c-avant">{d.coulisses.dernier_avant}</h2>
+            <p class="lede">{t(lang, vitrine.data.titre)}</p>
+            <p><a href={urlPiece(lang, vitrine, vitrineSerie)}>{d.coulisses.voir_fiche}</a></p>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="section" aria-labelledby="c-lexique">
+      <div class="section__head"><h2 id="c-lexique">{d.lexique.titre}</h2><a class="section__link" href={route(lang, 'lexique')}>{d.coulisses.tout_lexique} · {notions.length}</a></div>
+      <div class="univers-list">
+        {familles.map((f) => {
+          const liste = notions.filter((n) => n.data.famille === f);
+          if (!liste.length) return null;
+          return (
+            <div class="univers-row">
+              <h3>{d.lexique.familles[f]}</h3>
+              <p>{liste.map((n) => t(lang, n.data.titre).replace(/\s*\(.*\)$/, '')).join(' · ')}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="c-carnet">
+      <div class="section__head"><h2 id="c-carnet">{d.coulisses.carnet}</h2><a class="section__link" href={route(lang, 'carnet')}>{d.coulisses.tout_carnet}</a></div>
+      {notes.length ? (
+        <div class="univers-list">
+          {notes.map((n) => <a class="univers-row" href={route(lang, 'carnet', `${n.id.replace(/\.(fr|en)$/, '')}/`)}><h3>{t(lang, n.data.titre)}</h3><span class="label num">{n.data.date}</span></a>)}
+        </div>
+      ) : (
+        <p class="block__note">{d.coulisses.carnet_vide}</p>
+      )}
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, getCollection } from 'astro:content';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { urlPiece, serieDe, media, estVisible } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+import methode from '../data/methode.json';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const notions = await getCollection('notions');
+const titreNotion = (id: string) => { const n = notions.find((x) => x.id === id); return n ? t(lang, n.data.titre) : id; };
+async function lienPiece(id: string | null) {
+  if (!id) return null;
+  const p = await getEntry('pieces', id);
+  if (!p || !estVisible(p)) return null;
+  const s = await serieDe(p);
+  return { url: urlPiece(lang, p, s), titre: t(lang, p.data.titre), poster: media(p, p.data.media.poster) + '.webp' };
+}
+const etapes = await Promise.all(methode.etapes.map(async (e) => ({ ...e, lien: await lienPiece(e.cas.piece) })));
+const limites = await Promise.all(methode.limites.liste.map(async (l) => ({ ...l, lien: await lienPiece(l.piece) })));
+const alt = { fr: route('fr', 'methode'), en: route('en', 'methode') };
+const jsonld = [
+  breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.methode.titre, url: route(lang, 'methode') }]),
+  { '@context': 'https://schema.org', '@type': 'HowTo', name: d.methode.titre, description: t(lang, methode.intro), step: methode.etapes.map((e, i) => ({ '@type': 'HowToStep', position: i + 1, name: t(lang, e.titre), text: t(lang, e.texte) })) },
+];
+---
+<Base lang={lang} titre={d.methode.titre} description={d.methode.description} alt={alt} jsonld={jsonld} current="coulisses">
+  <div class="container">
+    <header class="page-head">
+      <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}><a href={route(lang, 'coulisses')}>{d.nav.coulisses}</a></nav>
+      <h1>{d.methode.titre}</h1>
+      <p class="lede">{t(lang, methode.intro)}</p>
+    </header>
+
+    <ol class="methode">
+      {etapes.map((e, i) => (
+        <li class="etape" id={e.id}>
+          <div class="etape__num num">{String(i + 1).padStart(2, '0')}</div>
+          <div class="etape__text">
+            <h2>{t(lang, e.titre)}</h2>
+            <p class="prose">{t(lang, e.texte)}</p>
+            <div class="etape__cas">
+              <span class="label">{d.methode.cas}</span>
+              <p>{t(lang, e.cas)}</p>
+              {e.lien && <a href={e.lien.url}>{e.lien.titre}</a>}
+            </div>
+            <ul class="notions">
+              {e.notions.map((n) => <li><a href={route(lang, 'lexique', `${n}/`)}>{titreNotion(n)}</a></li>)}
+            </ul>
+          </div>
+          {e.lien && <a class="etape__affiche" href={e.lien.url} tabindex="-1" aria-hidden="true"><img src={e.lien.poster} alt="" width={1080} height={1920} loading="lazy" decoding="async" /></a>}
+        </li>
+      ))}
+    </ol>
+
+    <section class="section" aria-labelledby="limites-titre">
+      <div class="section__head"><h2 id="limites-titre">{t(lang, methode.limites.titre)}</h2><p>{t(lang, methode.limites.intro)}</p></div>
+      <ul class="limites">
+        {limites.map((l) => (
+          <li>
+            <p>{lang === 'en' ? l.en : l.fr}</p>
+            <p class="block__note">
+              {l.lien && <><a href={l.lien.url}>{l.lien.titre}</a> · </>}
+              <a href={route(lang, 'lexique', `${l.notion}/`)}>{titreNotion(l.notion)}</a>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="droits-titre">
+      <div class="block">
+        <h2 id="droits-titre">{t(lang, methode.droits.titre)}</h2>
+        <p class="prose">{lang === 'en' ? methode.droits.en : methode.droits.fr}</p>
+        <p><a href={route(lang, 'lexique', 'mention-ia/')}>{titreNotion('mention-ia')}</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-band">
+        <h2 class="card__titre">{d.fiche.cta}</h2>
+        <p>{lang === 'fr' ? 'Même méthode, même exigence, votre sujet.' : 'Same method, same standard, your subject.'}</p>
+        <div><a class="btn btn--primary" href={route(lang, 'contact')}>{d.nav.contact}</a></div>
+      </div>
+    </section>
+  </div>
+</Base>

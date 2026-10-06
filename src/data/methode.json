@@ -1,0 +1,52 @@
+{
+  "intro": {
+    "fr": "Sept étapes, toujours dans le même ordre. Chacune est illustrée par un cas réel du catalogue, avec le lien vers le film. Les termes techniques renvoient au Lexique.",
+    "en": "Seven steps, always in the same order. Each one is illustrated by a real case from the catalogue, with a link to the film. Technical terms link to the glossary."
+  },
+  "etapes": [
+    { "id": "ecrire", "titre": { "fr": "Écrire et découper", "en": "Write and break down" },
+      "texte": { "fr": "Un film court tient sur une page : l'idée, la chute, puis la shot list, plan par plan, avec la durée que la voix laissera à chacun. On n'allume aucun générateur avant que cette page soit arrêtée.", "en": "A short film fits on one page: the idea, the ending, then the shot list, shot by shot, with the length the voice will leave each one. No generator is switched on before that page is settled." },
+      "cas": { "piece": "horsjeu-teaser", "fr": "Hors-Jeu : dix-sept plans écrits et numérotés avant la première image ; le teaser de vingt secondes en garde la structure.", "en": "Hors-Jeu: seventeen shots written and numbered before the first image; the twenty-second teaser keeps that structure." },
+      "notions": ["decoupage-technique", "accroche"] },
+    { "id": "son", "titre": { "fr": "Le son d'abord", "en": "Sound first" },
+      "texte": { "fr": "La voix ou la musique est enregistrée avant toute image. C'est elle qui fixe la durée de chaque plan ; l'inverse produit des images qu'on coupe à regret ou qu'on étire.", "en": "The voice or the music is recorded before any image. It sets the length of each shot; the other way round produces images cut with regret or stretched." },
+      "cas": { "piece": "rouvray-s1e01", "fr": "ROUVRAY 1 : la narration enregistrée durait trente-cinq secondes au lieu des vingt-deux prévues. Deux plans ont été refaits en dix secondes. C'est l'origine de la règle.", "en": "ROUVRAY 1: the recorded narration ran thirty-five seconds instead of the planned twenty-two. Two shots were redone at ten seconds. That is where the rule comes from." },
+      "notions": ["voix-de-synthese"] },
+    { "id": "image", "titre": { "fr": "Une image fixe par plan", "en": "One still image per shot" },
+      "texte": { "fr": "Chaque plan commence par une image fixe, générée, vérifiée et corrigée jusqu'à ce qu'elle soit juste : cadre, costume, lumière, époque, absence de visage de face. Un défaut se corrige dans l'image, jamais dans la vidéo.", "en": "Every shot starts with a still image, generated, checked and corrected until it is right: frame, costume, light, period, no face to camera. A defect is fixed in the image, never in the video." },
+      "cas": { "piece": "rouvray-s1e01", "fr": "ROUVRAY 1 : la cabine vide derrière l'inspecteur et les tartines en double ont été corrigées sur l'image de départ, puis seulement animées.", "en": "ROUVRAY 1: the empty cabin behind the inspector and the doubled sandwiches were fixed on the start frame, then only animated." },
+      "notions": ["image-de-depart", "anachronisme", "valeur-de-plan"] },
+    { "id": "animer", "titre": { "fr": "Animer et trier", "en": "Animate and sort" },
+      "texte": { "fr": "L'image validée devient un plan de quatre à dix secondes. On génère plusieurs prises, on garde la bonne, on note pourquoi les autres ne vont pas. Le tri est le vrai travail.", "en": "The approved image becomes a four- to ten-second shot. We generate several takes, keep the right one, note why the others fail. Sorting is the real work." },
+      "cas": { "piece": "rouvray-s1e02", "fr": "ROUVRAY 2 : dix-neuf générations pour cinq plans gardés, dont trois versions de la seule terrasse d'Orly.", "en": "ROUVRAY 2: nineteen generations for five kept shots, including three versions of the Orly terrace alone." },
+      "notions": ["image-vers-video", "vitesse-a-l-ecran", "mouvement-de-camera"] },
+    { "id": "monter", "titre": { "fr": "Monter", "en": "Edit" },
+      "texte": { "fr": "Les coupes se calent sur les mots de la voix, pas sur la durée des plans. Le texte à l'écran se pose ici, jamais dans l'image générée.", "en": "Cuts are set on the words of the voice, not on the length of the shots. On-screen text is placed here, never inside the generated image." },
+      "cas": { "piece": "varenne-s1e01", "fr": "VARENNE : le temps de pose entre deux bulles s'est réglé sur le premier épisode, et vaut pour toute la saison.", "en": "VARENNE: the pause between two speech balloons was set on the first episode and holds for the whole season." },
+      "notions": ["raccord"] },
+    { "id": "mixer", "titre": { "fr": "Mixer", "en": "Mix" },
+      "texte": { "fr": "Voix, ambiance, musique : la voix se traite comme un vrai enregistrement, le son d'ambiance vient des plans eux-mêmes quand il existe, la musique reste en retrait.", "en": "Voice, ambience, music: the voice is treated like a real recording, ambient sound comes from the shots themselves when it exists, music stays in the background." },
+      "cas": { "piece": "rouvray-s1e02", "fr": "ROUVRAY 2 : une voix passée par un micro d'époque, et le son natif des plans (réacteurs, foule) gardé sous la narration.", "en": "ROUVRAY 2: a voice passed through a period microphone, and the shots' native sound (jets, crowd) kept under the narration." },
+      "notions": ["voix-de-synthese", "synchronisation-labiale"] },
+    { "id": "etalonner", "titre": { "fr": "Étalonner et habiller", "en": "Grade and dress" },
+      "texte": { "fr": "Les couleurs de tous les plans sont ramenées dans une seule palette, puis viennent le grain, les cartons, les sous-titres. C'est à ce moment qu'une suite de plans devient un film.", "en": "The colours of all the shots are brought into one palette, then come the grain, the title cards, the subtitles. That is when a sequence of shots becomes a film." },
+      "cas": { "piece": "rouvray-s1e02", "fr": "ROUVRAY 2 : le vieillissement 8 mm est appliqué au montage sur des images générées nettes ; VARENNE : l'habillage des planches est le même d'un épisode à l'autre.", "en": "ROUVRAY 2: the 8 mm ageing is applied in the edit on sharp generated images; VARENNE: the panel design is the same from one episode to the next." },
+      "notions": ["etalonnage", "look-d-archive"] }
+  ],
+  "limites": {
+    "titre": { "fr": "Ce que l'IA ne sait pas encore faire", "en": "What AI cannot do yet" },
+    "intro": { "fr": "On le dit, et on dit comment on contourne.", "en": "We say it, and we say how we work around it." },
+    "liste": [
+      { "fr": "La vitesse réelle d'un objet rapide. Parade : décrire la vitesse en fractions d'écran, mesurer, regénérer.", "en": "The real speed of a fast object. Workaround: describe speed in fractions of the frame, measure, regenerate.", "piece": "rouvray-s1e02", "notion": "vitesse-a-l-ecran" },
+      { "fr": "Du texte lisible dans l'image : enseignes, banderoles, journaux. Parade : aucun texte généré, tout est posé au montage.", "en": "Legible text inside the image: signs, banners, newspapers. Workaround: no generated text, everything is set in the edit.", "piece": "horsjeu-teaser", "notion": "raccord" },
+      { "fr": "Tenir l'identité d'un personnage à partir d'une description seule. Parade : toujours une image déjà validée comme point de départ.", "en": "Holding a character's identity from a description alone. Workaround: always an already approved image as the starting point.", "piece": null, "notion": "coherence-de-personnage" },
+      { "fr": "De longues répliques en français, lèvres synchronisées. Parade : six mots au plus, le reste de dos, de profil ou en voix off.", "en": "Long lines in French with synced lips. Workaround: six words at most, the rest from behind, in profile or in voice-over.", "piece": "horsjeu-teaser", "notion": "synchronisation-labiale" },
+      { "fr": "Un détail qui reste identique d'un plan à l'autre : couleur de cheveux, objet dans la main. Parade : le fixer dans chaque image de départ, et signaler ce qui a dérivé.", "en": "A detail that stays identical from one shot to the next: hair colour, an object in the hand. Workaround: lock it in every start frame, and flag what drifted.", "piece": "horsjeu-teaser", "notion": "raccord" }
+    ]
+  },
+  "droits": {
+    "titre": { "fr": "Transparence et droits", "en": "Transparency and rights" },
+    "fr": "Chaque film porte sa mention « Images générées par IA », à l'écran et dans les fichiers. Aucune personne, marque ou œuvre réelle n'est imitée. Les musiques sont générées sous licence commerciale, jamais empruntées. Pour une pub, c'est la marque qui diffuse qui est tenue par la réglementation européenne : on lui livre la mention et les métadonnées avec le film.",
+    "en": "Every film carries its “AI-generated images” disclosure, on screen and in the files. No real person, brand or work is imitated. Music is generated under a commercial licence, never borrowed. For a commercial, the brand that airs it is the one bound by European regulation: we deliver the disclosure and the metadata with the film."
+  }
+}

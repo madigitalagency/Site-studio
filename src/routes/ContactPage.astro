@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui, route, type Lang } from '../lib/i18n';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const c = d.contact;
+const alt = { fr: route('fr', 'contact'), en: route('en', 'contact') };
+const jsonld = breadcrumb([{ name: d.nav.contact, url: route(lang, 'contact') }]);
+const types = [['pub', c.type_pub], ['film-de-marque', c.type_film], ['serie-de-marque', c.type_serie], ['film-patrimonial', c.type_patrimoine], ['clip', c.type_clip], ['autre', c.type_autre]];
+const budgets = [['moins-3000', c.budget_1], ['3000-8000', c.budget_2], ['8000-20000', c.budget_3], ['plus-20000', c.budget_4], ['inconnu', c.budget_5]];
+---
+<Base lang={lang} titre={c.titre} description={c.description} alt={alt} jsonld={jsonld} current="contact">
+  <div class="container contact">
+    <header class="page-head">
+      <h1>{c.titre}</h1>
+      <p class="lede">{c.intro}</p>
+    </header>
+    <div class="contact__grid">
+      <form class="form" method="post" action="/api/contact" data-contact>
+        <input type="hidden" name="langue" value={lang} />
+        <input type="hidden" name="piece" value="" data-piece />
+        <input type="hidden" name="horodatage" value="" data-horodatage />
+        <p class="form__piege" aria-hidden="true"><label for="site_web">Site web</label><input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off" /></p>
+
+        <div class="form__row">
+          <label for="nom">{c.nom}</label>
+          <input type="text" id="nom" name="nom" required maxlength="100" autocomplete="name" />
+        </div>
+        <div class="form__row">
+          <label for="email">{c.email}</label>
+          <input type="email" id="email" name="email" required maxlength="254" autocomplete="email" />
+        </div>
+        <div class="form__row">
+          <label for="societe">{c.societe} <span class="form__opt">{c.facultatif}</span></label>
+          <input type="text" id="societe" name="societe" maxlength="100" autocomplete="organization" />
+        </div>
+        <div class="form__row">
+          <label for="type_projet">{c.type}</label>
+          <select id="type_projet" name="type_projet" required>
+            <option value="">{c.choisir}</option>
+            {types.map(([v, l]) => <option value={v}>{l}</option>)}
+          </select>
+        </div>
+        <div class="form__row">
+          <label for="budget">{c.budget}</label>
+          <select id="budget" name="budget" required>
+            <option value="">{c.choisir}</option>
+            {budgets.map(([v, l]) => <option value={v}>{l}</option>)}
+          </select>
+        </div>
+        <div class="form__row">
+          <label for="message">{c.message}</label>
+          <textarea id="message" name="message" required minlength="20" maxlength="3000" rows="7"></textarea>
+          <span class="form__aide">{c.message_aide}</span>
+        </div>
+        <div class="form__row form__row--check">
+          <input type="checkbox" id="consentement" name="consentement" value="oui" required />
+          <label for="consentement">{c.consentement} <a href={route(lang, 'confidentialite')}>{d.pied.confidentialite}</a>.</label>
+        </div>
+        <div class="form__actions">
+          <button class="btn btn--primary" type="submit">{c.envoyer}</button>
+          <span class="form__aide">{c.delai}</span>
+        </div>
+        <p class="form__etat" data-etat hidden></p>
+      </form>
+      <aside class="contact__aside">
+        <h2>{c.aside_titre}</h2>
+        <p>{c.aside_1}</p>
+        <p>{c.aside_2}</p>
+        <p><a href="mailto:contact@madigitalagency.net">contact@madigitalagency.net</a></p>
+        <p class="block__note">{c.aside_3}</p>
+      </aside>
+    </div>
+  </div>
+  <script src="../scripts/contact.ts"></script>
+</Base>

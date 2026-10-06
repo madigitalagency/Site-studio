@@ -1,0 +1,8 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { ui, route } from '../../../lib/i18n';
+const d = ui('en');
+---
+<Base lang="en" titre={d.contact.merci_titre} description={d.contact.merci_texte} alt={{ fr: '/contact/merci/', en: '/en/contact/thanks/' }} current="contact">
+  <section class="section container page-head"><h1>{d.contact.merci_titre}</h1><p class="lede">{d.contact.merci_texte}</p><p><a href={route('en', 'films')}>{d.accueil.tout_catalogue}</a></p></section>
+</Base>

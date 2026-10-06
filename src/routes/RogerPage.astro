@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import CartePiece from '../components/CartePiece.astro';
+import { getCollection } from 'astro:content';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { catalogue, serieDe } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const r = d.roger;
+const filmo = (await catalogue()).filter((p) => p.data.roger);
+const filmoSeries = await Promise.all(filmo.map(serieDe));
+const notions = await getCollection('notions');
+const titreNotion = (id: string) => { const n = notions.find((x) => x.id === id); return n ? t(lang, n.data.titre) : id; };
+const planche = [
+  ['portrait', r.planche_1], ['corps-face', r.planche_2], ['corps-dos', r.planche_3], ['lecture', r.planche_4],
+  ['geste', r.planche_5], ['lunettes', r.planche_6], ['veste', r.planche_7],
+];
+const alt = { fr: route('fr', 'roger'), en: route('en', 'roger') };
+const jsonld = [
+  breadcrumb([{ name: 'Roger', url: route(lang, 'roger') }]),
+  { '@context': 'https://schema.org', '@type': 'Person', name: 'Roger', description: r.accroche, jobTitle: r.metier, image: 'https://studio.madigitalagency.net/media/roger/portrait.jpg', worksFor: { '@type': 'Organization', name: 'M&A Digital Agency · Studio' }, additionalType: 'https://schema.org/CreativeWork', disambiguatingDescription: r.fictif },
+];
+---
+<Base lang={lang} titre="Roger" description={r.accroche} alt={alt} image="/media/roger/portrait.jpg" jsonld={jsonld} current="roger">
+  <div class="container">
+    <header class="roger-hero">
+      <picture>
+        <source srcset="/media/roger/portrait.avif" type="image/avif" />
+        <source srcset="/media/roger/portrait.webp" type="image/webp" />
+        <img src="/media/roger/portrait.jpg" alt={r.alt_portrait} width={382} height={569} decoding="async" />
+      </picture>
+      <div class="roger-hero__text">
+        <p class="label">{r.metier}</p>
+        <h1>Roger</h1>
+        <p class="lede">{r.accroche}</p>
+        <p class="prose">{r.bio}</p>
+        <span class="ia">{r.fictif}</span>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="r-signes">
+      <div class="section__head"><h2 id="r-signes">{r.signes_titre}</h2></div>
+      <div class="univers-list">
+        <div class="univers-row"><h3>{r.signe_1_t}</h3><p>{r.signe_1}</p></div>
+        <div class="univers-row"><h3>{r.signe_2_t}</h3><p>{r.signe_2}</p></div>
+        <div class="univers-row"><h3>{r.signe_3_t}</h3><p>{r.signe_3}</p></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="r-casting">
+      <div class="section__head"><h2 id="r-casting">{r.casting_titre}</h2><p>{r.casting_intro}</p></div>
+      <div class="planche">
+        {planche.map(([f, legende]) => (
+          <figure>
+            <picture>
+              <source srcset={`/media/roger/${f}.avif`} type="image/avif" />
+              <img src={`/media/roger/${f}.webp`} alt={legende} loading="lazy" decoding="async" width={600} height={900} />
+            </picture>
+            <figcaption>{legende}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="essais">
+        <figure class="essai">
+          <video controls muted playsinline preload="none" poster="/media/roger/essai-rate.jpg" width={720} height={720}><source src="/media/roger/essai-rate.mp4" type="video/mp4" /></video>
+          <figcaption><span class="label">{r.essai_rate_t}</span><br />{r.essai_rate}</figcaption>
+        </figure>
+        <figure class="essai">
+          <video controls muted playsinline preload="none" poster="/media/roger/essai-reussi.jpg" width={720} height={720}><source src="/media/roger/essai-reussi.mp4" type="video/mp4" /></video>
+          <figcaption><span class="label">{r.essai_reussi_t}</span><br />{r.essai_reussi}</figcaption>
+        </figure>
+      </div>
+      <p class="prose">{r.casting_lecon}</p>
+      <ul class="notions">
+        {['planche-de-casting', 'coherence-de-personnage', 'image-de-depart', 'image-vers-video'].map((n) => <li><a href={route(lang, 'lexique', `${n}/`)}>{titreNotion(n)}</a></li>)}
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="r-filmo">
+      <div class="section__head"><h2 id="r-filmo">{r.filmo_titre}</h2></div>
+      {filmo.length ? (
+        <div class="grid-cards">{filmo.map((p, i) => <CartePiece piece={p} serie={filmoSeries[i]} lang={lang} />)}</div>
+      ) : (
+        <p class="block__note">{r.filmo_vide}</p>
+      )}
+    </section>
+
+    <section class="section" aria-labelledby="r-doleances">
+      <div class="section__head"><h2 id="r-doleances">{r.doleances_titre}</h2><p>{r.doleances_intro}</p></div>
+      <p class="block__note">{r.doleances_vide}</p>
+    </section>
+  </div>
+  <script src="../scripts/cards.ts"></script>
+</Base>

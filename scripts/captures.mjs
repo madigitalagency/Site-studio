@@ -12,6 +12,10 @@ const pages = [
   ['films', '/films/'],
   ['series', '/series/'],
   ['univers', '/univers/'],
+  ['methode', '/methode/'],
+  ['coulisses', '/coulisses/'],
+  ['roger', '/roger/'],
+  ['contact', '/contact/'],
   ['lexique', '/lexique/'],
   ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];

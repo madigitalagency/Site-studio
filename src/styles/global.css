@@ -348,9 +348,9 @@ details.block[open] summary::after { content: "–"; }
 .serie-bloc__sub { font-family: var(--display); font-style: italic; font-size: 20px; font-variation-settings: 'opsz' 36; }
 .univers-bloc:hover h2, .serie-bloc:hover h2 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; text-decoration-color: var(--accent); }
 .univers-bloc__affiches, .serie-bloc__affiches { display: flex; gap: 8px; justify-content: flex-end; }
-.univers-bloc__affiches img, .serie-bloc__affiches img { width: 25%; max-width: 96px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 4px; background: var(--night-deep); }
+.univers-bloc__affiches img, .serie-bloc__affiches img { flex: 0 1 96px; min-width: 0; width: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 4px; background: var(--night-deep); }
 .serie-bloc__affiches { justify-content: flex-start; }
-.serie-bloc__affiches img { width: 30%; max-width: 100px; }
+.serie-bloc__affiches img { flex-basis: 100px; }
 .serie-bloc__text .badges { margin-top: 4px; }
 @media (max-width: 720px) {
   .univers-bloc, .serie-bloc { grid-template-columns: 1fr; }
