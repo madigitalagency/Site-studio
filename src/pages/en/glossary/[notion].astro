@@ -1,0 +1,9 @@
+---
+import NotionPage from '../../../routes/NotionPage.astro';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+  return (await getCollection('notions')).map((notion) => ({ params: { notion: notion.id }, props: { notion } }));
+}
+const { notion } = Astro.props;
+---
+<NotionPage lang="en" notion={notion} />

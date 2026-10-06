@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import CartePiece from '../components/CartePiece.astro';
+import type { CollectionEntry } from 'astro:content';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { vuDans } from '../lib/notions';
+import { serieDe, urlSerie } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang; notion: CollectionEntry<'notions'> }
+const { lang, notion } = Astro.props;
+const d = ui(lang);
+const n = notion.data;
+const url = route(lang, 'lexique', `${notion.id}/`);
+const alt = { fr: route('fr', 'lexique', `${notion.id}/`), en: route('en', 'lexique', `${notion.id}/`) };
+const vus = (await vuDans()).get(notion.id) ?? { pieces: [], series: [] } as any;
+const pieces = Array.isArray(vus) ? vus : [];
+const piecesSeries = await Promise.all(pieces.map(serieDe));
+const autres = (lang === 'en' && n.aussi_appele?.en?.length ? n.aussi_appele.en : n.aussi_appele?.fr) ?? [];
+const jsonld = [
+  { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: t(lang, n.titre), description: t(lang, n.definition), url: 'https://studio.madigitalagency.net' + url, inDefinedTermSet: 'https://studio.madigitalagency.net' + route(lang, 'lexique') },
+  breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.lexique.titre, url: route(lang, 'lexique') }, { name: t(lang, n.titre), url }]),
+];
+---
+<Base lang={lang} titre={`${t(lang, n.titre)} · ${d.lexique.titre}`} description={t(lang, n.definition)} alt={alt} jsonld={jsonld} current="coulisses">
+  <article class="container notion">
+    <header class="page-head">
+      <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}>
+        <a href={route(lang, 'coulisses')}>{d.nav.coulisses}</a><span aria-hidden="true">/</span><a href={route(lang, 'lexique')}>{d.lexique.titre}</a><span aria-hidden="true">/</span><span>{d.lexique.familles[n.famille]}</span>
+      </nav>
+      <h1>{t(lang, n.titre)}</h1>
+      <p class="lede">{t(lang, n.definition)}</p>
+    </header>
+    <div class="notion__grid">
+      <section class="block" aria-labelledby="impact-titre">
+        <h2 id="impact-titre">{d.lexique.impact}</h2>
+        <p class="prose">{t(lang, n.impact)}</p>
+      </section>
+      {autres.length > 0 && (
+        <section class="block" aria-labelledby="autres-titre">
+          <h2 id="autres-titre">{d.lexique.autres_noms}</h2>
+          <p class="prose">{autres.join(' · ')}</p>
+        </section>
+      )}
+    </div>
+    {pieces.length > 0 && (
+      <section class="section" aria-labelledby="vu-titre">
+        <div class="section__head"><h2 id="vu-titre">{d.lexique.vu_dans_long}</h2></div>
+        <div class="grid-cards">
+          {pieces.map((p, i) => <CartePiece piece={p} serie={piecesSeries[i]} lang={lang} />)}
+        </div>
+      </section>
+    )}
+    <section class="section">
+      <div class="cta-band">
+        <h2 class="card__titre">{d.fiche.cta}</h2>
+        <div><a class="btn btn--primary" href={route(lang, 'contact')}>{d.nav.contact}</a></div>
+      </div>
+    </section>
+  </article>
+  <script src="../scripts/cards.ts"></script>
+</Base>

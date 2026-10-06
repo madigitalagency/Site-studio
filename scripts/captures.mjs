@@ -9,15 +9,18 @@ const pages = [
   ['accueil', '/'],
   ['serie-rouvray', '/series/rouvray/'],
   ['fiche-rouvray-2', '/series/rouvray/02-un-dimanche-a-orly/'],
+  ['lexique', '/lexique/'],
+  ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];
-const largeurs = [390, 1024, 1440];
+const largeurs = (process.env.LARGEURS ?? '390,1024,1440').split(',').map(Number);
+const seules = process.env.PAGES?.split(',');
 await mkdir(out, { recursive: true });
 const browser = await puppeteer.launch({
   executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
   headless: true,
   args: ['--hide-scrollbars', '--force-prefers-reduced-motion'],
 });
-for (const [nom, chemin] of pages) {
+for (const [nom, chemin] of pages.filter(([n]) => !seules || seules.includes(n))) {
   for (const w of largeurs) {
     const page = await browser.newPage();
     await page.setViewport({ width: w, height: 900, deviceScaleFactor: 1 });

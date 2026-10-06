@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { ui, t, route, type Lang } from '../lib/i18n';
+import { vuDans } from '../lib/notions';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const notions = await getCollection('notions');
+const familles = ['generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser'] as const;
+const vus = await vuDans();
+const alt = { fr: route('fr', 'lexique'), en: route('en', 'lexique') };
+const jsonld = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: d.lexique.titre,
+    url: 'https://studio.madigitalagency.net' + route(lang, 'lexique'),
+    hasDefinedTerm: notions.map((n) => ({ '@type': 'DefinedTerm', name: t(lang, n.data.titre), description: t(lang, n.data.definition), url: 'https://studio.madigitalagency.net' + route(lang, 'lexique', `${n.id}/`) })),
+  },
+  breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.lexique.titre, url: route(lang, 'lexique') }]),
+];
+---
+<Base lang={lang} titre={d.lexique.titre} description={d.lexique.description} alt={alt} jsonld={jsonld} current="coulisses">
+  <div class="container">
+    <header class="page-head">
+      <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}><a href={route(lang, 'coulisses')}>{d.nav.coulisses}</a></nav>
+      <h1>{d.lexique.titre}</h1>
+      <p class="lede">{d.lexique.intro}</p>
+      <p class="block__note"><label for="lex-filtre" class="visually-hidden">{d.lexique.chercher}</label><input class="lex-filtre" id="lex-filtre" type="search" placeholder={d.lexique.chercher} autocomplete="off" data-lex-filtre hidden /></p>
+    </header>
+    {familles.map((f) => {
+      const liste = notions.filter((n) => n.data.famille === f).sort((a, b) => t(lang, a.data.titre).localeCompare(t(lang, b.data.titre), lang));
+      if (!liste.length) return null;
+      return (
+        <section class="section lex-famille" aria-labelledby={`fam-${f}`} data-lex-famille>
+          <div class="section__head"><h2 id={`fam-${f}`}>{d.lexique.familles[f]}</h2></div>
+          <dl class="lex-liste">
+            {liste.map((n) => (
+              <div class="lex-item" data-lex-item data-texte={`${t(lang, n.data.titre)} ${t(lang, n.data.definition)} ${(n.data.aussi_appele?.[lang] ?? n.data.aussi_appele?.fr ?? []).join(' ')}`.toLowerCase()}>
+                <dt><a href={route(lang, 'lexique', `${n.id}/`)}>{t(lang, n.data.titre)}</a></dt>
+                <dd>{t(lang, n.data.definition)}{vus.get(n.id)?.length ? <span class="lex-vu"> · {d.lexique.vu_dans} {vus.get(n.id)!.length}</span> : null}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      );
+    })}
+    <p class="lex-vide" data-lex-vide hidden>{d.lexique.aucun}</p>
+  </div>
+  <script src="../scripts/lexique.ts"></script>
+</Base>

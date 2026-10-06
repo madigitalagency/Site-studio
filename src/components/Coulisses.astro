@@ -2,6 +2,7 @@
 import { ui, t, tl, route, type Lang } from '../lib/i18n';
 import Comparateur from './Comparateur.astro';
 import { marked } from '../lib/marked';
+import { getCollection } from 'astro:content';
 interface Props {
   lang: Lang;
   coulisses: NonNullable<import('../lib/content').Piece['data']['coulisses']>;
@@ -16,6 +17,8 @@ const texte = marked(t(lang, coulisses.texte));
 const genere = tl(lang, coulisses.genere);
 const manuel = tl(lang, coulisses.manuel);
 const images = vitrine ? coulisses.images ?? [] : [];
+const toutesNotions = await getCollection('notions');
+const titreNotion = (id: string) => { const n = toutesNotions.find((x) => x.id === id); return n ? t(lang, n.data.titre) : id; };
 ---
 <section class:list={["block", { "block--nu": sansTitre }]} aria-labelledby={sansTitre ? undefined : `${id}-titre`} aria-label={sansTitre ? d.fiche.coulisses : undefined}>
   {!sansTitre && <h2 id={`${id}-titre`}>{d.fiche.coulisses}</h2>}
@@ -41,7 +44,7 @@ const images = vitrine ? coulisses.images ?? [] : [];
     <div>
       <h3 class="label" style={undefined}>{d.fiche.aller_plus_loin}</h3>
       <ul class="notions">
-        {notions.map((n) => <li><a href={route(lang, 'lexique', `${n}/`)}>{n.replace(/-/g, ' ')}</a></li>)}
+        {notions.map((n) => <li><a href={route(lang, 'lexique', `${n}/`)}>{titreNotion(n)}</a></li>)}
       </ul>
     </div>
   )}

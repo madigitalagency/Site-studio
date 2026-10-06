@@ -309,3 +309,20 @@ details.block[open] summary::after { content: "–"; }
 }
 
 .block--nu { border-top: 0; padding-top: 0; }
+
+/* Lexique */
+.page-head { display: grid; gap: 16px; padding-block: 24px 8px; }
+.lex-filtre { font: inherit; color: var(--ink); background: var(--night-deep); border: 1px solid var(--line-strong); border-radius: 4px; padding: 10px 14px; width: min(100%, 420px); }
+.lex-filtre::placeholder { color: var(--muted); }
+.lex-liste { margin: 0; display: grid; border-top: 1px solid var(--line); }
+.lex-item { display: grid; grid-template-columns: minmax(180px, 1fr) 2fr; gap: 8px 32px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.lex-item dt { font-family: var(--display); font-size: 22px; font-variation-settings: 'opsz' 36; }
+.lex-item dt a { color: var(--ink); text-decoration: none; }
+.lex-item dt a:hover { color: var(--accent-ink); }
+.lex-item dd { margin: 0; color: var(--ink-2); max-width: 62ch; }
+.lex-vu { color: var(--muted); font-size: 14px; white-space: nowrap; }
+.lex-vide { color: var(--muted); padding-block: 24px; }
+@media (max-width: 720px) { .lex-item { grid-template-columns: 1fr; gap: 4px; } }
+.notion .page-head { padding-bottom: 32px; }
+.notion__grid { display: grid; grid-template-columns: 2fr 1fr; gap: clamp(32px, 5vw, 64px); }
+@media (max-width: 860px) { .notion__grid { grid-template-columns: 1fr; } }
