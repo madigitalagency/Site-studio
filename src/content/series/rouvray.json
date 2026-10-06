@@ -21,7 +21,7 @@
     },
     "images": [
       { "image": "/media/series-rouvray/planche-monogrammes.webp", "legende": { "fr": "Le monogramme de la compagnie, décliné sur les dérives, les cartons et la plaque d'archive.", "en": "The airline's monogram, declined on tail fins, title cards and the archive plate." } },
-      { "image": "/media/series-rouvray/lucien-ferrat.webp", "legende": { "fr": "Lucien Ferrat, personnage récurrent : la planche qui fixe son visage d'un épisode à l'autre.", "en": "Lucien Ferrat, recurring character: the sheet that locks his face from one episode to the next." } }
+      { "image": "/media/series-rouvray/lucien-ferrat.webp", "legende": { "fr": "Lucien Ferrat, chef de galley et personnage récurrent : la planche qui fixe son visage d'un épisode à l'autre.", "en": "Lucien Ferrat, galley chef and recurring character: the sheet that locks his face from one episode to the next." } }
     ]
   },
   "notions": ["planche-de-casting", "look-d-archive"]
