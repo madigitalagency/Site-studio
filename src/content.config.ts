@@ -121,7 +121,7 @@ const carnet = defineCollection({
 
 // Pages de texte : un fichier par langue, `<slug>.<lang>.md`
 const pages = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/pages', generateId: ({ entry }) => entry.replace(/.md$/, '') }),
   schema: z.object({
     titre: z.string(),
     description: z.string(),
