@@ -1,0 +1,10 @@
+# Noms de clients et d'employeur : jamais sur le site (mots entiers, casse respectée)
+UGGC
+BCA
+Brussels Corporate Aviation
+Afrijet
+FlyGabon
+Ferhat
+Diagadom
+Perenco
+Interhome

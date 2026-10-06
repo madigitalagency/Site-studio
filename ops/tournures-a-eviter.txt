@@ -1,0 +1,12 @@
+# Tournures à éviter (expressions régulières, avertissement seulement)
+Découvrez
+Plongez
+révolutionn
+sans précédent
+au cœur de
+que vous soyez
+n'hésitez pas
+booste
+disruptif
+game.changer
+innovant\w*

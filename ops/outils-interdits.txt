@@ -1,0 +1,32 @@
+# Noms d'outils et de modèles : jamais dans les textes du site (mots entiers, casse respectée)
+Higgsfield
+Kling
+Seedance
+Nano Banana
+ElevenLabs
+Suno
+ChatGPT
+GPT
+OpenAI
+Leonardo
+Midjourney
+Runway
+CapCut
+Veo
+Sora
+Gemini
+Whisper
+Codex
+Claude
+Anthropic
+HeyGen
+Luma
+Pika
+Hailuo
+Minimax
+Flux
+Stable Diffusion
+Dreamfall
+Metricool
+Brevo
+n8n
