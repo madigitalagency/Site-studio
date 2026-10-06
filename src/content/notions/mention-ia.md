@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Mention IA", en: "AI disclosure" }
+titre: { fr: "Mention IA (AI disclosure)", en: "AI disclosure" }
 famille: produire-diffuser
 definition:
   fr: "L'indication, visible et lisible par machine, qu'un film a été généré par IA."
@@ -7,6 +7,6 @@ definition:
 impact:
   fr: "La réglementation européenne la demande au diffuseur, donc aussi à une marque qui publie une pub générée. On la traite comme un service rendu, pas comme une contrainte : cartouche sur chaque film, métadonnées dans les fichiers, étiquette sur les réseaux. Plus l'image est réaliste, plus la mention est visible."
   en: "European regulation requires it from whoever publishes, so also from a brand airing a generated commercial. We treat it as a service rendered, not a constraint: a label on every film, metadata in the files, a tag on social media. The more realistic the image, the more visible the mention."
-aussi_appele: { fr: ["transparence IA", "étiquette IA"], en: ["AI label", "AI transparency"] }
+aussi_appele: { fr: ["étiquette IA", "transparence IA"], en: ["AI label", "AI transparency"] }
 carnet: null
 ---

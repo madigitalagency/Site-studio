@@ -9,7 +9,7 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = ui(lang);
 const notions = await getCollection('notions');
-const familles = ['generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser'] as const;
+const familles = ['grammaire', 'generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser'] as const;
 const vus = await vuDans();
 const alt = { fr: route('fr', 'lexique'), en: route('en', 'lexique') };
 const jsonld = [

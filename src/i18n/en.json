@@ -108,7 +108,7 @@
   "lexique": {
     "titre": "Glossary",
     "description": "The notions behind making AI-generated films, each explained in one sentence, with the Studio films where you can see them at work.",
-    "intro": "Each notion in one sentence, why it matters in production, and the films where you can see it at work. No tool names: roles and methods.",
+    "intro": "Each notion with the trade term as its title, why it matters in production, how it is written in a generation prompt, and the films where you can see it at work. No tool names.",
     "chercher": "Search a notion",
     "aucun": "No notion matches.",
     "impact": "Why it matters in production",
@@ -121,7 +121,8 @@
       "coherence": "Keep it consistent",
       "voix-son": "Voice and sound",
       "monter-finir": "Edit and finish",
-      "produire-diffuser": "Produce and publish"
+      "produire-diffuser": "Produce and publish",
+      "grammaire": "Image grammar"
     }
   }
 }

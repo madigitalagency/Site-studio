@@ -108,7 +108,7 @@
   "lexique": {
     "titre": "Lexique",
     "description": "Les notions de la fabrication de films générés par IA, expliquées en une phrase, avec les films du Studio où on les voit à l’œuvre.",
-    "intro": "Chaque notion en une phrase, pourquoi elle compte en production, et les films où on la voit à l’œuvre. Aucun nom d’outil : des postes et des méthodes.",
+    "intro": "Chaque notion avec le terme du métier en titre et son équivalent en français, pourquoi elle compte en production, comment on l’écrit dans une consigne de génération, et les films où on la voit à l’œuvre. Aucun nom d’outil.",
     "chercher": "Chercher une notion",
     "aucun": "Aucune notion ne correspond.",
     "impact": "Pourquoi ça compte en production",
@@ -121,7 +121,8 @@
       "coherence": "Tenir la cohérence",
       "voix-son": "Voix et son",
       "monter-finir": "Monter et finir",
-      "produire-diffuser": "Produire et diffuser"
+      "produire-diffuser": "Produire et diffuser",
+      "grammaire": "Grammaire de l’image"
     }
   }
 }

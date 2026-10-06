@@ -101,7 +101,7 @@ const notions = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/notions' }),
   schema: z.object({
     titre: bilingue,
-    famille: z.enum(['generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser']),
+    famille: z.enum(['generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser', 'grammaire']),
     definition: bilingue,
     impact: bilingue,
     aussi_appele: bilingueListe.optional(),
