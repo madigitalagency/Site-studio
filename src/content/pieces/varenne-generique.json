@@ -1,0 +1,34 @@
+{
+  "slug": "varenne-nothing-shows",
+  "titre": { "fr": "Nothing Shows · bande originale de VARENNE", "en": "Nothing Shows · VARENNE original soundtrack" },
+  "pitch": {
+    "fr": "Le thème de la saison 1 de VARENNE, en entier, sur trois images de la série. Une soul feutrée, une voix retenue, un saxophone qui répond : ce qu'on cache derrière un visage lisse.",
+    "en": "The full theme of VARENNE season 1, over three images from the series. Hushed soul, a restrained voice, a saxophone that answers: what is hidden behind a composed face."
+  },
+  "format": "clip", "univers": ["clips-musique", "drame-pouvoir"], "rendu": "roman-photo",
+  "duree_s": { "fr": 223.5 },
+  "orientations": ["9:16", "16:9"],
+  "langues": ["fr"],
+  "date_publication": "2026-10-22",
+  "statut": "programme",
+  "une": false, "roger": false, "annexe": false, "fiche": true, "vitrine": false,
+  "media": { "poster": "poster-916", "v916": { "fr": "v916-fr" }, "h169": { "fr": "h169-fr" }, "teaser": "teaser.mp4" },
+  "sources_media": {
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav",
+    "images": ["02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-01/images/planche5_nuit.png", "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/2026-09-22_scene-cafe-parisien.png", "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-08/images/planche5.png"],
+    "montage": "studio-site/scripts/generique.mjs + work/generique-varenne.json"
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** La musique d'Instagram ne sort pas d'Instagram. VARENNE avait besoin d'un thème à elle : on l'a écrit comme un brief à un compositeur, et on lui donne ici une pochette, pour qu'il s'écoute en entier.\n\n**Ce qui était difficile.** Tenir trois minutes et demie avec trois images sans que ça ressemble à un diaporama : un fond flou qui respire, une pochette carrée qui dérive lentement, deux fondus seulement, et les cartons dans la typographie du site. Et des paroles en anglais, pour qu'elles ne se battent pas avec les bulles des épisodes.\n\n**Ce qu'on a appris.** On juge une prise musicale sur sa première minute, parce que c'est elle qu'on entend sous un épisode. Et on garde une prise instrumentale de secours.",
+      "en": "**The idea.** Instagram's music does not leave Instagram. VARENNE needed a theme of its own: we wrote it like a brief to a composer, and here we give it a sleeve, so it can be heard in full.\n\n**What was hard.** Holding three and a half minutes with three images without it looking like a slideshow: a breathing blurred ground, a square sleeve that drifts slowly, only two dissolves, and title cards in the site's own typography. And English lyrics, so they do not fight the episodes' speech balloons.\n\n**What we learned.** A musical take is judged on its first minute, because that is what plays under an episode. And we keep an instrumental take as a fallback."
+    },
+    "genere": { "fr": ["musique", "images"], "en": ["music", "images"] },
+    "manuel": { "fr": ["brief musical et paroles", "choix des prises", "pochette et montage", "mixage"], "en": ["music brief and lyrics", "take selection", "sleeve and edit", "mix"] }
+  },
+  "notions": ["musique-generee", "etalonnage"],
+  "carnet": "une-musique-par-style",
+  "sources": [],
+  "liens": { "instagram": null, "tiktok": null },
+  "mention_ia": { "fr": "Musique et images générées par IA. Fiction : personnes et marques n'existent pas.", "en": "AI-generated music and images. Fiction: people and brands do not exist." }
+}
