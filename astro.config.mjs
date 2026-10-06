@@ -9,6 +9,8 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'never' },
+  // Aucun script en ligne, même petit : tout passe en fichier (CSP sans 'unsafe-inline').
+  vite: { build: { assetsInlineLimit: 0 } },
   i18n: { defaultLocale: 'fr', locales: ['fr', 'en'], routing: { prefixDefaultLocale: false } },
   integrations: [sitemap({ i18n: { defaultLocale: 'fr', locales: { fr: 'fr-FR', en: 'en' } } })],
 });
