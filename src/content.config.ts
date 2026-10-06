@@ -119,11 +119,12 @@ const carnet = defineCollection({
   }),
 });
 
+// Pages de texte : un fichier par langue, `<slug>.<lang>.md`
 const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
   schema: z.object({
-    titre: bilingue,
-    description: bilingue,
+    titre: z.string(),
+    description: z.string(),
     statut: z.enum(['brouillon', 'publie']).default('brouillon'),
   }),
 });

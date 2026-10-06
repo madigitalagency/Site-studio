@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry, render } from 'astro:content';
+import { route, type Lang } from '../lib/i18n';
+import { breadcrumb } from '../lib/jsonld';
+
+/** Page de texte (À propos, mentions légales, confidentialité) : contenu dans src/content/pages/<slug>.<lang>.md */
+interface Props { lang: Lang; slug: string; cle: 'apropos' | 'mentions' | 'confidentialite'; current?: string }
+const { lang, slug, cle, current } = Astro.props;
+const entry = await getEntry('pages', `${slug}.${lang}`);
+if (!entry) throw new Error(`Page ${slug}.${lang} introuvable`);
+const { Content } = await render(entry);
+const alt = { fr: route('fr', cle), en: route('en', cle) };
+const jsonld = breadcrumb([{ name: entry.data.titre, url: route(lang, cle) }]);
+---
+<Base lang={lang} titre={entry.data.titre} description={entry.data.description} alt={alt} jsonld={jsonld} current={current}>
+  <article class="container page-texte">
+    <header class="page-head">
+      <h1>{entry.data.titre}</h1>
+      <p class="lede">{entry.data.description}</p>
+    </header>
+    <div class="prose page-texte__corps"><Content /></div>
+  </article>
+</Base>

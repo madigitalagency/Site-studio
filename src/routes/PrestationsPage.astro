@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import { getEntry } from 'astro:content';
+import { ui, t, tl, route, type Lang } from '../lib/i18n';
+import { urlPiece, serieDe, estVisible } from '../lib/content';
+import { breadcrumb } from '../lib/jsonld';
+import data from '../data/prestations.json';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const p = d.prestations;
+const offres = await Promise.all(data.offres.map(async (o) => {
+  let demo: { url: string; titre: string } | null = null;
+  if (o.demo) { const e = await getEntry('pieces', o.demo); if (e && estVisible(e)) demo = { url: urlPiece(lang, e, await serieDe(e)), titre: t(lang, e.data.titre) }; }
+  return { ...o, demoLien: demo };
+}));
+const alt = { fr: route('fr', 'prestations'), en: route('en', 'prestations') };
+const jsonld = [
+  breadcrumb([{ name: d.nav.prestations, url: route(lang, 'prestations') }]),
+  { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: data.faq.liste.map((f) => ({ '@type': 'Question', name: t(lang, f.q), acceptedAnswer: { '@type': 'Answer', text: t(lang, f.r) } })) },
+  { '@context': 'https://schema.org', '@type': 'Service', name: p.titre, provider: { '@type': 'Organization', name: 'M&A Digital Agency · Studio' }, areaServed: ['FR', 'BE', 'CH', 'LU', 'MA', 'CI', 'SN', 'GB'], hasOfferCatalog: { '@type': 'OfferCatalog', name: p.titre, itemListElement: data.offres.map((o) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: t(lang, o.titre), description: t(lang, o.pitch) } })) } },
+];
+---
+<Base lang={lang} titre={p.titre} description={p.description} alt={alt} jsonld={jsonld} current="prestations">
+  <div class="container">
+    <header class="page-head">
+      <h1>{p.titre}</h1>
+      <p class="lede">{t(lang, data.intro)}</p>
+    </header>
+
+    <div class="offres-liste">
+      {offres.map((o) => (
+        <article class="offre-bloc" id={o.id}>
+          <div class="offre-bloc__head">
+            <h2>{t(lang, o.titre)}</h2>
+            <p class="prose">{t(lang, o.pitch)}</p>
+          </div>
+          <dl class="offre-bloc__facts">
+            <div><dt>{p.livrables}</dt><dd><ul>{tl(lang, o.livrables).map((l) => <li>{l}</li>)}</ul></dd></div>
+            <div><dt>{p.delai}</dt><dd>{t(lang, o.delai)}</dd></div>
+            <div><dt>{d.fiche.genere}</dt><dd>{tl(lang, o.genere).join(', ')}</dd></div>
+            <div><dt>{d.fiche.manuel}</dt><dd>{tl(lang, o.manuel).join(', ')}</dd></div>
+          </dl>
+          <div class="offre-bloc__actions">
+            {o.demoLien ? <a href={o.demoLien.url}>{p.voir_demo} · {o.demoLien.titre}</a> : <span class="block__note">{o.demo_note ? t(lang, o.demo_note) : ''}</span>}
+            <a class="btn btn--ghost" href={`${route(lang, 'contact')}?type=${o.id}`}>{d.nav.contact}</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <section class="section" aria-labelledby="processus-titre">
+      <div class="section__head"><h2 id="processus-titre">{t(lang, data.processus.titre)}</h2></div>
+      <ol class="processus">
+        {data.processus.etapes.map((e, i) => <li><span class="num">{String(i + 1).padStart(2, '0')}</span><p>{t(lang, e)}</p></li>)}
+      </ol>
+      <p class="block__note"><a href={route(lang, 'methode')}>{d.accueil.comment_lien}</a></p>
+    </section>
+
+    <section class="section" aria-labelledby="faq-titre">
+      <div class="section__head"><h2 id="faq-titre">{t(lang, data.faq.titre)}</h2></div>
+      <div class="faq">
+        {data.faq.liste.map((f) => <details class="block"><summary>{t(lang, f.q)}</summary><p class="prose">{t(lang, f.r)}</p></details>)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-band">
+        <h2 class="card__titre">{p.cta}</h2>
+        <p>{p.cta_texte}</p>
+        <div><a class="btn btn--primary" href={route(lang, 'contact')}>{d.nav.contact}</a></div>
+      </div>
+    </section>
+  </div>
+</Base>

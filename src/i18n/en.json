@@ -226,5 +226,14 @@
   "quatre": {
     "titre": "Roger lost this page.",
     "texte": "He didn’t have his glasses on. The catalogue and the home page are still there."
+  },
+  "prestations": {
+    "titre": "Services",
+    "description": "Adaptable AI commercial, brand film, brand series, heritage film, music video: five offers quoted per project, made with the Studio’s method.",
+    "livrables": "Deliverables",
+    "delai": "Indicative lead time",
+    "voir_demo": "See how we made it",
+    "cta": "Have a project in mind?",
+    "cta_texte": "Thirty minutes to frame it, a quote within two working days."
   }
 }

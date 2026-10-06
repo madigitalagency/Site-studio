@@ -51,3 +51,29 @@
 .contact__aside { display: grid; gap: 14px; color: var(--ink-2); padding-top: 6px; }
 .contact__aside h2 { font-size: 22px; color: var(--ink); }
 @media (max-width: 860px) { .contact__grid { grid-template-columns: 1fr; } }
+
+/* Prestations */
+.offres-liste { display: grid; border-top: 1px solid var(--line); }
+.offre-bloc { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(24px, 4vw, 56px); padding: 40px 0; border-bottom: 1px solid var(--line); }
+.offre-bloc__head { display: grid; gap: 14px; align-content: start; }
+.offre-bloc__head h2 { font-size: clamp(26px, 3vw, 34px); }
+.offre-bloc__facts { margin: 0; display: grid; gap: 14px; align-content: start; }
+.offre-bloc__facts dt { font-family: var(--label); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.offre-bloc__facts dd { margin: 0; color: var(--ink-2); }
+.offre-bloc__facts ul { margin: 0; padding-left: 18px; display: grid; gap: 2px; }
+.offre-bloc__actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+@media (max-width: 720px) { .offre-bloc { grid-template-columns: 1fr; } }
+.processus { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.processus li { display: grid; gap: 8px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink-2); }
+.processus .num { font-family: var(--display); font-size: 26px; color: var(--muted); }
+.faq { display: grid; }
+.faq details.block { padding-block: 18px; gap: 10px; }
+.faq details.block summary { font-size: 20px; }
+.faq details.block:last-child { border-bottom: 1px solid var(--line); }
+
+/* Pages de texte */
+.page-texte__corps { max-width: 66ch; padding-top: 16px; }
+.page-texte__corps h2 { font-size: clamp(22px, 2.4vw, 28px); color: var(--ink); margin: 2em 0 0.6em; }
+.page-texte__corps p + p { margin-top: 1em; }
+.page-texte__corps strong { color: var(--ink); }
+.page-texte__corps em { color: var(--muted); font-style: normal; font-size: 14px; }

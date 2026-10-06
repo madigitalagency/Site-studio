@@ -16,6 +16,8 @@ const pages = [
   ['coulisses', '/coulisses/'],
   ['roger', '/roger/'],
   ['contact', '/contact/'],
+  ['prestations', '/prestations/'],
+  ['a-propos', '/a-propos/'],
   ['lexique', '/lexique/'],
   ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];

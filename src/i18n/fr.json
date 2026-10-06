@@ -226,5 +226,14 @@
   "quatre": {
     "titre": "Roger a perdu cette page.",
     "texte": "Il n’avait pas ses lunettes. Le catalogue et l’accueil, eux, sont bien là."
+  },
+  "prestations": {
+    "titre": "Prestations",
+    "description": "Publicité IA déclinable, film de marque, série de marque, film patrimonial, clip : cinq offres sur devis, fabriquées avec la méthode du Studio.",
+    "livrables": "Livrables",
+    "delai": "Délai indicatif",
+    "voir_demo": "Voir comment on l’a fait",
+    "cta": "Un projet en tête ?",
+    "cta_texte": "Une demi-heure pour le cadrer, un devis sous deux jours ouvrés."
   }
 }
