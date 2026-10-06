@@ -38,13 +38,16 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": true
+    "muet": false
   },
   "sources_media": {
-    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/varenne_ep2_reel.mp4",
-    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/carrousel-tiktok/"
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/varenne_ep2_reel_BO.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/carrousel-tiktok/",
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
-  "notions": [],
+  "notions": [
+    "musique-generee"
+  ],
   "carnet": null,
   "sources": [],
   "liens": {
@@ -52,7 +55,7 @@
     "tiktok": null
   },
   "mention_ia": {
-    "fr": "Images générées par IA. Fiction : personnes, marques et médias n'existent pas.",
-    "en": "AI-generated images. Fiction: people, brands and media do not exist."
+    "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
+    "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
   }
 }
