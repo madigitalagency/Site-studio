@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import CartePiece from '../components/CartePiece.astro';
 import Coulisses from '../components/Coulisses.astro';
-import { ui, t, route, type Lang } from '../lib/i18n';
+import { ui, t, route, duree, type Lang } from '../lib/i18n';
 import { episodesDe, annexesDe, formatDe, universDe, urlPiece, urlSerie, media, type Serie } from '../lib/content';
 import { serieObject, breadcrumb } from '../lib/jsonld';
 
@@ -53,6 +53,24 @@ const couverture = premier ? media(premier, premier.data.media.poster) + '.jpg' 
         </section>
       );
     })}
+
+    {s.bande_originale && (
+      <section class="section" aria-labelledby="bo-titre">
+        <div class="section__head"><h2 id="bo-titre">{d.serie.bo}</h2></div>
+        <div class="bo">
+          {s.bande_originale.pochette && <picture class="bo__pochette"><source srcset={s.bande_originale.pochette + '.avif'} type="image/avif" /><img src={s.bande_originale.pochette + '.webp'} alt="" width={400} height={711} loading="lazy" decoding="async" /></picture>}
+          <div class="bo__text">
+            <h3>{s.bande_originale.titre}</h3>
+            <p class="label num">{duree(lang, s.bande_originale.duree_s)}</p>
+            {s.bande_originale.note && <p class="prose">{t(lang, s.bande_originale.note)}</p>}
+            <audio controls preload="none" aria-label={`${d.serie.bo_ecouter} : ${s.bande_originale.titre}`}>
+              {s.bande_originale.fichiers.map((f) => <source src={f} type={f.endsWith('.opus') ? 'audio/ogg; codecs=opus' : 'audio/mp4'} />)}
+            </audio>
+            <span class="ia">{t(lang, s.bande_originale.mention)}</span>
+          </div>
+        </div>
+      </section>
+    )}
 
     {annexes.length > 0 && (
       <section class="section" aria-labelledby="docs-titre">

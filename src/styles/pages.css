@@ -80,3 +80,12 @@
 
 /* Carnet */
 .notes-list .univers-row { gap: 8px; }
+
+/* Bande originale d'une série */
+.bo { display: grid; grid-template-columns: minmax(140px, 200px) 1fr; gap: clamp(20px, 3vw, 40px); align-items: start; padding: 24px; background: var(--surface); border-radius: var(--radius); }
+.bo__pochette img { border-radius: 4px; aspect-ratio: 9 / 16; object-fit: cover; width: 100%; }
+.bo__text { display: grid; gap: 12px; justify-items: start; min-width: 0; }
+.bo__text h3 { font-size: clamp(24px, 3vw, 32px); }
+.bo__text audio { width: 100%; max-width: 560px; }
+.bo__text audio::-webkit-media-controls-panel { background: var(--night-deep); }
+@media (max-width: 600px) { .bo { grid-template-columns: 1fr; } .bo__pochette { max-width: 160px; } }

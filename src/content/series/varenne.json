@@ -43,5 +43,22 @@
     "coherence-de-personnage",
     "planche-de-casting",
     "musique-generee"
-  ]
+  ],
+  "bande_originale": {
+    "titre": "Nothing Shows",
+    "fichiers": [
+      "/media/series-varenne-bo.m4a",
+      "/media/series-varenne-bo.opus"
+    ],
+    "duree_s": 223.5,
+    "pochette": "/media/series-varenne/bo-pochette",
+    "note": {
+      "fr": "Le thème de la saison, en entier. Sur chaque épisode, on n’en entend que la première minute : l’introduction, le premier couplet, le refrain.",
+      "en": "The season’s theme, in full. Each episode only carries its first minute: the intro, the first verse, the chorus."
+    },
+    "mention": {
+      "fr": "Musique originale générée, sous licence commerciale. Paroles en anglais, voulues : elles ne gênent pas la lecture des bulles.",
+      "en": "Original generated music, under a commercial licence. English lyrics, on purpose: they do not compete with the speech balloons."
+    }
+  }
 }

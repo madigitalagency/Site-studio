@@ -87,7 +87,9 @@
     "terminee": "Completed",
     "en_preparation": "In preparation",
     "reseaux": "Follow the series",
-    "nouvel_episode": "New episode"
+    "nouvel_episode": "New episode",
+    "bo": "Original soundtrack",
+    "bo_ecouter": "Listen to the full track"
   },
   "rendus": {
     "photorealiste": "Photorealistic",

@@ -20,6 +20,7 @@ const pages = [
   ['a-propos', '/a-propos/'],
   ['carnet', '/carnet/'],
   ['note-musique', '/carnet/une-musique-par-style/'],
+  ['serie-varenne', '/series/varenne/'],
   ['lexique', '/lexique/'],
   ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];

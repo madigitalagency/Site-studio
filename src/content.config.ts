@@ -94,6 +94,8 @@ const series = defineCollection({
     reseaux: z.object({ hashtags: z.array(z.string()).default([]) }).default({}),
     coulisses: coulisses.optional(),
     notions: z.array(z.string()).default([]),
+    // Bande originale de la série : le morceau entier, en écoute sur la page
+    bande_originale: z.object({ titre: z.string(), fichiers: z.array(z.string()), duree_s: z.number(), pochette: z.string().optional(), note: bilingue.optional(), mention: bilingue }).optional(),
   }),
 });
 

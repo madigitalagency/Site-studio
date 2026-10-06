@@ -87,7 +87,9 @@
     "terminee": "Terminée",
     "en_preparation": "En préparation",
     "reseaux": "Suivre la série",
-    "nouvel_episode": "Nouvel épisode"
+    "nouvel_episode": "Nouvel épisode",
+    "bo": "Bande originale",
+    "bo_ecouter": "Écouter le morceau entier"
   },
   "rendus": {
     "photorealiste": "Photoréaliste",
