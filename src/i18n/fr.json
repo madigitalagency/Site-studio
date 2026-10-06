@@ -235,5 +235,10 @@
     "voir_demo": "Voir comment on l’a fait",
     "cta": "Un projet en tête ?",
     "cta_texte": "Une demi-heure pour le cadrer, un devis sous deux jours ouvrés."
+  },
+  "carnet": {
+    "titre": "Carnet",
+    "description": "Les notes techniques du Studio : ce qu’on a mesuré, ce qu’on a appris, sans client et sans nom d’outil.",
+    "intro": "Des notes courtes, écrites après chaque film : ce qui a été mesuré, ce qui a cassé, ce qu’on refera. Aucun client, aucun nom d’outil."
   }
 }

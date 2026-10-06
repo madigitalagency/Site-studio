@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { ui, route, dateLongue, type Lang } from '../lib/i18n';
+import { breadcrumb } from '../lib/jsonld';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const d = ui(lang);
+const notes = (await getCollection('carnet')).filter((n) => n.id.endsWith(`.${lang}`) && n.data.statut === 'publie').sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+const alt = { fr: route('fr', 'carnet'), en: route('en', 'carnet') };
+const jsonld = breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.carnet.titre, url: route(lang, 'carnet') }]);
+---
+<Base lang={lang} titre={d.carnet.titre} description={d.carnet.description} alt={alt} jsonld={jsonld} current="coulisses">
+  <div class="container">
+    <header class="page-head">
+      <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}><a href={route(lang, 'coulisses')}>{d.nav.coulisses}</a></nav>
+      <h1>{d.carnet.titre}</h1>
+      <p class="lede">{d.carnet.intro}</p>
+    </header>
+    <section class="section" aria-label={d.carnet.titre}>
+      {notes.length ? (
+        <div class="univers-list notes-list">
+          {notes.map((n) => (
+            <a class="univers-row" href={route(lang, 'carnet', `${n.id.replace(/\.(fr|en)$/, '')}/`)}>
+              <span class="label num">{dateLongue(lang, n.data.date)}</span>
+              <h3>{n.data.titre}</h3>
+              <p>{n.data.description}</p>
+              {n.data.etiquettes.length > 0 && <span class="label">{n.data.etiquettes.join(' · ')}</span>}
+            </a>
+          ))}
+        </div>
+      ) : <p class="block__note">{d.coulisses.carnet_vide}</p>}
+    </section>
+  </div>
+</Base>

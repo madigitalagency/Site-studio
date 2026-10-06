@@ -1,0 +1,9 @@
+---
+import NotePage from '../../routes/NotePage.astro';
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+  return (await getCollection('carnet')).filter((n) => n.id.endsWith('.fr') && n.data.statut === 'publie').map((note) => ({ params: { slug: note.id.replace(/\.(fr|en)$/, '') }, props: { note } }));
+}
+const { note } = Astro.props;
+---
+<NotePage lang="fr" note={note} />

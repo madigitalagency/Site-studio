@@ -235,5 +235,10 @@
     "voir_demo": "See how we made it",
     "cta": "Have a project in mind?",
     "cta_texte": "Thirty minutes to frame it, a quote within two working days."
+  },
+  "carnet": {
+    "titre": "Notebook",
+    "description": "The Studio’s technical notes: what we measured, what we learned, with no client and no tool names.",
+    "intro": "Short notes written after each film: what was measured, what broke, what we will do again. No client, no tool names."
   }
 }

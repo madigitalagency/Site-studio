@@ -18,6 +18,8 @@ const pages = [
   ['contact', '/contact/'],
   ['prestations', '/prestations/'],
   ['a-propos', '/a-propos/'],
+  ['carnet', '/carnet/'],
+  ['note-musique', '/carnet/une-musique-par-style/'],
   ['lexique', '/lexique/'],
   ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];

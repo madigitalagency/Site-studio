@@ -109,12 +109,16 @@ const notions = defineCollection({
   }),
 });
 
+// Notes du Carnet : un fichier par langue, `<slug>.<lang>.md`
 const carnet = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/carnet' }),
+  loader: glob({ pattern: '**/*.md', base: './src/content/carnet', generateId: ({ entry }) => entry.replace(/\.md$/, '') }),
   schema: z.object({
-    titre: bilingue,
-    date: z.string(),
+    titre: z.string(),
+    description: z.string(),
+    date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     etiquettes: z.array(z.string()).default([]),
+    notions: z.array(z.string()).default([]),
+    pieces: z.array(z.string()).default([]),
     statut: z.enum(['brouillon', 'publie']).default('brouillon'),
   }),
 });

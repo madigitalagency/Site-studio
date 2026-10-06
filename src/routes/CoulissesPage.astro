@@ -12,7 +12,7 @@ const { lang } = Astro.props;
 const d = ui(lang);
 const notions = await getCollection('notions');
 const familles = ['grammaire', 'generer', 'diriger', 'coherence', 'voix-son', 'monter-finir', 'produire-diffuser'] as const;
-const notes = (await getCollection('carnet')).filter((n) => n.data.statut === 'publie').sort((a, b) => (a.data.date < b.data.date ? 1 : -1)).slice(0, 3);
+const notes = (await getCollection('carnet')).filter((n) => n.id.endsWith(`.${lang}`) && n.data.statut === 'publie').sort((a, b) => (a.data.date < b.data.date ? 1 : -1)).slice(0, 3);
 const pieces = await catalogue();
 const vitrine = pieces.find((p) => p.data.vitrine && p.data.coulisses?.images?.some((i) => 'avant' in i));
 const paire = vitrine?.data.coulisses?.images?.find((i) => 'avant' in i) as { avant: string; apres: string; legende: { fr: string; en?: string } } | undefined;
@@ -67,7 +67,7 @@ const jsonld = breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses'
       <div class="section__head"><h2 id="c-carnet">{d.coulisses.carnet}</h2><a class="section__link" href={route(lang, 'carnet')}>{d.coulisses.tout_carnet}</a></div>
       {notes.length ? (
         <div class="univers-list">
-          {notes.map((n) => <a class="univers-row" href={route(lang, 'carnet', `${n.id.replace(/\.(fr|en)$/, '')}/`)}><h3>{t(lang, n.data.titre)}</h3><span class="label num">{n.data.date}</span></a>)}
+          {notes.map((n) => <a class="univers-row" href={route(lang, 'carnet', `${n.id.replace(/\.(fr|en)$/, '')}/`)}><h3>{n.data.titre}</h3><span class="label num">{n.data.date}</span></a>)}
         </div>
       ) : (
         <p class="block__note">{d.coulisses.carnet_vide}</p>

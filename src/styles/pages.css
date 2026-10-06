@@ -77,3 +77,6 @@
 .page-texte__corps p + p { margin-top: 1em; }
 .page-texte__corps strong { color: var(--ink); }
 .page-texte__corps em { color: var(--muted); font-style: normal; font-size: 14px; }
+
+/* Carnet */
+.notes-list .univers-row { gap: 8px; }
