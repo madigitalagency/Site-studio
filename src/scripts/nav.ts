@@ -2,7 +2,7 @@
 const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
 const nav = document.querySelector<HTMLElement>('[data-nav]');
 if (toggle && nav) {
-  const mq = window.matchMedia('(max-width: 920px)');
+  const mq = window.matchMedia('(max-width: 1080px)');
   const apply = () => {
     if (mq.matches) {
       nav.hidden = toggle.getAttribute('aria-expanded') !== 'true';

@@ -72,7 +72,7 @@ const couverture = premier ? media(premier, premier.data.media.poster) + '.jpg' 
       <section class="section" aria-labelledby="coulisses-serie-titre">
         <div class="section__head"><h2 id="coulisses-serie-titre">{d.serie.coulisses}</h2></div>
         <div class="coulisses-serie">
-          <Coulisses lang={lang} coulisses={s.coulisses} notions={s.notions} vitrine={false} id="coulisses-serie" />
+          <Coulisses lang={lang} coulisses={s.coulisses} notions={s.notions} vitrine={false} id="coulisses-serie" sansTitre />
           {s.coulisses.images && (
             <div style={undefined}>
               {s.coulisses.images.map((im) => 'image' in im && (

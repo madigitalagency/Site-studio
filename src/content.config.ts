@@ -30,8 +30,11 @@ const coulisses = z.object({
   chiffre: bilingue.optional(),
 });
 
+// L'identifiant d'une entrée est son nom de fichier (le champ `slug` sert à l'adresse publique).
+const idFichier = ({ entry }: { entry: string }) => entry.replace(/\.json$/, '');
+
 const pieces = defineCollection({
-  loader: glob({ pattern: '**/*.json', base: './src/content/pieces' }),
+  loader: glob({ pattern: '**/*.json', base: './src/content/pieces', generateId: idFichier }),
   schema: z.object({
     slug: z.string(),
     serie: reference('series').optional(),
@@ -75,7 +78,7 @@ const pieces = defineCollection({
 });
 
 const series = defineCollection({
-  loader: glob({ pattern: '**/*.json', base: './src/content/series' }),
+  loader: glob({ pattern: '**/*.json', base: './src/content/series', generateId: idFichier }),
   schema: z.object({
     slug: z.string(),
     titre: bilingue,
