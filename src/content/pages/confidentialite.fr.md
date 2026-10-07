@@ -10,7 +10,7 @@ Ce site ne pose aucun cookie et n'utilise aucun traceur. Les seules données per
 
 ## Le formulaire de contact
 
-**Données collectées** : nom, adresse e-mail, société (facultatif), type de projet, budget indicatif, message, et la langue de la page.
+**Données collectées** : nom, adresse e-mail, société (facultatif), type de projet, échéance souhaitée, message, et la langue de la page.
 
 **Finalité** : répondre à votre demande de devis ou d'information.
 

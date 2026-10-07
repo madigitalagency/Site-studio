@@ -10,7 +10,7 @@ This site sets no cookies and uses no trackers. The only personal data processed
 
 ## The contact form
 
-**Data collected**: name, email address, company (optional), project type, indicative budget, message, and the page language.
+**Data collected**: name, email address, company (optional), project type, desired deadline, message, and the page language.
 
 **Purpose**: to answer your request for a quote or information.
 

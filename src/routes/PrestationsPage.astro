@@ -27,6 +27,7 @@ const jsonld = [
     <header class="page-head">
       <h1>{p.titre}</h1>
       <p class="lede">{t(lang, data.intro)}</p>
+      <p class="prose">{t(lang, data.devis)}</p>
     </header>
 
     <div class="offres-liste">
@@ -38,7 +39,6 @@ const jsonld = [
           </div>
           <dl class="offre-bloc__facts">
             <div><dt>{p.livrables}</dt><dd><ul>{tl(lang, o.livrables).map((l) => <li>{l}</li>)}</ul></dd></div>
-            <div><dt>{p.delai}</dt><dd>{t(lang, o.delai)}</dd></div>
             <div><dt>{d.fiche.genere}</dt><dd>{tl(lang, o.genere).join(', ')}</dd></div>
             <div><dt>{d.fiche.manuel}</dt><dd>{tl(lang, o.manuel).join(', ')}</dd></div>
           </dl>

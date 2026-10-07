@@ -4,66 +4,367 @@
     "en": "Five offers, all quoted per project, all made with the Studio's method. Each one links to a catalogue film that demonstrates it. What is generated and what is done by hand is stated plainly."
   },
   "offres": [
-    { "id": "publicite", "titre": { "fr": "Publicité IA déclinable", "en": "Adaptable AI commercial" },
-      "pitch": { "fr": "Un film de 15 à 30 secondes pour une marque ou un produit, livré en 16:9 et en vertical, puis décliné par marché, langue ou saison sans nouveau tournage. Le produit réel est intégré au montage, jamais généré.", "en": "A 15 to 30-second film for a brand or a product, delivered in 16:9 and vertical, then adapted by market, language or season without a new shoot. The real product is integrated in the edit, never generated." },
-      "livrables": { "fr": ["Master 16:9 et 9:16", "Déclinaisons à la demande (ville, langue, saison)", "Voix off dans chaque langue", "Mention IA et métadonnées"], "en": ["16:9 and 9:16 masters", "Variants on request (city, language, season)", "Voice-over in each language", "AI disclosure and metadata"] },
-      "delai": { "fr": "2 à 3 semaines", "en": "2 to 3 weeks" },
-      "genere": { "fr": ["décors et personnages", "animation", "voix off"], "en": ["sets and characters", "animation", "voice-over"] },
-      "manuel": { "fr": ["script et découpage", "intégration du produit réel", "montage, mixage, étalonnage"], "en": ["script and shot list", "real product integration", "editing, mixing, grading"] },
-      "demo": null, "demo_note": { "fr": "Première pub fictive en production.", "en": "First fictional commercial in production." } },
-    { "id": "film-de-marque", "titre": { "fr": "Film de marque ou d'entreprise", "en": "Brand or corporate film" },
-      "pitch": { "fr": "De 45 secondes à 3 minutes : un lieu, un métier, une promesse d'employeur, racontés sans tournage et sans visage réel. Pour une page d'accueil, un salon, un recrutement.", "en": "From 45 seconds to 3 minutes: a place, a trade, an employer promise, told without a shoot and without a real face. For a home page, a trade show, a recruitment drive." },
-      "livrables": { "fr": ["Master 16:9 (et vertical si utile)", "Voix off FR et EN", "Sous-titres", "Mention IA et métadonnées"], "en": ["16:9 master (and vertical if useful)", "FR and EN voice-over", "Subtitles", "AI disclosure and metadata"] },
-      "delai": { "fr": "3 à 5 semaines", "en": "3 to 5 weeks" },
-      "genere": { "fr": ["images et animation", "voix off", "musique"], "en": ["images and animation", "voice-over", "music"] },
-      "manuel": { "fr": ["écriture", "direction artistique", "montage, mixage, étalonnage"], "en": ["writing", "art direction", "editing, mixing, grading"] },
-      "demo": null, "demo_note": { "fr": "Premier film d'entreprise fictif en préparation.", "en": "First fictional corporate film in preparation." } },
-    { "id": "serie-de-marque", "titre": { "fr": "Série de marque", "en": "Brand series" },
-      "pitch": { "fr": "Votre marque intégrée dans une fiction à épisodes, publiée au rythme des réseaux : un univers, des personnages qui reviennent, et la marque présente sans être le sujet. VARENNE en est la démonstration, avec la marque fictive Saulène.", "en": "Your brand inside serial fiction, released at the pace of social media: a world, recurring characters, and the brand present without being the subject. VARENNE is the demonstration, with the fictional brand Saulène." },
-      "livrables": { "fr": ["Bible de série et planches de casting", "Épisodes verticaux de 45 à 90 secondes", "Objets « in-universe » pour le fil (articles, posts, pubs)", "Calendrier de publication"], "en": ["Series bible and character sheets", "45 to 90-second vertical episodes", "In-universe objects for the feed (articles, posts, ads)", "Publishing calendar"] },
-      "delai": { "fr": "3 à 4 semaines de préparation, puis un épisode par semaine", "en": "3 to 4 weeks of preparation, then one episode a week" },
-      "genere": { "fr": ["images", "animation", "voix"], "en": ["images", "animation", "voices"] },
-      "manuel": { "fr": ["écriture de la saison", "casting et bible", "montage et habillage", "publication"], "en": ["season writing", "casting and bible", "editing and design", "publishing"] },
-      "demo": "varenne-s1e01", "demo_note": null },
-    { "id": "film-patrimonial", "titre": { "fr": "Film patrimonial, archives de marque", "en": "Heritage film, brand archives" },
-      "pitch": { "fr": "L'histoire vraie d'une entreprise, racontée en archives reconstituées : les faits sont les vôtres, documentés, les images sont générées et vieillies. ROUVRAY en est la démonstration.", "en": "A company's true story, told in reconstructed archives: the facts are yours, documented; the images are generated and aged. ROUVRAY is the demonstration." },
-      "livrables": { "fr": ["Épisodes de 30 à 60 secondes ou film de 2 à 3 minutes", "Recherche et sources citées", "Voix off FR et EN", "Mention IA et métadonnées"], "en": ["30 to 60-second episodes or a 2 to 3-minute film", "Research and cited sources", "FR and EN voice-over", "AI disclosure and metadata"] },
-      "delai": { "fr": "3 à 5 semaines", "en": "3 to 5 weeks" },
-      "genere": { "fr": ["images et animation", "voix off"], "en": ["images and animation", "voice-over"] },
-      "manuel": { "fr": ["recherche historique", "écriture", "montage, vieillissement, mixage"], "en": ["historical research", "writing", "editing, ageing, mixing"] },
-      "demo": "rouvray-s1e02", "demo_note": null },
-    { "id": "clip", "titre": { "fr": "Clip et habillage musical", "en": "Music video and motion design" },
-      "pitch": { "fr": "Un clip de 1 à 3 minutes sur votre morceau, ou l'habillage animé d'une marque : logo, génériques, cartons. Le montage suit le tempo.", "en": "A 1 to 3-minute video for your track, or a brand's animated identity: logo, title sequences, cards. The edit follows the tempo." },
-      "livrables": { "fr": ["Master 16:9 et vertical", "Extraits pour les réseaux", "Mention IA et métadonnées"], "en": ["16:9 and vertical masters", "Social media cuts", "AI disclosure and metadata"] },
-      "delai": { "fr": "3 à 4 semaines", "en": "3 to 4 weeks" },
-      "genere": { "fr": ["images et animation"], "en": ["images and animation"] },
-      "manuel": { "fr": ["storyboard", "montage au tempo", "étalonnage"], "en": ["storyboard", "tempo editing", "grading"] },
-      "demo": null, "demo_note": { "fr": "Premier clip en cours de refonte.", "en": "First music video being reworked." } }
+    {
+      "id": "publicite",
+      "titre": {
+        "fr": "Publicité IA déclinable",
+        "en": "Adaptable AI commercial"
+      },
+      "pitch": {
+        "fr": "Un film de 15 à 30 secondes pour une marque ou un produit, livré en 16:9 et en vertical, puis décliné par marché, langue ou saison sans nouveau tournage. Le produit réel est intégré au montage, jamais généré.",
+        "en": "A 15 to 30-second film for a brand or a product, delivered in 16:9 and vertical, then adapted by market, language or season without a new shoot. The real product is integrated in the edit, never generated."
+      },
+      "livrables": {
+        "fr": [
+          "Master 16:9 et 9:16",
+          "Déclinaisons à la demande (ville, langue, saison)",
+          "Voix off dans chaque langue",
+          "Mention IA et métadonnées"
+        ],
+        "en": [
+          "16:9 and 9:16 masters",
+          "Variants on request (city, language, season)",
+          "Voice-over in each language",
+          "AI disclosure and metadata"
+        ]
+      },
+      "genere": {
+        "fr": [
+          "décors et personnages",
+          "animation",
+          "voix off"
+        ],
+        "en": [
+          "sets and characters",
+          "animation",
+          "voice-over"
+        ]
+      },
+      "manuel": {
+        "fr": [
+          "script et découpage",
+          "intégration du produit réel",
+          "montage, mixage, étalonnage"
+        ],
+        "en": [
+          "script and shot list",
+          "real product integration",
+          "editing, mixing, grading"
+        ]
+      },
+      "demo": null,
+      "demo_note": {
+        "fr": "Première pub fictive en production.",
+        "en": "First fictional commercial in production."
+      }
+    },
+    {
+      "id": "film-de-marque",
+      "titre": {
+        "fr": "Film de marque ou d'entreprise",
+        "en": "Brand or corporate film"
+      },
+      "pitch": {
+        "fr": "De 45 secondes à 3 minutes : un lieu, un métier, une promesse d'employeur, racontés sans tournage et sans visage réel. Pour une page d'accueil, un salon, un recrutement.",
+        "en": "From 45 seconds to 3 minutes: a place, a trade, an employer promise, told without a shoot and without a real face. For a home page, a trade show, a recruitment drive."
+      },
+      "livrables": {
+        "fr": [
+          "Master 16:9 (et vertical si utile)",
+          "Voix off FR et EN",
+          "Sous-titres",
+          "Mention IA et métadonnées"
+        ],
+        "en": [
+          "16:9 master (and vertical if useful)",
+          "FR and EN voice-over",
+          "Subtitles",
+          "AI disclosure and metadata"
+        ]
+      },
+      "genere": {
+        "fr": [
+          "images et animation",
+          "voix off",
+          "musique"
+        ],
+        "en": [
+          "images and animation",
+          "voice-over",
+          "music"
+        ]
+      },
+      "manuel": {
+        "fr": [
+          "écriture",
+          "direction artistique",
+          "montage, mixage, étalonnage"
+        ],
+        "en": [
+          "writing",
+          "art direction",
+          "editing, mixing, grading"
+        ]
+      },
+      "demo": null,
+      "demo_note": {
+        "fr": "Premier film d'entreprise fictif en préparation.",
+        "en": "First fictional corporate film in preparation."
+      }
+    },
+    {
+      "id": "serie-de-marque",
+      "titre": {
+        "fr": "Série de marque",
+        "en": "Brand series"
+      },
+      "pitch": {
+        "fr": "Votre marque intégrée dans une fiction à épisodes, publiée au rythme des réseaux : un univers, des personnages qui reviennent, et la marque présente sans être le sujet. VARENNE en est la démonstration, avec la marque fictive Saulène.",
+        "en": "Your brand inside serial fiction, released at the pace of social media: a world, recurring characters, and the brand present without being the subject. VARENNE is the demonstration, with the fictional brand Saulène."
+      },
+      "livrables": {
+        "fr": [
+          "Bible de série et planches de casting",
+          "Épisodes verticaux de 45 à 90 secondes",
+          "Objets « in-universe » pour le fil (articles, posts, pubs)",
+          "Calendrier de publication"
+        ],
+        "en": [
+          "Series bible and character sheets",
+          "45 to 90-second vertical episodes",
+          "In-universe objects for the feed (articles, posts, ads)",
+          "Publishing calendar"
+        ]
+      },
+      "genere": {
+        "fr": [
+          "images",
+          "animation",
+          "voix"
+        ],
+        "en": [
+          "images",
+          "animation",
+          "voices"
+        ]
+      },
+      "manuel": {
+        "fr": [
+          "écriture de la saison",
+          "casting et bible",
+          "montage et habillage",
+          "publication"
+        ],
+        "en": [
+          "season writing",
+          "casting and bible",
+          "editing and design",
+          "publishing"
+        ]
+      },
+      "demo": "varenne-s1e01",
+      "demo_note": null
+    },
+    {
+      "id": "film-patrimonial",
+      "titre": {
+        "fr": "Film patrimonial, archives de marque",
+        "en": "Heritage film, brand archives"
+      },
+      "pitch": {
+        "fr": "L'histoire vraie d'une entreprise, racontée en archives reconstituées : les faits sont les vôtres, documentés, les images sont générées et vieillies. ROUVRAY en est la démonstration.",
+        "en": "A company's true story, told in reconstructed archives: the facts are yours, documented; the images are generated and aged. ROUVRAY is the demonstration."
+      },
+      "livrables": {
+        "fr": [
+          "Épisodes de 30 à 60 secondes ou film de 2 à 3 minutes",
+          "Recherche et sources citées",
+          "Voix off FR et EN",
+          "Mention IA et métadonnées"
+        ],
+        "en": [
+          "30 to 60-second episodes or a 2 to 3-minute film",
+          "Research and cited sources",
+          "FR and EN voice-over",
+          "AI disclosure and metadata"
+        ]
+      },
+      "genere": {
+        "fr": [
+          "images et animation",
+          "voix off"
+        ],
+        "en": [
+          "images and animation",
+          "voice-over"
+        ]
+      },
+      "manuel": {
+        "fr": [
+          "recherche historique",
+          "écriture",
+          "montage, vieillissement, mixage"
+        ],
+        "en": [
+          "historical research",
+          "writing",
+          "editing, ageing, mixing"
+        ]
+      },
+      "demo": "rouvray-s1e02",
+      "demo_note": null
+    },
+    {
+      "id": "clip",
+      "titre": {
+        "fr": "Clip et habillage musical",
+        "en": "Music video and motion design"
+      },
+      "pitch": {
+        "fr": "Un clip de 1 à 3 minutes sur votre morceau, ou l'habillage animé d'une marque : logo, génériques, cartons. Le montage suit le tempo.",
+        "en": "A 1 to 3-minute video for your track, or a brand's animated identity: logo, title sequences, cards. The edit follows the tempo."
+      },
+      "livrables": {
+        "fr": [
+          "Master 16:9 et vertical",
+          "Extraits pour les réseaux",
+          "Mention IA et métadonnées"
+        ],
+        "en": [
+          "16:9 and vertical masters",
+          "Social media cuts",
+          "AI disclosure and metadata"
+        ]
+      },
+      "genere": {
+        "fr": [
+          "images et animation"
+        ],
+        "en": [
+          "images and animation"
+        ]
+      },
+      "manuel": {
+        "fr": [
+          "storyboard",
+          "montage au tempo",
+          "étalonnage"
+        ],
+        "en": [
+          "storyboard",
+          "tempo editing",
+          "grading"
+        ]
+      },
+      "demo": null,
+      "demo_note": {
+        "fr": "Premier clip en cours de refonte.",
+        "en": "First music video being reworked."
+      }
+    }
   ],
   "processus": {
-    "titre": { "fr": "Comment ça se passe", "en": "How it works" },
+    "titre": {
+      "fr": "Comment ça se passe",
+      "en": "How it works"
+    },
     "etapes": [
-      { "fr": "Un échange d'une demi-heure : objectif, public, ton, durée, canaux, ce qui existe déjà.", "en": "A thirty-minute call: goal, audience, tone, length, channels, what already exists." },
-      { "fr": "Un devis et un calendrier, avec ce qui est généré et ce qui est fait à la main.", "en": "A quote and a schedule, stating what is generated and what is done by hand." },
-      { "fr": "Le script et le découpage, validés avant toute image.", "en": "The script and the shot list, approved before any image." },
-      { "fr": "Les images fixes de chaque plan, validées avant l'animation.", "en": "The still images of every shot, approved before animation." },
-      { "fr": "Le montage, en deux passes de corrections.", "en": "The edit, with two rounds of corrections." },
-      { "fr": "La livraison : masters, déclinaisons, mention IA, métadonnées, et les droits qui vont avec.", "en": "Delivery: masters, variants, AI disclosure, metadata, and the rights that go with them." }
+      {
+        "fr": "Un échange d'une demi-heure : objectif, public, ton, durée, canaux, ce qui existe déjà.",
+        "en": "A thirty-minute call: goal, audience, tone, length, channels, what already exists."
+      },
+      {
+        "fr": "Un devis et un calendrier, avec ce qui est généré et ce qui est fait à la main.",
+        "en": "A quote and a schedule, stating what is generated and what is done by hand."
+      },
+      {
+        "fr": "Le script et le découpage, validés avant toute image.",
+        "en": "The script and the shot list, approved before any image."
+      },
+      {
+        "fr": "Les images fixes de chaque plan, validées avant l'animation.",
+        "en": "The still images of every shot, approved before animation."
+      },
+      {
+        "fr": "Le montage, en deux passes de corrections.",
+        "en": "The edit, with two rounds of corrections."
+      },
+      {
+        "fr": "La livraison : masters, déclinaisons, mention IA, métadonnées, et les droits qui vont avec.",
+        "en": "Delivery: masters, variants, AI disclosure, metadata, and the rights that go with them."
+      }
     ]
   },
   "faq": {
-    "titre": { "fr": "Questions fréquentes", "en": "Frequently asked questions" },
+    "titre": {
+      "fr": "Questions fréquentes",
+      "en": "Frequently asked questions"
+    },
     "liste": [
-      { "q": { "fr": "Faut-il indiquer que le film est généré par IA ?", "en": "Does the film have to say it is AI-generated?" },
-        "r": { "fr": "Oui, et c'est le diffuseur qui y est tenu par la réglementation européenne, donc vous. On vous livre la mention à l'écran, les métadonnées dans les fichiers et le texte pour les réseaux. Bien faite, la mention rassure plus qu'elle ne gêne.", "en": "Yes, and the publisher is the one bound by European regulation, so you are. We deliver the on-screen disclosure, the metadata in the files and the text for social media. Done well, the disclosure reassures more than it bothers." } },
-      { "q": { "fr": "Peut-on montrer un vrai produit, un vrai lieu, une vraie personne ?", "en": "Can we show a real product, a real place, a real person?" },
-        "r": { "fr": "Un vrai produit, oui : il est filmé ou photographié, puis intégré au montage. Un vrai lieu, par ses photos, en référence. Une vraie personne, non : aucune ressemblance générée, c'est notre règle et c'est aussi la loi.", "en": "A real product, yes: it is filmed or photographed, then integrated in the edit. A real place, through its photos, as reference. A real person, no: no generated likeness, it is our rule and it is also the law." } },
-      { "q": { "fr": "Que devez-vous fournir ?", "en": "What do you need to provide?" },
-        "r": { "fr": "L'objectif, le public, les canaux ; votre charte si elle existe ; les faits ou le produit à montrer. Le reste, on l'écrit ensemble.", "en": "The goal, the audience, the channels; your brand guidelines if they exist; the facts or the product to show. The rest, we write together." } },
-      { "q": { "fr": "Combien de corrections ?", "en": "How many rounds of corrections?" },
-        "r": { "fr": "Deux passes sur le montage, après validation du script et des images fixes. Changer une image fixe validée revient à refaire un plan ; c'est chiffré à part.", "en": "Two rounds on the edit, after approval of the script and the still images. Changing an approved still means redoing a shot; it is quoted separately." } },
-      { "q": { "fr": "À qui appartiennent les films ?", "en": "Who owns the films?" },
-        "r": { "fr": "À vous, pour les usages prévus au devis, avec les conditions commerciales des outils de génération vérifiées à la livraison. Le Studio garde le droit de montrer le film dans son catalogue, sauf refus de votre part.", "en": "To you, for the uses stated in the quote, with the commercial terms of the generation tools checked at delivery. The Studio keeps the right to show the film in its catalogue, unless you decline." } }
+      {
+        "q": {
+          "fr": "Faut-il indiquer que le film est généré par IA ?",
+          "en": "Does the film have to say it is AI-generated?"
+        },
+        "r": {
+          "fr": "Oui, et c'est le diffuseur qui y est tenu par la réglementation européenne, donc vous. On vous livre la mention à l'écran, les métadonnées dans les fichiers et le texte pour les réseaux. Bien faite, la mention rassure plus qu'elle ne gêne.",
+          "en": "Yes, and the publisher is the one bound by European regulation, so you are. We deliver the on-screen disclosure, the metadata in the files and the text for social media. Done well, the disclosure reassures more than it bothers."
+        }
+      },
+      {
+        "q": {
+          "fr": "Peut-on montrer un vrai produit, un vrai lieu, une vraie personne ?",
+          "en": "Can we show a real product, a real place, a real person?"
+        },
+        "r": {
+          "fr": "Un vrai produit, oui : il est filmé ou photographié, puis intégré au montage. Un vrai lieu, par ses photos, en référence. Une vraie personne, non : aucune ressemblance générée, c'est notre règle et c'est aussi la loi.",
+          "en": "A real product, yes: it is filmed or photographed, then integrated in the edit. A real place, through its photos, as reference. A real person, no: no generated likeness, it is our rule and it is also the law."
+        }
+      },
+      {
+        "q": {
+          "fr": "Que devez-vous fournir ?",
+          "en": "What do you need to provide?"
+        },
+        "r": {
+          "fr": "L'objectif, le public, les canaux ; votre charte si elle existe ; les faits ou le produit à montrer. Le reste, on l'écrit ensemble.",
+          "en": "The goal, the audience, the channels; your brand guidelines if they exist; the facts or the product to show. The rest, we write together."
+        }
+      },
+      {
+        "q": {
+          "fr": "Combien ça coûte, et en combien de temps ?",
+          "en": "How much does it cost, and how long does it take?"
+        },
+        "r": {
+          "fr": "Sur devis, selon le projet. Le premier échange sert à le cadrer ; le devis et le calendrier arrivent sous deux jours ouvrés. Dites-nous votre échéance dès le formulaire : un film pour la semaine prochaine et une série sur six mois ne s’organisent pas de la même façon.",
+          "en": "Quoted per project. The first call frames it; the quote and the schedule follow within two working days. Tell us your deadline right in the form: a film for next week and a six-month series are not organised the same way."
+        }
+      },
+      {
+        "q": {
+          "fr": "Combien de corrections ?",
+          "en": "How many rounds of corrections?"
+        },
+        "r": {
+          "fr": "Deux passes sur le montage, après validation du script et des images fixes. Changer une image fixe validée revient à refaire un plan ; c'est chiffré à part.",
+          "en": "Two rounds on the edit, after approval of the script and the still images. Changing an approved still means redoing a shot; it is quoted separately."
+        }
+      },
+      {
+        "q": {
+          "fr": "À qui appartiennent les films ?",
+          "en": "Who owns the films?"
+        },
+        "r": {
+          "fr": "À vous, pour les usages prévus au devis, avec les conditions commerciales des outils de génération vérifiées à la livraison. Le Studio garde le droit de montrer le film dans son catalogue, sauf refus de votre part.",
+          "en": "To you, for the uses stated in the quote, with the commercial terms of the generation tools checked at delivery. The Studio keeps the right to show the film in its catalogue, unless you decline."
+        }
+      }
     ]
+  },
+  "devis": {
+    "fr": "Chaque film fait l’objet d’un devis et d’un calendrier propres au projet : on en parle lors du premier échange, à partir de l’objectif, de la durée, des déclinaisons et de ce qui existe déjà. Pas de grille de prix : deux films de trente secondes n’ont jamais le même travail derrière.",
+    "en": "Every film gets its own quote and schedule: we settle them in the first call, from the goal, the length, the variants and what already exists. No price list: two thirty-second films never have the same work behind them."
   }
 }

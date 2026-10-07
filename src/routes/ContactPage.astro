@@ -10,7 +10,7 @@ const c = d.contact;
 const alt = { fr: route('fr', 'contact'), en: route('en', 'contact') };
 const jsonld = breadcrumb([{ name: d.nav.contact, url: route(lang, 'contact') }]);
 const types = [['pub', c.type_pub], ['film-de-marque', c.type_film], ['serie-de-marque', c.type_serie], ['film-patrimonial', c.type_patrimoine], ['clip', c.type_clip], ['autre', c.type_autre]];
-const budgets = [['moins-3000', c.budget_1], ['3000-8000', c.budget_2], ['8000-20000', c.budget_3], ['plus-20000', c.budget_4], ['inconnu', c.budget_5]];
+const echeances = [['deux-semaines', c.ech_1], ['un-mois', c.ech_2], ['trois-mois', c.ech_3], ['long-cours', c.ech_4], ['sans-date', c.ech_5]];
 ---
 <Base lang={lang} titre={c.titre} description={c.description} alt={alt} jsonld={jsonld} current="contact">
   <div class="container contact">
@@ -45,10 +45,10 @@ const budgets = [['moins-3000', c.budget_1], ['3000-8000', c.budget_2], ['8000-2
           </select>
         </div>
         <div class="form__row">
-          <label for="budget">{c.budget}</label>
-          <select id="budget" name="budget" required>
+          <label for="echeance">{c.echeance}</label>
+          <select id="echeance" name="echeance" required>
             <option value="">{c.choisir}</option>
-            {budgets.map(([v, l]) => <option value={v}>{l}</option>)}
+            {echeances.map(([v, l]) => <option value={v}>{l}</option>)}
           </select>
         </div>
         <div class="form__row">
