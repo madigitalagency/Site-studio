@@ -2,6 +2,7 @@
 // Usage : node scripts/lighthouse.mjs [mobile|desktop]   → scores par page, rapport JSON dans work/lighthouse/
 import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
+import desktopConfig from 'lighthouse/core/config/desktop-config.js';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
 const BASE = 'http://127.0.0.1:4321';
@@ -15,7 +16,7 @@ const lignes = [];
 let sous = 0;
 try {
   for (const page of PAGES) {
-    const r = await lighthouse(BASE + page, { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'], formFactor: forme, screenEmulation: forme === 'desktop' ? { mobile: false, width: 1350, height: 940, deviceScaleFactor: 1, disabled: false } : undefined });
+    const r = await lighthouse(BASE + page, { port: chrome.port, output: 'json', logLevel: 'error', onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'] }, forme === 'desktop' ? desktopConfig : undefined);
     const c = r.lhr.categories;
     const s = Object.fromEntries(Object.entries(c).map(([k, v]) => [k, Math.round((v.score ?? 0) * 100)]));
     const min = Math.min(...Object.values(s));
