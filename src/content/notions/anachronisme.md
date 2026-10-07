@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Anachronisme", en: "Anachronism" }
+titre: { fr: "Anachronism (anachronisme)", en: "Anachronism" }
 famille: coherence
 definition:
   fr: "Un détail qui n'appartient pas à l'époque du film : un vêtement, un objet, une coiffure, un avion."

@@ -28,8 +28,7 @@ const site = Astro.site!.toString().replace(/\/$/, '');
 const d = ui(lang);
 const canonical = site + Astro.url.pathname;
 const ogImage = site + (image ?? '/partage-1200x630.jpg');
-const accueil = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
-const titrePage = `${titre} · ${accueil ? d.site.signature : 'Studio M&A'}`;
+const titrePage = `${titre} · ${d.site.signature}`;
 // Description bornée à ~155 caractères pour les moteurs, coupée à la fin d'une phrase quand c'est possible
 const borne = (s: string) => {
   if (s.length <= 158) return s;

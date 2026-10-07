@@ -17,6 +17,18 @@ export const organisation = {
   sameAs: ['https://www.instagram.com/studio.madigitalagency/'],
 };
 
+/** Site web déclaré à Google : le nom du site s'affiche au-dessus de l'adresse dans les résultats, même quand le titre est coupé. */
+export const siteWeb = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': SITE + '/#website',
+  name: 'M&A Digital Agency · Studio',
+  alternateName: 'Studio M&A Digital Agency',
+  url: SITE + '/',
+  inLanguage: ['fr', 'en'],
+  publisher: org,
+};
+
 export function videoObject(lang: Lang, piece: Piece, url: string, serie?: Serie) {
   const p = piece.data;
   const base = `${SITE}/media/${piece.id}/`;

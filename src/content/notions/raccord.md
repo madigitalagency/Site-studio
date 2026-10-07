@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Raccord (continuity)", en: "Continuity" }
+titre: { fr: "Continuity (raccord)", en: "Continuity" }
 famille: grammaire
 definition:
   fr: "La cohérence entre deux plans qui se suivent : position des personnages, direction des regards, objets, lumière, costume."

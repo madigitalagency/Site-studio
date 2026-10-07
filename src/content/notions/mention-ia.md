@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Mention IA (AI disclosure)", en: "AI disclosure" }
+titre: { fr: "AI disclosure (mention IA)", en: "AI disclosure" }
 famille: produire-diffuser
 definition:
   fr: "L'indication, visible et lisible par machine, qu'un film a été généré par IA."

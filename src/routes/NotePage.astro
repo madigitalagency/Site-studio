@@ -23,7 +23,7 @@ const jsonld = [
   { '@context': 'https://schema.org', '@type': 'Article', headline: note.data.titre, description: note.data.description, datePublished: note.data.date, dateModified: note.data.date, inLanguage: lang, author: { '@type': 'Organization', '@id': 'https://studio.madigitalagency.net/#organisation', name: 'M&A Digital Agency · Studio' }, url: 'https://studio.madigitalagency.net' + url, mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://studio.madigitalagency.net' + url }, image: ['https://studio.madigitalagency.net/partage-1200x630.jpg'] },
 ];
 ---
-<Base lang={lang} titre={`${note.data.titre} · ${d.carnet.titre}`} description={note.data.description} alt={alt} jsonld={jsonld} current="coulisses">
+<Base lang={lang} titre={note.data.titre} description={note.data.description} alt={alt} jsonld={jsonld} current="coulisses">
   <article class="container page-texte">
     <header class="page-head">
       <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}><a href={route(lang, 'coulisses')}>{d.nav.coulisses}</a><span aria-hidden="true">/</span><a href={route(lang, 'carnet')}>{d.carnet.titre}</a></nav>

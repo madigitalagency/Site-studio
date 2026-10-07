@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Lumière (lighting)", en: "Lighting" }
+titre: { fr: "Lighting (lumière)", en: "Lighting" }
 famille: grammaire
 definition:
   fr: "La source, la direction et la qualité de la lumière d'un plan : dure ou douce, naturelle ou artificielle, heure du jour."

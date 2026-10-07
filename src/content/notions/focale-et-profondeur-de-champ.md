@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Focale et profondeur de champ (lens, depth of field)", en: "Lens and depth of field" }
+titre: { fr: "Lens and depth of field (focale, profondeur de champ)", en: "Lens and depth of field" }
 famille: grammaire
 definition:
   fr: "La focale donne l'angle de vue (grand-angle, 35 mm, téléobjectif) ; la profondeur de champ dit ce qui est net et ce qui est flou."

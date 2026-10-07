@@ -22,7 +22,7 @@ const jsonld = [
   breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.lexique.titre, url: route(lang, 'lexique') }, { name: t(lang, n.titre), url }]),
 ];
 ---
-<Base lang={lang} titre={`${t(lang, n.titre)} · ${d.lexique.titre}`} description={t(lang, n.definition)} alt={alt} jsonld={jsonld} current="coulisses">
+<Base lang={lang} titre={t(lang, n.titre).split(' (')[0]} description={t(lang, n.definition)} alt={alt} jsonld={jsonld} current="coulisses">
   <article class="container notion">
     <header class="page-head">
       <nav class="fiche__crumb" aria-label={lang === 'fr' ? 'Fil d’Ariane' : 'Breadcrumb'}>

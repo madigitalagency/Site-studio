@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Valeur de plan (shot size)", en: "Shot size" }
+titre: { fr: "Shot size (valeur de plan)", en: "Shot size" }
 famille: grammaire
 definition:
   fr: "La taille du sujet dans le cadre : plan large, plan moyen, plan rapproché, gros plan, très gros plan."

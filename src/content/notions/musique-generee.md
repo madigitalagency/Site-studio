@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Musique générée (AI music)", en: "Generated music" }
+titre: { fr: "AI music (musique générée)", en: "Generated music" }
 famille: voix-son
 definition:
   fr: "Un morceau original composé par un modèle à partir d'une consigne écrite : style, tempo, instruments, ambiance, structure."

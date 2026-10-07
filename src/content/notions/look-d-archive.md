@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Look d'archive (film look, grain)", en: "Archive look" }
+titre: { fr: "Film look (look d'archive, grain)", en: "Archive look" }
 famille: monter-finir
 definition:
   fr: "L'habillage qui fait passer une image trop nette pour une bobine d'époque : grain, cadence, couleurs, vignettage, poussières."

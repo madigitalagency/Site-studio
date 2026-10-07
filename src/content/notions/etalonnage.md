@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Étalonnage (color grading)", en: "Color grading" }
+titre: { fr: "Color grading (étalonnage)", en: "Color grading" }
 famille: grammaire
 definition:
   fr: "Le réglage final des couleurs, des contrastes et de la densité de tous les plans, pour qu'ils appartiennent au même film."

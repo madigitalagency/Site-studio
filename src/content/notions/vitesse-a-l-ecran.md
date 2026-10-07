@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Vitesse à l'écran (screen-relative speed)", en: "Screen-relative speed" }
+titre: { fr: "Screen-relative speed (vitesse à l'écran)", en: "Screen-relative speed" }
 famille: diriger
 definition:
   fr: "Décrire la vitesse d'un objet par la part du cadre qu'il traverse en un temps donné, plutôt que par un adjectif."

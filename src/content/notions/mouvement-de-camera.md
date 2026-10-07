@@ -1,5 +1,5 @@
 ---
-titre: { fr: "Mouvement de caméra (camera move)", en: "Camera move" }
+titre: { fr: "Camera move (mouvement de caméra)", en: "Camera move" }
 famille: grammaire
 definition:
   fr: "Ce que fait la caméra pendant le plan : fixe (locked-off), panoramique, travelling, caméra épaule, zoom lent."
