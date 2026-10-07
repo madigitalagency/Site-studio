@@ -15,7 +15,7 @@ const notions = readdirSync('src/content/notions').filter((f) => f.endsWith('.md
 const carnet = readdirSync('src/content/carnet').filter((f) => f.endsWith('.fr.md')).map((f) => ({ id: f.replace('.fr.md', ''), md: lire('src/content/carnet/' + f) }));
 const pages = ['a-propos', 'mentions-legales', 'confidentialite'].map((s) => ({ id: s, md: lire(`src/content/pages/${s}.fr.md`) }));
 
-const corps = (md) => md.replace(/^---[sS]*?---s*/, '').trim().replace(/^## /gm, '#### ');
+const corps = (md) => md.replace(/^---[\s\S]*?---\s*/, '').trim().replace(/^## /gm, '#### ');
 const fm = (md, cle) => { const m = md.match(new RegExp(`^${cle}:\\s*(.*)$`, 'm')); return m ? m[1].replace(/^"|"$/g, '') : ''; };
 const fmBloc = (md, cle) => { const m = md.match(new RegExp(`^${cle}:\\n\\s+fr:\\s*"(.*)"`, 'm')); return m ? m[1] : ''; };
 const titreNotion = (md) => { const m = md.match(/^titre:\s*\{\s*fr:\s*"(.*?)"/m); return m ? m[1] : ''; };
