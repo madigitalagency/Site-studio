@@ -19,7 +19,8 @@ const idx = eps.findIndex((e) => e.id === piece.id);
 const prev = idx > 0 ? eps[idx - 1] : undefined;
 const next = idx >= 0 && idx < eps.length - 1 ? eps[idx + 1] : undefined;
 const format = formatDe(p.format);
-const poster = media(piece, p.media.poster) + '.jpg';
+const poster = media(piece, p.media.poster);
+const partage = media(piece, 'partage.jpg');
 const videoUrl = p.media.v916?.fr ? media(piece, `${p.media.v916.fr}-1080.mp4`) : undefined;
 const transcription = t(lang, p.transcription);
 const crumbs = [{ name: d.nav.films, url: route(lang, 'films') }];
@@ -28,9 +29,9 @@ crumbs.push({ name: t(lang, p.titre), url });
 const jsonld = [videoObject(lang, piece, url, serie), breadcrumb(crumbs)];
 const titreMeta = serie ? `${t(lang, p.titre)} · ${t(lang, serie.data.titre)}` : t(lang, p.titre);
 const titreSeul = !!serie?.data.episodes_titre_seul;
-const descMeta = titreSeul && serie ? `${t(lang, serie.data.titre)}, ${numero(p.saison, p.episode)} · ${t(lang, serie.data.sous_titre)}` : t(lang, p.pitch);
+const descMeta = titreSeul && serie ? `${t(lang, serie.data.titre)}, ${numero(p.saison, p.episode)} · ${t(lang, serie.data.sous_titre)}. ${t(lang, serie.data.pitch).split(/(?<=\.)\s/)[0]}` : t(lang, p.pitch);
 ---
-<Base lang={lang} titre={titreMeta} description={descMeta} alt={alt} image={poster} video={videoUrl} type="video.other" jsonld={jsonld} current={serie ? 'series' : 'films'}>
+<Base lang={lang} titre={titreMeta} description={descMeta} alt={alt} image={partage} preload={poster + '-720.jpg'} video={videoUrl} videoDims={videoUrl ? { w: 1080, h: 1920 } : undefined} type="video.other" jsonld={jsonld} current={serie ? 'series' : 'films'}>
   <article class="section container fiche">
     <div class="fiche__player">
       <Lecteur piece={piece} lang={lang} />

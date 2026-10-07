@@ -17,8 +17,8 @@ const annexes = await annexesDe(serie.id);
 const saisons = [...new Set(eps.map((e) => e.data.saison ?? 1))].sort();
 const premier = eps[0];
 const statut = s.statut === 'en-cours' ? d.serie.en_cours : s.statut === 'terminee' ? d.serie.terminee : d.serie.en_preparation;
-const jsonld = [serieObject(lang, serie, url, eps.length), breadcrumb([{ name: d.nav.series, url: route(lang, 'series') }, { name: t(lang, s.titre), url }])];
-const couverture = premier ? media(premier, premier.data.media.poster) + '.jpg' : undefined;
+const jsonld = [serieObject(lang, serie, url, eps.length, premier ? media(premier, 'partage.jpg') : undefined), breadcrumb([{ name: d.nav.series, url: route(lang, 'series') }, { name: t(lang, s.titre), url }])];
+const couverture = premier ? media(premier, 'partage.jpg') : undefined;
 ---
 <Base lang={lang} titre={t(lang, s.titre)} description={t(lang, s.pitch)} alt={alt} image={couverture} jsonld={jsonld} current="series">
   <div class="container">

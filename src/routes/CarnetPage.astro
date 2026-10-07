@@ -24,7 +24,7 @@ const jsonld = breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses'
           {notes.map((n) => (
             <a class="univers-row" href={route(lang, 'carnet', `${n.id.replace(/\.(fr|en)$/, '')}/`)}>
               <span class="label num">{dateLongue(lang, n.data.date)}</span>
-              <h3>{n.data.titre}</h3>
+              <h2 class="note__titre">{n.data.titre}</h2>
               <p>{n.data.description}</p>
               {n.data.etiquettes.length > 0 && <span class="label">{n.data.etiquettes.join(' · ')}</span>}
             </a>

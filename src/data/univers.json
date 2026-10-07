@@ -1,24 +1,145 @@
 [
-  { "id": "histoire-archives", "nom": { "fr": "Histoire & archives", "en": "History & archives" }, "statut": "actif", "ordre": 1,
-    "description": { "fr": "Des faits vrais, racontés comme des archives retrouvées. Chaque épisode cite sa source.", "en": "True facts, told like rediscovered archives. Every episode cites its source." } },
-  { "id": "drame-pouvoir", "nom": { "fr": "Drame & pouvoir", "en": "Drama & power" }, "statut": "actif", "ordre": 2,
-    "description": { "fr": "Des fictions à épisodes où l'argent, la réputation et les décisions se disputent la place.", "en": "Serial fiction where money, reputation and decisions fight for the room." } },
-  { "id": "marque-produit", "nom": { "fr": "Marque & produit", "en": "Brand & product" }, "statut": "a-venir", "ordre": 3,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "clips-musique", "nom": { "fr": "Clips & musique", "en": "Music videos" }, "statut": "a-venir", "ordre": 4,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "comedie-saynetes", "nom": { "fr": "Comédie & saynètes", "en": "Comedy & sketches" }, "statut": "a-venir", "ordre": 5,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "suspense-etrange", "nom": { "fr": "Suspense & étrange", "en": "Suspense & the uncanny" }, "statut": "a-venir", "ordre": 6,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "entreprise-lieux", "nom": { "fr": "Entreprise & lieux", "en": "Business & places" }, "statut": "a-venir", "ordre": 7,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "reel-documentaire", "nom": { "fr": "Réel & documentaire", "en": "Real & documentary" }, "statut": "reserve", "ordre": 8,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "voyages-hospitalite", "nom": { "fr": "Voyages & hospitalité", "en": "Travel & hospitality" }, "statut": "reserve", "ordre": 9,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "tech-mobilite", "nom": { "fr": "Tech & mobilité", "en": "Tech & mobility" }, "statut": "reserve", "ordre": 10,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } },
-  { "id": "animation-stylise", "nom": { "fr": "Animation & stylisé", "en": "Animation & stylised" }, "statut": "reserve", "ordre": 11,
-    "description": { "fr": "À ÉCRIRE", "en": "À ÉCRIRE" } }
+  {
+    "id": "histoire-archives",
+    "nom": {
+      "fr": "Histoire & archives",
+      "en": "History & archives"
+    },
+    "statut": "actif",
+    "ordre": 1,
+    "description": {
+      "fr": "Des faits vrais, racontés comme des archives retrouvées. Chaque épisode cite sa source.",
+      "en": "True facts, told like rediscovered archives. Every episode cites its source."
+    }
+  },
+  {
+    "id": "drame-pouvoir",
+    "nom": {
+      "fr": "Drame & pouvoir",
+      "en": "Drama & power"
+    },
+    "statut": "actif",
+    "ordre": 2,
+    "description": {
+      "fr": "Des fictions à épisodes où l'argent, la réputation et les décisions se disputent la place.",
+      "en": "Serial fiction where money, reputation and decisions fight for the room."
+    }
+  },
+  {
+    "id": "marque-produit",
+    "nom": {
+      "fr": "Marque & produit",
+      "en": "Brand & product"
+    },
+    "statut": "a-venir",
+    "ordre": 3,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "clips-musique",
+    "nom": {
+      "fr": "Clips & musique",
+      "en": "Music videos"
+    },
+    "statut": "a-venir",
+    "ordre": 4,
+    "description": {
+      "fr": "Des clips sur des musiques originales générées, de la pochette au montage. Le premier est le générique de VARENNE : trois images, une chanson entière, la série en filigrane.",
+      "en": "Music videos on original generated tracks, from the sleeve to the edit. The first one is the VARENNE title sequence: three images, one whole song, the series in the background."
+    }
+  },
+  {
+    "id": "comedie-saynetes",
+    "nom": {
+      "fr": "Comédie & saynètes",
+      "en": "Comedy & sketches"
+    },
+    "statut": "a-venir",
+    "ordre": 5,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "suspense-etrange",
+    "nom": {
+      "fr": "Suspense & étrange",
+      "en": "Suspense & the uncanny"
+    },
+    "statut": "a-venir",
+    "ordre": 6,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "entreprise-lieux",
+    "nom": {
+      "fr": "Entreprise & lieux",
+      "en": "Business & places"
+    },
+    "statut": "a-venir",
+    "ordre": 7,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "reel-documentaire",
+    "nom": {
+      "fr": "Réel & documentaire",
+      "en": "Real & documentary"
+    },
+    "statut": "reserve",
+    "ordre": 8,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "voyages-hospitalite",
+    "nom": {
+      "fr": "Voyages & hospitalité",
+      "en": "Travel & hospitality"
+    },
+    "statut": "reserve",
+    "ordre": 9,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "tech-mobilite",
+    "nom": {
+      "fr": "Tech & mobilité",
+      "en": "Tech & mobility"
+    },
+    "statut": "reserve",
+    "ordre": 10,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  },
+  {
+    "id": "animation-stylise",
+    "nom": {
+      "fr": "Animation & stylisé",
+      "en": "Animation & stylised"
+    },
+    "statut": "reserve",
+    "ordre": 11,
+    "description": {
+      "fr": "À ÉCRIRE",
+      "en": "À ÉCRIRE"
+    }
+  }
 ]

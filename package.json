@@ -9,9 +9,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1 --port 4321",
-    "check": "node scripts/check.mjs",
+    "check": "node scripts/check.mjs && node scripts/liens.mjs",
     "captures": "node scripts/captures.mjs",
-    "astro": "astro"
+    "astro": "astro",
+    "liens": "node scripts/liens.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "variantes": "node scripts/variantes.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -22,6 +25,7 @@
     "esbuild": true
   },
   "devDependencies": {
+    "lighthouse": "^13.5.0",
     "puppeteer-core": "^25.12.0"
   }
 }

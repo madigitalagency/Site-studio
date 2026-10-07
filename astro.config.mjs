@@ -12,5 +12,6 @@ export default defineConfig({
   // Aucun script en ligne, même petit : tout passe en fichier (CSP sans 'unsafe-inline').
   vite: { build: { assetsInlineLimit: 0 } },
   i18n: { defaultLocale: 'fr', locales: ['fr', 'en'], routing: { prefixDefaultLocale: false } },
-  integrations: [sitemap({ i18n: { defaultLocale: 'fr', locales: { fr: 'fr-FR', en: 'en' } } })],
+  // Les hreflang complets sont dans chaque page (Base.astro) ; l'option i18n du plan ne sait pas jumeler /methode/ et /en/method/.
+  integrations: [sitemap({ filter: (page) => !/\/contact\/(merci|thanks)\/$/.test(page) })],
 });

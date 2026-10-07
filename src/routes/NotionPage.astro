@@ -18,7 +18,7 @@ const pieces = Array.isArray(vus) ? vus : [];
 const piecesSeries = await Promise.all(pieces.map(serieDe));
 const autres = (lang === 'en' && n.aussi_appele?.en?.length ? n.aussi_appele.en : n.aussi_appele?.fr) ?? [];
 const jsonld = [
-  { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: t(lang, n.titre), description: t(lang, n.definition), url: 'https://studio.madigitalagency.net' + url, inDefinedTermSet: 'https://studio.madigitalagency.net' + route(lang, 'lexique') },
+  { '@context': 'https://schema.org', '@type': 'DefinedTerm', name: t(lang, n.titre), description: t(lang, n.definition), url: 'https://studio.madigitalagency.net' + url, inDefinedTermSet: { '@type': 'DefinedTermSet', '@id': 'https://studio.madigitalagency.net' + route(lang, 'lexique'), name: d.lexique.titre } },
   breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.lexique.titre, url: route(lang, 'lexique') }, { name: t(lang, n.titre), url }]),
 ];
 ---

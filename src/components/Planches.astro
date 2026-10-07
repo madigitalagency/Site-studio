@@ -6,7 +6,7 @@ const { piece, lang } = Astro.props;
 const d = ui(lang);
 const n = piece.data.media.planches ?? 0;
 const textes = piece.data.planches_texte?.fr ?? [];
-const planches = Array.from({ length: n }, (_, i) => ({ num: i + 1, src: media(piece, `planches/${String(i + 1).padStart(2, '0')}.webp`), texte: textes[i] ?? '' }));
+const planches = Array.from({ length: n }, (_, i) => ({ num: i + 1, src: media(piece, `planches/${String(i + 1).padStart(2, '0')}.webp`), petite: media(piece, `planches/${String(i + 1).padStart(2, '0')}-540.webp`), texte: textes[i] ?? '' }));
 ---
 <section class="planches" aria-label={d.fiche.planches} data-planches>
   <div class="planches__head">
@@ -21,7 +21,7 @@ const planches = Array.from({ length: n }, (_, i) => ({ num: i + 1, src: media(p
     {planches.map((p) => (
       <li class="planches__item" data-planche={p.num}>
         <figure>
-          <img src={p.src} alt={`${d.fiche.planche_n} ${p.num} : ${p.texte}`} width={1080} height={1920} loading={p.num <= 2 ? 'eager' : 'lazy'} decoding="async" />
+          <img src={p.src} srcset={`${p.petite} 540w, ${p.src} 1080w`} sizes="(min-width: 420px) 300px, 72vw" alt={`${d.fiche.planche_n} ${p.num} : ${p.texte}`} width={1080} height={1920} loading={p.num <= 2 ? 'eager' : 'lazy'} decoding="async" />
           <figcaption><span class="label num">{d.fiche.planche_n} {p.num}</span><span>{p.texte}</span></figcaption>
         </figure>
       </li>

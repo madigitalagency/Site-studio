@@ -16,6 +16,7 @@ const jsonld = [
   {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
+    '@id': 'https://studio.madigitalagency.net' + route(lang, 'lexique'),
     name: d.lexique.titre,
     url: 'https://studio.madigitalagency.net' + route(lang, 'lexique'),
     hasDefinedTerm: notions.map((n) => ({ '@type': 'DefinedTerm', name: t(lang, n.data.titre), description: t(lang, n.data.definition), url: 'https://studio.madigitalagency.net' + route(lang, 'lexique', `${n.id}/`) })),

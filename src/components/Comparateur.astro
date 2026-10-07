@@ -3,15 +3,17 @@ import { ui, t, type Lang } from '../lib/i18n';
 interface Props { avant: string; apres: string; legende: { fr: string; en?: string }; lang: Lang; id: string }
 const { avant, apres, legende, lang, id } = Astro.props;
 const d = ui(lang);
+const srcset = (u: string) => (u.endsWith('.webp') ? `${u.replace(/\.webp$/, '-540.webp')} 540w, ${u} 1080w` : undefined);
+const sizes = '(min-width: 900px) 420px, 92vw';
 ---
 <div class="compare" data-compare>
   <div class="compare__pair">
     <figure>
-      <img src={avant} alt="" width={1080} height={806} loading="lazy" decoding="async" />
+      <img src={avant} srcset={srcset(avant)} sizes={sizes} alt={`${d.fiche.avant} · ${t(lang, legende)}`} width={1080} height={806} loading="lazy" decoding="async" />
       <figcaption>{d.fiche.avant}</figcaption>
     </figure>
     <figure>
-      <img src={apres} alt="" width={1080} height={806} loading="lazy" decoding="async" />
+      <img src={apres} srcset={srcset(apres)} sizes={sizes} alt={`${d.fiche.apres} · ${t(lang, legende)}`} width={1080} height={806} loading="lazy" decoding="async" />
       <figcaption>{d.fiche.apres}</figcaption>
     </figure>
     <input class="compare__range" type="range" min="0" max="100" value="50" id={id} aria-label={`${d.fiche.avant} / ${d.fiche.apres}`} hidden />

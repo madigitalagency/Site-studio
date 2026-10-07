@@ -1,11 +1,14 @@
 import { t, type Lang } from './i18n';
-import type { Piece, Serie } from './content';
+import { urlSerie, type Piece, type Serie } from './content';
 
 const SITE = 'https://studio.madigitalagency.net';
+/** Référence courte à l'organisation, réutilisée par tous les schémas (même @id que sur l'accueil). */
+export const org = { '@type': 'Organization', '@id': SITE + '/#organisation', name: 'M&A Digital Agency · Studio' };
 
 export const organisation = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': SITE + '/#organisation',
   name: 'M&A Digital Agency · Studio',
   url: SITE + '/',
   logo: SITE + '/apple-touch-icon.png',
@@ -24,13 +27,13 @@ export function videoObject(lang: Lang, piece: Piece, url: string, serie?: Serie
     '@type': 'VideoObject',
     name: t(lang, p.titre),
     description: t(lang, p.pitch),
-    thumbnailUrl: [base + p.media.poster + '.jpg'],
+    thumbnailUrl: [base + 'partage.jpg', base + p.media.poster + '.jpg'],
     uploadDate: p.date_publication,
     duration: `PT${secondes}S`,
     inLanguage: lang,
     url: SITE + url,
     isFamilyFriendly: true,
-    creator: { '@type': 'Organization', name: 'M&A Digital Agency · Studio' },
+    creator: org,
     keywords: ['IA', 'vidéo générée', ...(serie ? [t(lang, serie.data.titre)] : [])].join(', '),
   };
   if (v) obj.contentUrl = `${base}${v}-1080.mp4`;
@@ -38,21 +41,23 @@ export function videoObject(lang: Lang, piece: Piece, url: string, serie?: Serie
     obj['@type'] = ['VideoObject', 'Episode'];
     obj.episodeNumber = p.episode;
     obj.partOfSeason = { '@type': 'CreativeWorkSeason', seasonNumber: p.saison };
-    obj.partOfSeries = { '@type': 'CreativeWorkSeries', name: t(lang, serie.data.titre) };
+    obj.partOfSeries = { '@type': 'CreativeWorkSeries', '@id': SITE + urlSerie(lang, serie), name: t(lang, serie.data.titre), url: SITE + urlSerie(lang, serie) };
   }
   return obj;
 }
 
-export function serieObject(lang: Lang, serie: Serie, url: string, episodes: number) {
+export function serieObject(lang: Lang, serie: Serie, url: string, episodes: number, image?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'CreativeWorkSeries',
+    '@id': SITE + url,
+    ...(image ? { image: SITE + image } : {}),
     name: t(lang, serie.data.titre),
     description: t(lang, serie.data.pitch),
     url: SITE + url,
     inLanguage: lang,
     numberOfEpisodes: episodes,
-    creator: { '@type': 'Organization', name: 'M&A Digital Agency · Studio' },
+    creator: org,
   };
 }
 

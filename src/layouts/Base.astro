@@ -17,13 +17,28 @@ interface Props {
   type?: 'website' | 'video.other';
   jsonld?: Record<string, unknown> | Record<string, unknown>[];
   current?: string;
+  /** Page de service (404, merci) : pas d'indexation, pas de canonical ni d'hreflang. */
+  noindex?: boolean;
+  /** Image à précharger (affiche du lecteur = élément LCP). */
+  preload?: string;
+  videoDims?: { w: number; h: number };
 }
-const { lang, titre, description, alt, image, video, type = 'website', jsonld, current } = Astro.props;
+const { lang, titre, description, alt, image, video, type = 'website', jsonld, current, noindex = false, preload, videoDims } = Astro.props;
 const site = Astro.site!.toString().replace(/\/$/, '');
 const d = ui(lang);
 const canonical = site + Astro.url.pathname;
 const ogImage = site + (image ?? '/partage-1200x630.jpg');
-const titrePage = `${titre} · ${d.site.signature}`;
+const accueil = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
+const titrePage = `${titre} · ${accueil ? d.site.signature : 'Studio M&A'}`;
+// Description bornée à ~155 caractères pour les moteurs, coupée à la fin d'une phrase quand c'est possible
+const borne = (s: string) => {
+  if (s.length <= 158) return s;
+  const c = s.slice(0, 156);
+  const point = Math.max(c.lastIndexOf('. '), c.lastIndexOf('? '), c.lastIndexOf('! '));
+  if (point > 100) return c.slice(0, point + 1);
+  return c.slice(0, c.lastIndexOf(' ')).replace(/[,;:]$/, '') + '…';
+};
+const desc = borne(description);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -31,11 +46,14 @@ const titrePage = `${titre} · ${d.site.signature}`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{titrePage}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="fr" href={site + alt.fr} />
-    <link rel="alternate" hreflang="en" href={site + alt.en} />
-    <link rel="alternate" hreflang="x-default" href={site + alt.fr} />
+    <meta name="description" content={desc} />
+    {noindex ? <meta name="robots" content="noindex,follow" /> : <>
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hreflang="fr" href={site + alt.fr} />
+      <link rel="alternate" hreflang="en" href={site + alt.en} />
+      <link rel="alternate" hreflang="x-default" href={site + alt.fr} />
+    </>}
+    {preload && <link rel="preload" as="image" href={preload} />}
     <link rel="preload" href="/fonts/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/series.css" />
@@ -45,11 +63,16 @@ const titrePage = `${titre} · ${d.site.signature}`;
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content={d.site.signature} />
     <meta property="og:title" content={titrePage} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
     {video && <meta property="og:video" content={site + video} />}
+    {video && <meta property="og:video:type" content="video/mp4" />}
+    {video && videoDims && <meta property="og:video:width" content={String(videoDims.w)} />}
+    {video && videoDims && <meta property="og:video:height" content={String(videoDims.h)} />}
     <meta name="twitter:card" content="summary_large_image" />
     {jsonld && <script type="application/ld+json" set:html={JSON.stringify(jsonld)} />}
   </head>

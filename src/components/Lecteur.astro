@@ -17,20 +17,20 @@ const srcLarge = h169 ? { l1080: media(piece, `${h169}-1080.mp4`), l720: media(p
 <div class="player" data-player>
   <div class:list={['player__frame', { 'player__frame--wide': wide }]}>
     {src ? (
-      <video controls playsinline preload="none" poster={poster + '.jpg'} lang={src.lang} width={wide ? 1920 : 1080} height={wide ? 1080 : 1920}>
+      <video controls playsinline preload="none" poster={poster + '-720.jpg'} lang={src.lang} width={wide ? 1920 : 1080} height={wide ? 1080 : 1920}>
         <source src={src.l1080} type="video/mp4" media="(min-width: 700px)" />
         <source src={src.l720} type="video/mp4" />
       </video>
     ) : (
-      <img src={poster + '.jpg'} alt="" width={1080} height={1920} />
+      <img src={poster + '-720.jpg'} alt="" width={1080} height={1920} />
     )}
   </div>
   <div class="player__tools">
     <span class="ia">{d.fiche.mention_ia}</span>
     {aDeux && srcLarge && src && (
       <div class="player__switch" role="group" aria-label="Format" data-switch hidden>
-        <button type="button" aria-pressed="true" data-orientation="9:16" data-l1080={src.l1080} data-l720={src.l720} data-poster={poster + '.jpg'}>{d.fiche.fenetre}</button>
-        <button type="button" aria-pressed="false" data-orientation="16:9" data-l1080={srcLarge.l1080} data-l720={srcLarge.l720} data-poster={media(piece, 'poster-169') + '.jpg'}>{d.fiche.large}</button>
+        <button type="button" aria-pressed="true" data-orientation="9:16" data-l1080={src.l1080} data-l720={src.l720} data-poster={poster + '-720.jpg'}>{d.fiche.fenetre}</button>
+        <button type="button" aria-pressed="false" data-orientation="16:9" data-l1080={srcLarge.l1080} data-l720={srcLarge.l720} data-poster={media(piece, 'poster-169') + '-720.jpg'}>{d.fiche.large}</button>
       </div>
     )}
     {p.media.muet && <span class="player__note">{d.fiche.muet}</span>}

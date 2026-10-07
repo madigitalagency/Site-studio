@@ -34,7 +34,7 @@ const titreNotion = (id: string) => { const n = toutesNotions.find((x) => x.id =
       <Comparateur lang={lang} id={`${id}-cmp-${i}`} avant={im.avant} apres={typeof im.apres === 'string' ? im.apres : im.avant} legende={im.legende} />
     ) : (
       <figure class="compare">
-        <img src={im.image} alt="" loading="lazy" decoding="async" />
+        <img src={im.image} alt={t(lang, im.legende)} loading="lazy" decoding="async" />
         <figcaption class="compare__legend">{t(lang, im.legende)}</figcaption>
       </figure>
     )

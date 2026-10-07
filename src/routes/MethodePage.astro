@@ -23,7 +23,7 @@ const limites = await Promise.all(methode.limites.liste.map(async (l) => ({ ...l
 const alt = { fr: route('fr', 'methode'), en: route('en', 'methode') };
 const jsonld = [
   breadcrumb([{ name: d.nav.coulisses, url: route(lang, 'coulisses') }, { name: d.methode.titre, url: route(lang, 'methode') }]),
-  { '@context': 'https://schema.org', '@type': 'HowTo', name: d.methode.titre, description: t(lang, methode.intro), step: methode.etapes.map((e, i) => ({ '@type': 'HowToStep', position: i + 1, name: t(lang, e.titre), text: t(lang, e.texte) })) },
+  { '@context': 'https://schema.org', '@type': 'HowTo', name: d.methode.titre, description: t(lang, methode.intro), step: methode.etapes.map((e, i) => ({ '@type': 'HowToStep', position: i + 1, name: t(lang, e.titre), text: t(lang, e.texte), url: `https://studio.madigitalagency.net${route(lang, 'methode')}#${e.id}` })) },
 ];
 ---
 <Base lang={lang} titre={d.methode.titre} description={d.methode.description} alt={alt} jsonld={jsonld} current="coulisses">
