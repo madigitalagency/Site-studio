@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-07/varenne_ep7_reel_BO.mp4",
@@ -46,6 +47,8 @@
     "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
   "notions": [
+    "raccord",
+    "valeur-de-plan",
     "musique-generee"
   ],
   "carnet": null,
@@ -57,5 +60,47 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Trois mois ont passé. Le deuxième entrepôt tourne, et le fonds qui hésitait rappelle.\n\n**Ce qui était difficile.** Faire sentir une ellipse de trois mois en cinq images : un nouveau lieu, une saison, une Éléna moins tendue. Après l'échange de visages de l'épisode 6, aucun plan à plusieurs personnages : chaque image porte une seule personne, et le dialogue se joue en champ-contrechamp.\n\n**Ce qu'on a appris.** Une contrainte technique peut devenir un choix de mise en scène. Ici, elle donne à l'épisode son calme.",
+      "en": "**The idea.** Three months have passed. The second warehouse is running, and the fund that hesitated calls back.\n\n**What was hard.** Making a three-month ellipsis felt in five images: a new place, a season, a less tense Éléna. After episode 6's face swap, no multi-character shots: each image carries one person, and the dialogue plays in shot and reverse shot.\n\n**What we learned.** A technical constraint can become a staging choice. Here, it gives the episode its calm."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "décors décrits sans référence",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "sets described without references",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Trois mois plus tard. Le deuxième entrepôt tourne depuis six semaines. — Nadia : Zéro commande en retard ce mois-ci. C'est une première.",
+      "Même semaine. Inès a refait les comptes trois fois. — Inès : Pour la première fois, on pourrait commencer les États-Unis sans lever un euro.",
+      "Cité Info. Roger lui confie son premier direct. Un sujet qui n'a rien à voir avec sa sœur. — Clara : Ils ne demandent pas qu'on arrête les travaux. Ils demandent qu'on les prévienne.",
+      "15 h. Un fonds qui avait hésité en décembre rappelle. — voix du fonds : Nous aimerions reprendre la discussion. À vos conditions. — Éléna : En décembre, vous hésitiez. — voix du fonds : En décembre, vous aviez besoin de nous. — Éléna : Je vous rappelle. Peut-être.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "20 h. Une enveloppe épaisse, sans logo. — Un dîner, jeudi. En bas, à la main, deux initiales : A. K. — Encadré : INVITATION — JEUDI, 20 H 30 — RÉPONSE SOUHAITÉE",
+      "À suivre"
+    ]
   }
 }

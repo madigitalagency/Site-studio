@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-03/varenne_ep3_reel_BO.mp4",
@@ -46,6 +47,8 @@
     "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
   "notions": [
+    "planche-de-casting",
+    "lumiere",
     "musique-generee"
   ],
   "carnet": null,
@@ -57,5 +60,47 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Présenter Adrian par ce qu'il a cessé de faire : un bureau qui ne reçoit presque personne, trente dossiers par mois, trois lus.\n\n**Ce qui était difficile.** Caster un homme riche sans aucun signe de richesse : un seul bureau en noyer, une fenêtre, rien d'autre. Trois candidats, un retenu. Et le bandeau d'antenne de la rédaction de Clara, qu'on n'a pas généré : il est posé au montage, comme tout texte à l'écran.\n\n**Ce qu'on a appris.** Un décor sobre demande plus de consignes qu'un décor chargé, parce que le modèle meuble tout seul.",
+      "en": "**The idea.** Introduce Adrian by what he has stopped doing: an office that hardly receives anyone, thirty files a month, three read.\n\n**What was hard.** Casting a wealthy man with no sign of wealth: one walnut desk, one window, nothing else. Three candidates, one kept. And the on-air banner of Clara's newsroom, which we did not generate: it is set in the edit, like any on-screen text.\n\n**What we learned.** A sober set needs more instructions than a busy one, because the model furnishes it on its own."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "casting d'Adrian",
+        "habillage d'antenne",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "casting Adrian",
+        "on-air design",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Deux semaines plus tard. Paris 8e, 9 h. Un bureau qui ne reçoit presque personne. — Encadré : Adrian Keller, 44 ans. A fondé, développé et vendu une société d'hospitality de luxe. Investit son propre argent. Rarement.",
+      "Il reçoit trente dossiers par mois. Il en lit trois. — Encadré : DOSSIERS REÇUS — SEPTEMBRE — 31 · LUS — 3 · INVESTIS — 0",
+      "Cité Info, 12 h 30. Le flash de la mi-journée. — Roger : Propre. Tu enchaînes sur la Bourse à 13 h.",
+      "Un contact commun. Adrian ne dit jamais oui au téléphone. — contact : Elle s'appelle Éléna Varenne. Skincare. Elle lève pour les États-Unis. — Adrian : L'influenceuse ? — contact : Elle connaît ses chiffres mieux que toi les tiens. Trente minutes. — Adrian : Trente minutes.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "22 h. Le même jour. — Il lit l'article. Deux fois. — Encadré : MARGES — « INFLUENCEUSE OU VÉRITABLE ENTREPRENEURE ? »",
+      "À suivre"
+    ]
   }
 }

@@ -22,6 +22,7 @@ const pages = [
   ['note-musique', '/carnet/une-musique-par-style/'],
   ['serie-varenne', '/series/varenne/'],
   ['fiche-generique', '/films/varenne-nothing-shows/'],
+  ['fiche-varenne-2', '/series/varenne/s1e02-les-chiffres/'],
   ['lexique', '/lexique/'],
   ['notion-vitesse', '/lexique/vitesse-a-l-ecran/'],
 ];

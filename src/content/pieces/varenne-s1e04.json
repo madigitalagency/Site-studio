@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-04/varenne_ep4_reel_BO.mp4",
@@ -46,6 +47,8 @@
     "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
   "notions": [
+    "coherence-de-personnage",
+    "raccord",
     "musique-generee"
   ],
   "carnet": null,
@@ -57,5 +60,47 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Une réunion prévue pour trente minutes qui en dure cent trente, et, au même moment, un entrepôt qui sature.\n\n**Ce qui était difficile.** Deux lieux qui n'existaient pas encore, l'entrepôt et le taxi, décrits entièrement dans la consigne, sans image de référence. Et deux plans à deux personnages, où chacun doit garder son visage pendant que l'autre parle.\n\n**Ce qu'on a appris.** Les chiffres qu'on fait dire aux personnages sont inventés et cohérents entre eux ; aucun ne vient du monde réel. C'est une règle d'écriture autant qu'une précaution.",
+      "en": "**The idea.** A meeting planned for thirty minutes that runs for a hundred and thirty, while a warehouse is overflowing at the same time.\n\n**What was hard.** Two places that did not exist yet, the warehouse and the taxi, described entirely in the prompt, with no reference image. And two two-character shots, where each has to keep her face while the other speaks.\n\n**What we learned.** The figures the characters say are invented and consistent with each other; none comes from the real world. It is a writing rule as much as a precaution."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "décors décrits sans référence",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "sets described without references",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Une semaine plus tard. Paris 8e, 15 h. Réunion prévue : trente minutes. — Adrian : Je n'ai pas lu votre deck. Commencez par les chiffres.",
+      "Elle n'ouvre pas son ordinateur. — Éléna : Soixante et onze pour cent de marge. Chaque nouvelle cliente me coûte 26 euros — 18 il y a six mois. Neuf semaines de stock. Je continue ?",
+      "Au même moment. L'entrepôt de Saulène, Gennevilliers. — Encadré : CAPACITÉ DE STOCKAGE — 94 % · COMMANDES J+1 — 312",
+      "16 h 40. La réunion aurait dû finir il y a une heure. — Adrian : Vous connaissez vos chiffres. — Éléna : Vous avez l'air surpris. — Adrian : Je m'attendais à un pitch. — Éléna : Et moi à un cours sur mon secteur. On s'est trompés tous les deux.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "17 h 10. Trente minutes prévues. Cent trente. — Il n'a pas dit oui. Il n'a pas dit non. — Encadré : RÉUNION KELLER — DURÉE : 2 H 10 — DÉCISION : —",
+      "À suivre"
+    ]
   }
 }

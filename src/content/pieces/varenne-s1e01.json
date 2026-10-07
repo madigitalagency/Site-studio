@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-01/varenne_ep1_reel_BO.mp4",
@@ -89,5 +90,19 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Paris, 7 h 12. L'article est en ligne depuis une heure. — Encadré : Éléna Varenne, 31 ans. Fondatrice de Saulène, marque de skincare. Ancienne influenceuse. — « Éléna Varenne : influenceuse ou véritable entrepreneure ? »",
+      "9 h 30, bureau de Saulène. Sa réponse publique tient en deux lignes. — Encadré : « Merci pour vos messages. Une question légitime mérite une vraie réponse. Elle arrive. — E. »",
+      "Même heure, une rédaction à l'autre bout de Paris. — Encadré : Clara Varenne, 28 ans. Journaliste. Sa sœur. — collègue : C'est ta sœur, non ? — Clara : Je l'ai lu. Je ne commente pas.",
+      "13 h. Clara a pris le déjeuner sur son temps d'antenne. — Clara : Tu l'as lu ? — Éléna : Trois fois. C'est une bonne question. Je vais y répondre avec des chiffres. — Clara : Tu dis ça comme si ça ne te touchait pas. — Éléna : Ça ne me touche pas.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "23 h 40. Le même jour. — Elle ouvre un dossier qu'elle n'avait pas prévu d'ouvrir cette année. — Encadré : LEVÉE DE FONDS — USA — v1.xlsx",
+      "À suivre"
+    ]
   }
 }

@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-06/varenne_ep6_reel_BO.mp4",
@@ -46,6 +47,8 @@
     "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
   "notions": [
+    "coherence-de-personnage",
+    "raccord",
     "musique-generee"
   ],
   "carnet": null,
@@ -57,5 +60,47 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Éléna change de stratégie sans l'admettre : trois chantiers avant de chercher un euro.\n\n**Ce qui était difficile.** Un épisode de bureau, à trois femmes, sans aucun jargon : on dit « payer nos fournisseurs plus tard », jamais le terme financier. Et un plan où deux visages se sont échangés d'une génération à l'autre, repris jusqu'à ce que chacune garde le sien.\n\n**Ce qu'on a appris.** Les plans à plusieurs personnages sont le point faible du format ; l'épisode suivant n'en a aucun, et c'est voulu.",
+      "en": "**The idea.** Éléna changes strategy without admitting it: three projects before looking for a single euro.\n\n**What was hard.** An office episode, three women, with no jargon at all: we say \"pay our suppliers later\", never the finance term. And a shot where two faces swapped from one generation to the next, redone until each kept her own.\n\n**What we learned.** Multi-character shots are the format's weak point; the next episode has none, on purpose."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "tri des générations",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "take selection",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Le lendemain, 8 h. Nadia et Inès attendent un calendrier de levée. — Éléna : On ne lève pas en décembre. On repousse.",
+      "Trois chantiers avant de chercher un euro. — Encadré : 1. UN DEUXIÈME ENTREPÔT · 2. LA DISTRIBUTION · 3. LA TRÉSORERIE",
+      "Cité Info, 9 h 15. Clara a lu *Marges* dans le métro. — Éléna : C'est faux. — Clara : Lequel ? Les six millions, ou les investisseurs qui hésitent ?",
+      "8 h 40. Personne ne s'attendait à ça. — Nadia : Un deuxième entrepôt avant les États-Unis. Enfin. — Inès : Et on négocie de payer nos fournisseurs plus tard. Je le demande depuis mars. — Nadia : Qui t'a convaincue ? — Éléna : Personne. J'ai relu les chiffres.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "22 h. Elle ouvre la conversation avec Adrian. — Elle écrit « Vous aviez raison. » Elle efface. — Encadré : MESSAGE À A. KELLER — BROUILLON SUPPRIMÉ",
+      "À suivre"
+    ]
   }
 }

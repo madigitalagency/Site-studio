@@ -242,5 +242,10 @@
     "titre": "Notebook",
     "description": "The Studio’s technical notes: what we measured, what we learned, with no client and no tool names.",
     "intro": "Short notes written after each film: what was measured, what broke, what we will do again. No client, no tool names."
+  },
+  "planches": {
+    "precedente": "Previous panel",
+    "suivante": "Next panel",
+    "texte": "Panel text"
   }
 }

@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-02/varenne_ep2_reel_BO.mp4",
@@ -46,6 +47,8 @@
     "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
   "notions": [
+    "coherence-de-personnage",
+    "valeur-de-plan",
     "musique-generee"
   ],
   "carnet": null,
@@ -57,5 +60,47 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Une réunion où personne ne cède : Éléna veut lancer l'Amérique, ses deux directrices lui opposent les chiffres. L'épisode, c'est la table.\n\n**Ce qui était difficile.** Deux nouveaux visages à verrouiller d'un coup, Nadia et Inès, et un plan à trois personnages qui devait tenir dix-huit secondes de dialogue. On l'a découpé en quatre images successives de la même table, pour que chaque réplique ait son regard, sans jamais mélanger les trois visages.\n\n**Ce qu'on a appris.** La durée d'un épisode se décide à l'écriture, en comptant les blocs de texte, pas en visant une minute ronde. C'est la leçon de l'épisode 1, appliquée ici.",
+      "en": "**The idea.** A meeting where nobody gives in: Éléna wants to launch America, her two directors answer with the numbers. The episode is the table.\n\n**What was hard.** Two new faces to lock at once, Nadia and Inès, and a three-character shot that had to carry eighteen seconds of dialogue. We split it into four successive images of the same table, so that every line gets its own gaze, without ever mixing the three faces.\n\n**What we learned.** An episode's length is decided at the writing stage, by counting text blocks, not by aiming at a round minute. Episode 1 taught it; here it is applied."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "casting des deux nouveaux personnages",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "casting of the two new characters",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Bureaux de Saulène, 10 h. Réunion hebdomadaire. — Encadré : Nadia Ferrand, directrice des opérations. Elle connaît l'entrepôt mieux que quiconque. — Nadia : Nous pouvons vendre davantage. Ça ne veut pas dire que nous sommes prêts à livrer davantage.",
+      "Même réunion, quelques minutes plus tard. — Encadré : Inès Duval, responsable finance. — Inès : Si on lève six millions maintenant, on cède quinze pour cent de la société. Et il nous faudra deux fois plus de trésorerie avant de vendre un seul flacon aux États-Unis.",
+      "Éléna écoute. Elle ne change pas d'avis. — Éléna : L'Amérique n'attendra pas qu'on soit parfaits.",
+      "La réunion continue. Personne ne cède. — Éléna : Six mois. On lance aux États-Unis dans six mois. — Inès : Avec quel argent ? — Éléna : Celui qu'on va lever. — Nadia : Et si la levée prend plus de six mois ?",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "19 h. Les autres sont partis. — Elle relit le tableau une dernière fois. — Encadré : US EXPANSION — MODÈLE FINANCIER — v3.xlsx",
+      "À suivre"
+    ]
   }
 }

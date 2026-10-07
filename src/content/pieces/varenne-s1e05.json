@@ -38,7 +38,8 @@
       "fr": "v916-fr"
     },
     "teaser": "teaser.mp4",
-    "muet": false
+    "muet": false,
+    "planches": 10
   },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-05/varenne_ep5_reel_BO.mp4",
@@ -46,6 +47,8 @@
     "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav"
   },
   "notions": [
+    "raccord",
+    "coherence-de-personnage",
     "musique-generee"
   ],
   "carnet": null,
@@ -57,5 +60,47 @@
   "mention_ia": {
     "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
     "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Un refus en quatre lignes, et le conseil qu'Éléna n'avait pas demandé.\n\n**Ce qui était difficile.** Faire exister un mail à l'écran : rien n'est généré dans l'image, le texte est posé au montage dans un gabarit, comme un vrai écran. Et un plan à deux dans la rédaction, Roger et Clara, où l'un écoute pendant que l'autre parle : le plan le plus simple à écrire et le plus délicat à tenir.\n\n**Ce qu'on a appris.** Aucun décor nouveau cet épisode : trois lieux déjà fixés suffisent, et la série y gagne en continuité.",
+      "en": "**The idea.** A four-line refusal, and the advice Éléna had not asked for.\n\n**What was hard.** Making an email exist on screen: nothing is generated inside the image, the text is set in the edit in a template, like a real screen. And a two-character shot in the newsroom, Roger and Clara, where one listens while the other speaks: the simplest shot to write and the trickiest to hold.\n\n**What we learned.** No new set this episode: three places already fixed are enough, and the series gains continuity."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "texte à l'écran",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "on-screen text",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Trois jours plus tard. Bureaux de Saulène, 8 h. Un mail de quatre lignes. — Encadré : DE : A. KELLER — OBJET : SAULÈNE — « Je ne participerai pas. Appelez-moi si vous voulez savoir pourquoi. »",
+      "Elle l'appelle. Elle s'attendait à devoir défendre son entreprise. — Éléna : Pourquoi ?",
+      "Cité Info, 11 h. Roger n'a jamais eu besoin d'une source pour sentir un sujet. — Encadré : Roger, rédacteur en chef de Cité Info. Sent les sujets avant qu'ils existent. — Roger : Un investisseur a refusé Saulène. Ça se dit. Tu veux le sujet ? — Clara : Non.",
+      "Il répond du premier coup. — Adrian : Vous levez trop tôt. Vous avez encore trois leviers avant de céder des parts : vos opérations, votre distribution, votre trésorerie. — Éléna : Vous refusez, et vous m'expliquez comment faire sans vous ? — Adrian : Je vous dis que la meilleure décision, c'est de ne pas prendre mon argent. — Éléna : Je ne vous ai pas demandé un conseil.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "23 h. Elle relit le mail. — Elle déteste qu'il ait peut-être raison. — Encadré : BROUILLON — À : NADIA, INÈS — « On revoit le plan. Demain 8 h. »",
+      "À suivre"
+    ]
   }
 }

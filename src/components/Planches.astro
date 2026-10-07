@@ -1,0 +1,35 @@
+---
+import { ui, type Lang } from '../lib/i18n';
+import { media, type Piece } from '../lib/content';
+interface Props { piece: Piece; lang: Lang }
+const { piece, lang } = Astro.props;
+const d = ui(lang);
+const n = piece.data.media.planches ?? 0;
+const textes = piece.data.planches_texte?.fr ?? [];
+const planches = Array.from({ length: n }, (_, i) => ({ num: i + 1, src: media(piece, `planches/${String(i + 1).padStart(2, '0')}.webp`), texte: textes[i] ?? '' }));
+---
+<section class="planches" aria-label={d.fiche.planches} data-planches>
+  <div class="planches__head">
+    <h2 class="card__titre">{d.fiche.planches}</h2>
+    <div class="planches__nav" data-nav hidden>
+      <button type="button" data-prev aria-label={d.planches.precedente}>←</button>
+      <span class="num" data-compteur>1 / {n}</span>
+      <button type="button" data-next aria-label={d.planches.suivante}>→</button>
+    </div>
+  </div>
+  <ol class="planches__piste" data-piste tabindex="0" aria-label={d.fiche.planches}>
+    {planches.map((p) => (
+      <li class="planches__item" data-planche={p.num}>
+        <figure>
+          <img src={p.src} alt={`${d.fiche.planche_n} ${p.num} : ${p.texte}`} width={1080} height={1920} loading={p.num <= 2 ? 'eager' : 'lazy'} decoding="async" />
+          <figcaption><span class="label num">{d.fiche.planche_n} {p.num}</span><span>{p.texte}</span></figcaption>
+        </figure>
+      </li>
+    ))}
+  </ol>
+  <details class="planches__texte">
+    <summary>{d.planches.texte}</summary>
+    <ol>{planches.map((p) => <li><span class="label num">{p.num}</span> {p.texte}</li>)}</ol>
+  </details>
+</section>
+<script src="../scripts/planches.ts"></script>

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Lecteur from '../components/Lecteur.astro';
 import Coulisses from '../components/Coulisses.astro';
+import Planches from '../components/Planches.astro';
 import { ui, t, duree, numero, dateLongue, route, type Lang } from '../lib/i18n';
 import { episodesDe, formatDe, universDe, urlPiece, urlSerie, media, type Piece, type Serie } from '../lib/content';
 import { videoObject, breadcrumb } from '../lib/jsonld';
@@ -50,6 +51,8 @@ const titreMeta = serie ? `${t(lang, p.titre)} · ${t(lang, serie.data.titre)}` 
           <li class="num">{dateLongue(lang, p.date_publication)}</li>
         </ul>
       </header>
+
+      {p.media.planches && <Planches piece={piece} lang={lang} />}
 
       {p.sources.length > 0 && (
         <section class="block block--sources" aria-labelledby="sources-titre">
