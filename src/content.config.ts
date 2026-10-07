@@ -90,6 +90,8 @@ const series = defineCollection({
     rendu: z.string(),
     statut: z.enum(['en-preparation', 'en-cours', 'terminee']),
     rythme: bilingue.optional(),
+    // Les fiches d'épisode n'affichent que le titre, sans résumé
+    episodes_titre_seul: z.boolean().default(false),
     identite: z.object({ accent: z.string().optional(), logo: z.string().optional(), couverture: z.string().optional() }).default({}),
     reseaux: z.object({ hashtags: z.array(z.string()).default([]) }).default({}),
     coulisses: coulisses.optional(),

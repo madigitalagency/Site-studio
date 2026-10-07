@@ -11,8 +11,8 @@
         "en": "Adaptable AI commercial"
       },
       "pitch": {
-        "fr": "Un film de 15 à 30 secondes pour une marque ou un produit, livré en 16:9 et en vertical, puis décliné par marché, langue ou saison sans nouveau tournage. Le produit réel est intégré au montage, jamais généré.",
-        "en": "A 15 to 30-second film for a brand or a product, delivered in 16:9 and vertical, then adapted by market, language or season without a new shoot. The real product is integrated in the edit, never generated."
+        "fr": "Un film de 15 à 30 secondes pour une marque ou un produit, livré en 16:9 et en vertical, puis décliné par marché, langue ou saison sans nouveau tournage. Le produit, le logo et le marquage de la marque sont intégrés dans l'image à partir de vos fichiers, puis vérifiés plan par plan.",
+        "en": "A 15 to 30-second film for a brand or a product, delivered in 16:9 and vertical, then adapted by market, language or season without a new shoot. The brand's product, logo and markings are built into the image from your files, then checked shot by shot."
       },
       "livrables": {
         "fr": [
@@ -282,8 +282,8 @@
         "en": "The script and the shot list, approved before any image."
       },
       {
-        "fr": "Les images fixes de chaque plan, validées avant l'animation.",
-        "en": "The still images of every shot, approved before animation."
+        "fr": "Le storyboard : une image fixe par plan, dans l'ordre du film, validé avant l'animation.",
+        "en": "The storyboard: one still image per shot, in film order, approved before animation."
       },
       {
         "fr": "Le montage, en deux passes de corrections.",
@@ -317,8 +317,8 @@
           "en": "Can we show a real product, a real place, a real person?"
         },
         "r": {
-          "fr": "Un vrai produit, oui : il est filmé ou photographié, puis intégré au montage. Un vrai lieu, par ses photos, en référence. Une vraie personne, non : aucune ressemblance générée, c'est notre règle et c'est aussi la loi.",
-          "en": "A real product, yes: it is filmed or photographed, then integrated in the edit. A real place, through its photos, as reference. A real person, no: no generated likeness, it is our rule and it is also the law."
+          "fr": "Un vrai produit, oui : à partir de ses photos, il est intégré dans l'image avec son logo et son marquage, puis vérifié plan par plan. Un vrai lieu, par ses photos, en référence. Une vraie personne, non : aucune ressemblance générée, c'est notre règle et c'est aussi la loi.",
+          "en": "A real product, yes: from its photos, it is built into the image with its logo and markings, then checked shot by shot. A real place, through its photos, as reference. A real person, no: no generated likeness, it is our rule and it is also the law."
         }
       },
       {

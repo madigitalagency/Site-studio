@@ -8,8 +8,8 @@
     "en": "Keller"
   },
   "pitch": {
-    "fr": "Deux semaines plus tard. Un bureau du 8e arrondissement qui ne reçoit presque personne : Adrian Keller reçoit trente dossiers par mois et en lit trois.",
-    "en": "Two weeks later. An office in the 8th arrondissement that hardly receives anyone: Adrian Keller gets thirty files a month and reads three."
+    "fr": "VARENNE, saison 1, épisode 3.",
+    "en": "VARENNE, season 1, episode 3."
   },
   "format": "roman-photo",
   "univers": [
@@ -63,8 +63,8 @@
   },
   "coulisses": {
     "texte": {
-      "fr": "**L'idée.** Présenter Adrian par ce qu'il a cessé de faire : un bureau qui ne reçoit presque personne, trente dossiers par mois, trois lus.\n\n**Ce qui était difficile.** Caster un homme riche sans aucun signe de richesse : un seul bureau en noyer, une fenêtre, rien d'autre. Trois candidats, un retenu. Et le bandeau d'antenne de la rédaction de Clara, qu'on n'a pas généré : il est posé au montage, comme tout texte à l'écran.\n\n**Ce qu'on a appris.** Un décor sobre demande plus de consignes qu'un décor chargé, parce que le modèle meuble tout seul.",
-      "en": "**The idea.** Introduce Adrian by what he has stopped doing: an office that hardly receives anyone, thirty files a month, three read.\n\n**What was hard.** Casting a wealthy man with no sign of wealth: one walnut desk, one window, nothing else. Three candidates, one kept. And the on-air banner of Clara's newsroom, which we did not generate: it is set in the edit, like any on-screen text.\n\n**What we learned.** A sober set needs more instructions than a busy one, because the model furnishes it on its own."
+      "fr": "**L'idée.** Présenter Adrian par ce qu'il a cessé de faire : un bureau qui ne reçoit presque personne, trente dossiers par mois, trois lus.\n\n**Ce qui était difficile.** Caster un homme riche sans aucun signe de richesse : un seul bureau en noyer, une fenêtre, rien d'autre. Trois candidats, un retenu. Et le bandeau d'antenne de la rédaction de Clara, posé au montage, comme tout texte qui doit rester modifiable d'un épisode à l'autre.\n\n**Ce qu'on a appris.** Un décor sobre demande plus de consignes qu'un décor chargé, parce que le modèle meuble tout seul.",
+      "en": "**The idea.** Introduce Adrian by what he has stopped doing: an office that hardly receives anyone, thirty files a month, three read.\n\n**What was hard.** Casting a wealthy man with no sign of wealth: one walnut desk, one window, nothing else. Three candidates, one kept. And the on-air banner of Clara's newsroom, set in the edit, like any text that has to stay editable from one episode to the next.\n\n**What we learned.** A sober set needs more instructions than a busy one, because the model furnishes it on its own."
     },
     "genere": {
       "fr": [

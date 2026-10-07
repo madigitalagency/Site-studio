@@ -27,8 +27,10 @@ if (serie) crumbs.push({ name: t(lang, serie.data.titre), url: urlSerie(lang, se
 crumbs.push({ name: t(lang, p.titre), url });
 const jsonld = [videoObject(lang, piece, url, serie), breadcrumb(crumbs)];
 const titreMeta = serie ? `${t(lang, p.titre)} · ${t(lang, serie.data.titre)}` : t(lang, p.titre);
+const titreSeul = !!serie?.data.episodes_titre_seul;
+const descMeta = titreSeul && serie ? `${t(lang, serie.data.titre)}, ${numero(p.saison, p.episode)} · ${t(lang, serie.data.sous_titre)}` : t(lang, p.pitch);
 ---
-<Base lang={lang} titre={titreMeta} description={t(lang, p.pitch)} alt={alt} image={poster} video={videoUrl} type="video.other" jsonld={jsonld} current={serie ? 'series' : 'films'}>
+<Base lang={lang} titre={titreMeta} description={descMeta} alt={alt} image={poster} video={videoUrl} type="video.other" jsonld={jsonld} current={serie ? 'series' : 'films'}>
   <article class="section container fiche">
     <div class="fiche__player">
       <Lecteur piece={piece} lang={lang} />
@@ -41,7 +43,7 @@ const titreMeta = serie ? `${t(lang, p.titre)} · ${t(lang, serie.data.titre)}` 
         </nav>
         <h1>{t(lang, p.titre)}</h1>
         {!enDispo && <p class="block__note">{d.fiche.version_fr_seulement} · <a href={alt.fr}>{d.fiche.voir_fr}</a></p>}
-        <p class="lede">{t(lang, p.pitch)}</p>
+        {!titreSeul && <p class="lede">{t(lang, p.pitch)}</p>}
         <ul class="badges">
           <li class="num">{duree(lang, (lang === 'en' && p.duree_s.en) || p.duree_s.fr)}</li>
           <li>{t(lang, format.nom)}</li>

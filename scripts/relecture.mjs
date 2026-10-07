@@ -59,7 +59,7 @@ h(2, '3. Fiches des films (pitch, coulisses, mention)');
 for (const id of ordrePieces) {
   const x = pieces.find((q) => q.id === id); if (!x) continue;
   h(3, `${x.titre.fr}${x.serie ? ` (${x.serie.toUpperCase()} S${x.saison}·E${String(x.episode ?? 0).padStart(2, '0')})` : ''}`);
-  champ('Pitch', x.pitch.fr);
+  if (!series.find((s) => s.id === x.serie)?.episodes_titre_seul) champ('Pitch', x.pitch.fr);
   if (x.coulisses?.texte?.fr) { L.push('**Coulisses**', '', x.coulisses.texte.fr.replace(/\*\*(.+?)\*\*\s*/g, '**$1** '), ''); }
   else L.push('**Coulisses** · _À ÉCRIRE_', '');
   if (x.coulisses?.chiffre?.fr) champ('Chiffre', x.coulisses.chiffre.fr);
