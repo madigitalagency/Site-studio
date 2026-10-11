@@ -22,7 +22,7 @@ Construction locale, aucun code en ligne (CSP stricte posée par nginx), médias
 3. **Compléter la fiche** `src/content/pieces/<id>.json` (3 min) : `pitch` (sauf séries « titre seul »), `coulisses.texte` en trois parties (l'idée, ce qui était difficile, ce qu'on a appris), `genere` / `manuel`, `chiffre`, `notions` (identifiants du Lexique), `sources` (avec note), `transcription`, `mention_ia`. Images de coulisses : fichiers dans `public/media/<id>/coulisses/`, puis `npm run variantes`.
    Aucun nom d'outil, aucun client, aucune personne réelle : `npm run check` les refuse.
 
-4. **Statut et date** : `"statut": "programme"` avec `date_publication` = jour de sortie (la page apparaît ce jour-là, à la prochaine mise en ligne), ou `"publie"` tout de suite.
+4. **Statut, date et heure** : `"statut": "programme"`, `date_publication` et `heure_publication` (heure de Paris, celle du post dans le Calendrier Studio). La tâche planifiée `npm run deploy:auto` (toutes les 30 min) publie la page dans la demi-heure qui suit. `"publie"` pour une sortie immédiate.
 
 5. **Vérifier** (1 min)
    ```
@@ -37,7 +37,7 @@ Construction locale, aucun code en ligne (CSP stricte posée par nginx), médias
    ```
    npm run deploy
    ```
-   Construit à la date du jour, contrôle, envoie les pages (archive tar par SSH, bascule atomique), puis seulement les médias nouveaux ou modifiés (manifeste SHA-256). `npm run deploy -- --dry` pour voir sans rien envoyer.
+   Construit à l'heure de Paris, contrôle, envoie les pages (bascule atomique), puis les médias utilisés par les pages en ligne, et eux seuls : les vidéos d'un épisode à venir ne partent qu'à sa sortie, et un média qui n'est plus utilisé est retiré du serveur. `npm run deploy -- --dry` pour voir sans rien envoyer. Journal : `work/deploy.log`.
 
 8. **Après la sortie sur Instagram** : `liens.instagram` dans la fiche, `statut: "publie"`, puis `npm run deploy -- --pages`.
 

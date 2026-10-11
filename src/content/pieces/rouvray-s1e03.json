@@ -1,19 +1,45 @@
 {
   "slug": "03-le-recrutement",
-  "serie": "rouvray", "saison": 1, "episode": 3,
-  "titre": { "fr": "Le recrutement", "en": "The Hiring" },
+  "serie": "rouvray",
+  "saison": 1,
+  "episode": 3,
+  "titre": {
+    "fr": "Le recrutement",
+    "en": "The Hiring"
+  },
   "pitch": {
     "fr": "En 1959, une hôtesse de l'air perdait sa place le jour de son mariage. Madeleine cherche cette règle dans une offre d'emploi d'aujourd'hui.",
     "en": "In 1959, a stewardess lost her job the day she married. Madeleine looks for that rule in a job ad from today."
   },
-  "format": "archive-narree", "univers": ["histoire-archives"], "rendu": "photorealiste",
-  "duree_s": { "fr": 24.8 },
-  "orientations": ["9:16"],
-  "langues": ["fr"],
+  "format": "archive-narree",
+  "univers": [
+    "histoire-archives"
+  ],
+  "rendu": "photorealiste",
+  "duree_s": {
+    "fr": 24.8
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
   "date_publication": "2026-10-18",
+  "heure_publication": "19:00",
   "statut": "programme",
-  "une": false, "roger": false, "annexe": false, "fiche": true, "vitrine": true,
-  "media": { "poster": "poster-916", "v916": { "fr": "v916-fr" }, "teaser": "teaser.mp4" },
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": true,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4"
+  },
   "sources_media": {
     "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Rouvray/Production/Episode-03/rouvray_ep3_reel_FR_V7_guillaume.mp4"
   },
@@ -22,26 +48,85 @@
       "fr": "**L'idée.** Pour la première fois, la série quitte l'archive : une cheffe de cabine de 1959, Madeleine, lit une offre d'emploi de 2026 sur une tablette. Elle y cherche les trois règles de son époque, le poids, l'âge et le mariage, et ne les trouve pas.\n\n**Ce qui était difficile.** Un texte lisible sur un écran qui bouge. Plutôt que de laisser le générateur inventer l'annonce, on a généré la tablette avec un écran blanc, puis incrusté au montage une vraie page, suivie image par image et déformée selon l'angle de l'écran. Deuxième piège : la voix. Six narrateurs essayés ; le retenu parle plus vite que les autres, sauf sur l'accroche, laissée à vitesse normale pour qu'on entende « 1959 ».\n\n**Ce qu'on a appris.** Ce qui doit être lu se pose au montage, pas dans l'image générée. Et un silence muet au début coûte des spectateurs : la voix démarre dès la première image.",
       "en": "**The idea.** For the first time, the series leaves the archive: a 1959 chief stewardess, Madeleine, reads a 2026 job ad on a tablet. She looks for the three rules of her day, weight, age and marriage, and cannot find them.\n\n**What was hard.** Readable text on a moving screen. Rather than letting the generator invent the ad, we generated the tablet with a blank white screen, then composited a real page in the edit, tracked frame by frame and warped to the angle of the screen. Second trap: the voice. Six narrators tried; the one we kept speaks faster than the others, except on the hook, left at normal speed so that \"1959\" is heard.\n\n**What we learned.** Anything meant to be read goes in at the edit, not into the generated image. And a silent opening costs viewers: the voice starts on the very first frame."
     },
-    "genere": { "fr": ["images", "animation des plans", "voix off"], "en": ["images", "shot animation", "voice-over"] },
-    "manuel": { "fr": ["recherche juridique et sources", "écriture", "page d'annonce et incrustation à l'écran", "montage", "sous-titres", "mixage"], "en": ["legal research and sources", "writing", "job-ad page and screen compositing", "editing", "subtitles", "mixing"] },
+    "genere": {
+      "fr": [
+        "images",
+        "animation des plans",
+        "voix off"
+      ],
+      "en": [
+        "images",
+        "shot animation",
+        "voice-over"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "recherche juridique et sources",
+        "écriture",
+        "page d'annonce et incrustation à l'écran",
+        "montage",
+        "sous-titres",
+        "mixage"
+      ],
+      "en": [
+        "legal research and sources",
+        "writing",
+        "job-ad page and screen compositing",
+        "editing",
+        "subtitles",
+        "mixing"
+      ]
+    },
     "images": [
-      { "avant": "/media/rouvray-s1e03/coulisses/f1-ecran-blanc.webp", "apres": "/media/rouvray-s1e03/coulisses/f1-annonce-incrustee.webp",
-        "legende": { "fr": "La tablette générée avec un écran blanc, puis la page d'annonce incrustée au montage.", "en": "The tablet generated with a blank screen, then the job-ad page composited in the edit." } }
+      {
+        "avant": "/media/rouvray-s1e03/coulisses/f1-ecran-blanc.webp",
+        "apres": "/media/rouvray-s1e03/coulisses/f1-annonce-incrustee.webp",
+        "legende": {
+          "fr": "La tablette générée avec un écran blanc, puis la page d'annonce incrustée au montage.",
+          "en": "The tablet generated with a blank screen, then the job-ad page composited in the edit."
+        }
+      }
     ],
-    "chiffre": { "fr": "16 générations pour 5 plans gardés, 6 voix essayées.", "en": "16 generations for 5 kept shots, 6 voices tried." }
+    "chiffre": {
+      "fr": "16 générations pour 5 plans gardés, 6 voix essayées.",
+      "en": "16 generations for 5 kept shots, 6 voices tried."
+    }
   },
-  "notions": ["accroche", "voix-de-synthese", "coherence-de-personnage", "anachronisme"],
+  "notions": [
+    "accroche",
+    "voix-de-synthese",
+    "coherence-de-personnage",
+    "anachronisme"
+  ],
   "carnet": null,
   "sources": [
-    { "titre": "Tribunal des conflits, 15 janvier 1968, Compagnie Air France c/ époux Barbier", "url": "https://www.revuegeneraledudroit.eu/blog/decisions/tribunal-des-conflits-15-janvier-1968-compagnie-air-france-c-epoux-barbier-requete-numero-01908-publie-au-recueil",
-      "note": { "fr": "Cite l'article 72 du règlement du 20 avril 1959 (le mariage met fin aux fonctions de l'hôtesse) et l'arrêt de la cour d'appel de Paris du 30 avril 1963.", "en": "Quotes article 72 of the 20 April 1959 regulation (marriage ends a stewardess's employment) and the Paris Court of Appeal ruling of 30 April 1963." } },
-    { "titre": "Code du travail, articles L1132-1 et L5331-2",
-      "note": { "fr": "Discrimination interdite (âge, situation de famille, apparence physique) ; pas de limite d'âge dans une offre d'emploi.", "en": "Discrimination banned (age, family status, physical appearance); no age limit in a job ad." } }
+    {
+      "titre": "Tribunal des conflits, 15 janvier 1968, Compagnie Air France c/ époux Barbier",
+      "url": "https://www.revuegeneraledudroit.eu/blog/decisions/tribunal-des-conflits-15-janvier-1968-compagnie-air-france-c-epoux-barbier-requete-numero-01908-publie-au-recueil",
+      "note": {
+        "fr": "Cite l'article 72 du règlement du 20 avril 1959 (le mariage met fin aux fonctions de l'hôtesse) et l'arrêt de la cour d'appel de Paris du 30 avril 1963.",
+        "en": "Quotes article 72 of the 20 April 1959 regulation (marriage ends a stewardess's employment) and the Paris Court of Appeal ruling of 30 April 1963."
+      }
+    },
+    {
+      "titre": "Code du travail, articles L1132-1 et L5331-2",
+      "note": {
+        "fr": "Discrimination interdite (âge, situation de famille, apparence physique) ; pas de limite d'âge dans une offre d'emploi.",
+        "en": "Discrimination banned (age, family status, physical appearance); no age limit in a job ad."
+      }
+    }
   ],
   "transcription": {
     "fr": "En 1959, ce mot vous coûtait votre poste. Une hôtesse de l'air montait sur la balance. À trente-deux ans, bien des compagnies la remerciaient. Et le jour de son mariage, elle perdait sa place. Madeleine cherche ces trois règles dans une annonce d'aujourd'hui. Elle ne les trouvera pas. La loi interdit désormais de les écrire.",
     "en": "In 1959, this word cost you your job. A stewardess stepped on the scales. At thirty-two, many airlines let her go. And the day she married, she lost her job. Madeleine is looking for those three rules in a job ad from today. She won't find them. The law now forbids writing them."
   },
-  "liens": { "instagram": null, "tiktok": null },
-  "mention_ia": { "fr": "Images, animation et voix générées par IA. Compagnie et annonce fictives, faits réels.", "en": "Images, animation and voice generated by AI. Fictional airline and job ad, true facts." }
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images, animation et voix générées par IA. Compagnie et annonce fictives, faits réels.",
+    "en": "Images, animation and voice generated by AI. Fictional airline and job ad, true facts."
+  }
 }

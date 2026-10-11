@@ -6,15 +6,28 @@ import { route, type Lang } from './i18n';
 export type Piece = CollectionEntry<'pieces'>;
 export type Serie = CollectionEntry<'series'>;
 
-// Date de construction : `STUDIO_DATE=2026-10-22 npm run build` construit le site tel qu'il sera ce jour-là.
-const today = () => process.env.STUDIO_DATE || (import.meta.env.STUDIO_DATE as string | undefined) || new Date().toISOString().slice(0, 10);
+// Date de construction : `STUDIO_DATE=2026-10-22 npm run build` construit le site tel qu'il sera ce jour-là (à 23 h 59).
+// Sans STUDIO_DATE : maintenant, en heure de Paris (les heures de sortie sont celles des posts).
+const maintenantParis = () => {
+  const p = Object.fromEntries(new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+  return { date: `${p.year}-${p.month}-${p.day}`, heure: `${p.hour}:${p.minute}` };
+};
+const instant = () => {
+  const forcee = process.env.STUDIO_DATE || (import.meta.env.STUDIO_DATE as string | undefined);
+  return forcee ? { date: forcee, heure: '23:59' } : maintenantParis();
+};
+const today = () => instant().date;
 const brouillons = () => (process.env.STUDIO_BROUILLONS ?? import.meta.env.STUDIO_BROUILLONS) === '1';
 
 /** Une pièce est construite si elle est publiée, ou programmée à une date passée (CDC v2 §4.6). */
 export function estVisible(p: Piece) {
   if (brouillons()) return true;
   if (p.data.statut === 'publie') return true;
-  if (p.data.statut === 'programme') return p.data.date_publication <= today();
+  if (p.data.statut === 'programme') {
+    const n = instant();
+    if (p.data.date_publication !== n.date) return p.data.date_publication < n.date;
+    return (p.data.heure_publication ?? '00:00') <= n.heure;
+  }
   return false;
 }
 

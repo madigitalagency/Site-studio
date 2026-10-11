@@ -17,7 +17,8 @@
     "variantes": "node scripts/variantes.mjs",
     "new": "node scripts/new.mjs",
     "media": "node scripts/media.mjs",
-    "deploy": "node scripts/deploy.mjs"
+    "deploy": "node scripts/deploy.mjs",
+    "deploy:auto": "node scripts/deploy.mjs --auto"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

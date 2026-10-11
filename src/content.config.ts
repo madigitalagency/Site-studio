@@ -49,6 +49,8 @@ const pieces = defineCollection({
     orientations: z.array(z.enum(['9:16', '16:9', '4:3', '4:5'])).min(1),
     langues: z.array(z.enum(['fr', 'en'])).min(1),
     date_publication: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    // Heure de sortie, heure de Paris (celle du post sur les réseaux) ; sans heure, la pièce sort à minuit
+    heure_publication: z.string().regex(/^\d{2}:\d{2}$/).optional(),
     statut: z.enum(['brouillon', 'programme', 'publie']),
     une: z.boolean().default(false),
     roger: z.boolean().default(false),
