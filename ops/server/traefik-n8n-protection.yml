@@ -1,0 +1,34 @@
+# Protection de l'éditeur n8n exposé par Traefik (reste ouvert du lot 0, audit du 06/10).
+# Principe : deux routeurs sur le même hôte. Les chemins /webhook/ (formulaires des deux sites) restent libres ;
+# tout le reste (éditeur, API) passe par une authentification Traefik en plus du compte n8n.
+# À reporter dans les labels du service n8n de /root/docker-compose.yml, en remplaçant le routeur existant
+# (nom et hôte À_CONFIRMER par ops/server/lecture-lot6.sh ; ci-dessous : routeur « n8n », hôte n8n.madigitalagency.net).
+#
+# Mot de passe : générer l'empreinte sur le VPS, puis doubler chaque « $ » en « $$ » dans le fichier compose :
+#   openssl passwd -apr1            (demande le mot de passe, renvoie l'empreinte)
+#   -> label : traefik.http.middlewares.n8n-auth.basicauth.users=mourad:$$apr1$$xxxxxxxx$$yyyyyyyyyyyyyyyyyyyyyy
+#
+services:
+  n8n:
+    labels:
+      - traefik.enable=true
+      # 1. Webhooks : libres, priorité haute
+      - traefik.http.routers.n8n-webhook.rule=Host(`n8n.madigitalagency.net`) && (PathPrefix(`/webhook/`) || PathPrefix(`/webhook-waiting/`))
+      - traefik.http.routers.n8n-webhook.entrypoints=websecure          # À_CONFIRMER
+      - traefik.http.routers.n8n-webhook.tls.certresolver=letsencrypt   # À_CONFIRMER
+      - traefik.http.routers.n8n-webhook.priority=20
+      - traefik.http.routers.n8n-webhook.service=n8n
+      # 2. Éditeur et API : authentification Traefik
+      - traefik.http.routers.n8n.rule=Host(`n8n.madigitalagency.net`)
+      - traefik.http.routers.n8n.entrypoints=websecure                  # À_CONFIRMER
+      - traefik.http.routers.n8n.tls.certresolver=letsencrypt           # À_CONFIRMER
+      - traefik.http.routers.n8n.priority=10
+      - traefik.http.routers.n8n.middlewares=n8n-auth
+      - traefik.http.routers.n8n.service=n8n
+      - traefik.http.middlewares.n8n-auth.basicauth.users=mourad:$$apr1$$REMPLACER$$REMPLACER
+      - traefik.http.middlewares.n8n-auth.basicauth.realm=n8n
+      - traefik.http.services.n8n.loadbalancer.server.port=5678
+# Après modification : cd /root && docker compose up -d n8n ; puis vérifier :
+#   curl -sI https://n8n.madigitalagency.net/ | head -1          -> 401
+#   curl -sI https://n8n.madigitalagency.net/webhook/x | head -1 -> 404 (joignable, pas d'auth)
+# Le formulaire du site principal continue de passer par /webhook/ : à tester après coup.

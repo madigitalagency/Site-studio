@@ -1,0 +1,32 @@
+# Site Studio : un conteneur nginx:alpine derrière Traefik, sur le modèle du site principal.
+# Dossier serveur : /opt/studio (ce fichier, nginx.conf, release.sh, releases/, current -> releases/<date>, media/)
+# Valeurs À_CONFIRMER : nom du réseau Traefik, nom du résolveur de certificat, nom du point d'entrée HTTPS
+# (lecture : ops/server/lecture-lot6.sh ; en général root_default, letsencrypt ou le_resolver, websecure).
+services:
+  studio:
+    image: nginx:alpine
+    container_name: studio
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./:/srv:ro
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.studio.rule=Host(`studio.madigitalagency.net`)
+      - traefik.http.routers.studio.entrypoints=websecure          # À_CONFIRMER
+      - traefik.http.routers.studio.tls=true
+      - traefik.http.routers.studio.tls.certresolver=letsencrypt   # À_CONFIRMER
+      - traefik.http.services.studio.loadbalancer.server.port=80
+      # Redirection HTTP -> HTTPS si Traefik ne la fait pas déjà au niveau du point d'entrée (À_CONFIRMER)
+      - traefik.http.routers.studio-http.rule=Host(`studio.madigitalagency.net`)
+      - traefik.http.routers.studio-http.entrypoints=web
+      - traefik.http.routers.studio-http.middlewares=studio-https
+      - traefik.http.middlewares.studio-https.redirectscheme.scheme=https
+      - traefik.http.middlewares.studio-https.redirectscheme.permanent=true
+
+networks:
+  traefik:
+    external: true
+    name: root_default   # À_CONFIRMER : réseau où vivent root-traefik-1 et root-n8n-1

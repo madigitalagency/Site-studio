@@ -14,7 +14,10 @@
     "astro": "astro",
     "liens": "node scripts/liens.mjs",
     "lighthouse": "node scripts/lighthouse.mjs",
-    "variantes": "node scripts/variantes.mjs"
+    "variantes": "node scripts/variantes.mjs",
+    "new": "node scripts/new.mjs",
+    "media": "node scripts/media.mjs",
+    "deploy": "node scripts/deploy.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

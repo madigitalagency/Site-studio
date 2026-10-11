@@ -1,0 +1,95 @@
+{
+  "name": "Studio — formulaire de contact",
+  "nodes": [
+    {
+      "parameters": { "httpMethod": "POST", "path": "studio-contact", "responseMode": "responseNode", "options": {} },
+      "id": "a1000000-0000-4000-8000-000000000001",
+      "name": "Réception",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "studio-contact"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validation du formulaire du site Studio (champs : nom, email, societe, type_projet, echeance, message, consentement, langue, piece, horodatage, site_web)\nconst b = $input.first().json.body || {};\nconst h = $input.first().json.headers || {};\nconst s = (v, n) => String(v ?? '').trim().slice(0, n);\nconst nom = s(b.nom, 100), email = s(b.email, 254), societe = s(b.societe, 100), type_projet = s(b.type_projet, 40), echeance = s(b.echeance, 40), message = s(b.message, 3000), piece = s(b.piece, 80);\nconst langue = s(b.langue, 2) === 'en' ? 'en' : 'fr';\n// Pot de miel rempli, ou formulaire envoyé moins de 3 s après l'ouverture : robot. On répond comme si tout allait bien, sans envoyer.\nconst spam = !!s(b.site_web, 10) || (Number(b.horodatage) > 0 && Date.now() - Number(b.horodatage) < 3000);\nconst ok = nom.length >= 2 && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) && message.length >= 20 && b.consentement === 'oui' && !!type_projet && !!echeance;\nconst json = /application\\/json/i.test(String(h.accept || ''));\nconst site = 'https://studio.madigitalagency.net';\nreturn [{ json: { ok, spam, envoyer: ok && !spam, json, langue, nom, email, societe, type_projet, echeance, message, piece,\n  redirect: langue === 'en' ? site + '/en/contact/thanks/' : site + '/contact/merci/',\n  retour: langue === 'en' ? site + '/en/contact/?erreur=1' : site + '/contact/?erreur=1',\n  ip: h['x-real-ip'] || h['x-forwarded-for'] || '', date: new Date().toISOString() } }];"
+      },
+      "id": "a1000000-0000-4000-8000-000000000002",
+      "name": "Validation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "conditions": { "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict", "version": 2 }, "conditions": [ { "id": "c1", "leftValue": "={{ $json.envoyer }}", "rightValue": true, "operator": { "type": "boolean", "operation": "true", "singleValue": true } } ], "combinator": "and" },
+        "options": {}
+      },
+      "id": "a1000000-0000-4000-8000-000000000003",
+      "name": "À envoyer ?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "fromEmail": "contact@madigitalagency.net",
+        "toEmail": "contact@madigitalagency.net",
+        "subject": "=[Studio] {{ $json.type_projet }} · {{ $json.echeance }} · {{ $json.nom }}",
+        "emailFormat": "text",
+        "text": "=Demande reçue par le formulaire du site Studio ({{ $json.langue.toUpperCase() }}), le {{ $json.date }}\n\nNom : {{ $json.nom }}\nE-mail : {{ $json.email }}\nSociété : {{ $json.societe || '—' }}\nType de projet : {{ $json.type_projet }}\nÉchéance : {{ $json.echeance }}\nFilm de référence : {{ $json.piece || '—' }}\n\nMessage :\n{{ $json.message }}\n\n—\nRépondre : répondre à ce courriel écrit directement à {{ $json.email }}.\nAdresse IP : {{ $json.ip }}",
+        "options": { "replyTo": "={{ $json.email }}" }
+      },
+      "id": "a1000000-0000-4000-8000-000000000004",
+      "name": "Courriel à l'agence",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [720, -120],
+      "credentials": { "smtp": { "id": "À_SÉLECTIONNER", "name": "SMTP du site principal" } }
+    },
+    {
+      "parameters": {
+        "conditions": { "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict", "version": 2 }, "conditions": [ { "id": "c2", "leftValue": "={{ $('Validation').item.json.json }}", "rightValue": true, "operator": { "type": "boolean", "operation": "true", "singleValue": true } } ], "combinator": "and" },
+        "options": {}
+      },
+      "id": "a1000000-0000-4000-8000-000000000005",
+      "name": "Réponse JSON ?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [960, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ ok: $('Validation').item.json.ok }) }}",
+        "options": { "responseCode": "={{ $('Validation').item.json.ok ? 200 : 400 }}", "responseHeaders": { "entries": [ { "name": "Cache-Control", "value": "no-store" } ] } }
+      },
+      "id": "a1000000-0000-4000-8000-000000000006",
+      "name": "Réponse au script",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1200, -120]
+    },
+    {
+      "parameters": {
+        "respondWith": "redirect",
+        "redirectURL": "={{ $('Validation').item.json.ok ? $('Validation').item.json.redirect : $('Validation').item.json.retour }}",
+        "options": { "responseCode": 303 }
+      },
+      "id": "a1000000-0000-4000-8000-000000000007",
+      "name": "Redirection sans script",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1200, 120]
+    }
+  ],
+  "connections": {
+    "Réception": { "main": [ [ { "node": "Validation", "type": "main", "index": 0 } ] ] },
+    "Validation": { "main": [ [ { "node": "À envoyer ?", "type": "main", "index": 0 } ] ] },
+    "À envoyer ?": { "main": [ [ { "node": "Courriel à l'agence", "type": "main", "index": 0 } ], [ { "node": "Réponse JSON ?", "type": "main", "index": 0 } ] ] },
+    "Courriel à l'agence": { "main": [ [ { "node": "Réponse JSON ?", "type": "main", "index": 0 } ] ] },
+    "Réponse JSON ?": { "main": [ [ { "node": "Réponse au script", "type": "main", "index": 0 } ], [ { "node": "Redirection sans script", "type": "main", "index": 0 } ] ] }
+  },
+  "settings": { "executionOrder": "v1", "saveDataSuccessExecution": "none", "saveDataErrorExecution": "all", "saveManualExecutions": false },
+  "pinData": {}
+}
