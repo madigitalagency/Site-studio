@@ -39,7 +39,7 @@ Construction locale, aucun code en ligne (CSP stricte posée par nginx), médias
    ```
    Construit à l'heure de Paris, contrôle, envoie les pages (bascule atomique), puis les médias utilisés par les pages en ligne, et eux seuls : les vidéos d'un épisode à venir ne partent qu'à sa sortie, et un média qui n'est plus utilisé est retiré du serveur. `npm run deploy -- --dry` pour voir sans rien envoyer. Journal : `work/deploy.log`.
 
-8. **Après la sortie sur Instagram** : `liens.instagram` dans la fiche, `statut: "publie"`, puis `npm run deploy -- --pages`.
+8. **Après la sortie sur Instagram** : `liens.instagram` dans la fiche, `statut: "publie"`, puis `npm run deploy`.
 
 ## Autres opérations
 
