@@ -7,7 +7,7 @@ export type Piece = CollectionEntry<'pieces'>;
 export type Serie = CollectionEntry<'series'>;
 
 // Date de construction : `STUDIO_DATE=2026-10-22 npm run build` construit le site tel qu'il sera ce jour-là.
-const today = () => process.env.STUDIO_DATE ?? (import.meta.env.STUDIO_DATE as string | undefined) ?? new Date().toISOString().slice(0, 10);
+const today = () => process.env.STUDIO_DATE || (import.meta.env.STUDIO_DATE as string | undefined) || new Date().toISOString().slice(0, 10);
 const brouillons = () => (process.env.STUDIO_BROUILLONS ?? import.meta.env.STUDIO_BROUILLONS) === '1';
 
 /** Une pièce est construite si elle est publiée, ou programmée à une date passée (CDC v2 §4.6). */

@@ -17,7 +17,8 @@ const ssh = (cmd) => sh(`ssh ${HOTE} "${cmd.replace(/"/g, '\\"')}"`);
 
 // 1. Construire à la date réelle (seules les pièces publiées ou dont la date est passée apparaissent) et contrôler
 if (faireTout || args.includes('--pages')) {
-  sh('npx astro build', { env: { ...process.env, STUDIO_DATE: '', STUDIO_BROUILLONS: '' } });
+  const env = { ...process.env }; delete env.STUDIO_DATE; delete env.STUDIO_BROUILLONS;
+  sh('npx astro build', { env });
   sh('npm run check');
   mkdirSync('work', { recursive: true });
   // Pages sans les médias (public/media est servi à part)
