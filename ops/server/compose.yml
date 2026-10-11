@@ -1,32 +1,26 @@
-# Site Studio : un conteneur nginx:alpine derrière Traefik, sur le modèle du site principal.
+# Site Studio : un conteneur nginx:alpine derrière Traefik, sur le modèle exact du site principal (/opt/madigitalagency).
 # Dossier serveur : /opt/studio (ce fichier, nginx.conf, release.sh, releases/, current -> releases/<date>, media/)
-# Valeurs À_CONFIRMER : nom du réseau Traefik, nom du résolveur de certificat, nom du point d'entrée HTTPS
-# (lecture : ops/server/lecture-lot6.sh ; en général root_default, letsencrypt ou le_resolver, websecure).
+# Réglages relevés le 11/10 (lecture-lot6) : réseau root_default, résolveur mytlschallenge, points d'entrée web,websecure
+# (la redirection HTTP -> HTTPS est déjà faite par Traefik pour tout le serveur).
 services:
   studio:
     image: nginx:alpine
     container_name: studio
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ./:/srv:ro
     networks:
-      - traefik
+      - root_default
     labels:
       - traefik.enable=true
+      - traefik.docker.network=root_default
       - traefik.http.routers.studio.rule=Host(`studio.madigitalagency.net`)
-      - traefik.http.routers.studio.entrypoints=websecure          # À_CONFIRMER
+      - traefik.http.routers.studio.entrypoints=web,websecure
       - traefik.http.routers.studio.tls=true
-      - traefik.http.routers.studio.tls.certresolver=letsencrypt   # À_CONFIRMER
+      - traefik.http.routers.studio.tls.certresolver=mytlschallenge
       - traefik.http.services.studio.loadbalancer.server.port=80
-      # Redirection HTTP -> HTTPS si Traefik ne la fait pas déjà au niveau du point d'entrée (À_CONFIRMER)
-      - traefik.http.routers.studio-http.rule=Host(`studio.madigitalagency.net`)
-      - traefik.http.routers.studio-http.entrypoints=web
-      - traefik.http.routers.studio-http.middlewares=studio-https
-      - traefik.http.middlewares.studio-https.redirectscheme.scheme=https
-      - traefik.http.middlewares.studio-https.redirectscheme.permanent=true
 
 networks:
-  traefik:
+  root_default:
     external: true
-    name: root_default   # À_CONFIRMER : réseau où vivent root-traefik-1 et root-n8n-1

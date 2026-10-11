@@ -1,34 +1,46 @@
-# Protection de l'éditeur n8n exposé par Traefik (reste ouvert du lot 0, audit du 06/10).
-# Principe : deux routeurs sur le même hôte. Les chemins /webhook/ (formulaires des deux sites) restent libres ;
-# tout le reste (éditeur, API) passe par une authentification Traefik en plus du compte n8n.
-# À reporter dans les labels du service n8n de /root/docker-compose.yml, en remplaçant le routeur existant
-# (nom et hôte À_CONFIRMER par ops/server/lecture-lot6.sh ; ci-dessous : routeur « n8n », hôte n8n.madigitalagency.net).
+# Protection de l'éditeur n8n (reste ouvert de l'audit du 06/10). Réglages relevés le 11/10.
+# Aujourd'hui, https://n8n.srv1170093.hstgr.cloud ouvre l'éditeur à tout Internet (seul le compte n8n protège).
+# Les deux formulaires (site principal et Studio) passent par le réseau Docker interne (http://n8n:5678),
+# pas par Traefik : ils ne sont pas touchés par cette protection.
 #
-# Mot de passe : générer l'empreinte sur le VPS, puis doubler chaque « $ » en « $$ » dans le fichier compose :
-#   openssl passwd -apr1            (demande le mot de passe, renvoie l'empreinte)
-#   -> label : traefik.http.middlewares.n8n-auth.basicauth.users=mourad:$$apr1$$xxxxxxxx$$yyyyyyyyyyyyyyyyyyyyyy
-#
-services:
-  n8n:
+# Ce bloc remplace les labels du service n8n dans /root/docker-compose.yml (lignes « labels: » jusqu'à « environment: »).
+# Avant : cp /root/docker-compose.yml /root/docker-compose.yml.avant-protection
+# Mot de passe : sur le VPS, `openssl passwd -apr1` (le demande deux fois, affiche l'empreinte $apr1$...).
+# Dans le label, chaque « $ » de l'empreinte s'écrit « $$ ».
     labels:
       - traefik.enable=true
-      # 1. Webhooks : libres, priorité haute
-      - traefik.http.routers.n8n-webhook.rule=Host(`n8n.madigitalagency.net`) && (PathPrefix(`/webhook/`) || PathPrefix(`/webhook-waiting/`))
-      - traefik.http.routers.n8n-webhook.entrypoints=websecure          # À_CONFIRMER
-      - traefik.http.routers.n8n-webhook.tls.certresolver=letsencrypt   # À_CONFIRMER
-      - traefik.http.routers.n8n-webhook.priority=20
-      - traefik.http.routers.n8n-webhook.service=n8n
-      # 2. Éditeur et API : authentification Traefik
-      - traefik.http.routers.n8n.rule=Host(`n8n.madigitalagency.net`)
-      - traefik.http.routers.n8n.entrypoints=websecure                  # À_CONFIRMER
-      - traefik.http.routers.n8n.tls.certresolver=letsencrypt           # À_CONFIRMER
-      - traefik.http.routers.n8n.priority=10
-      - traefik.http.routers.n8n.middlewares=n8n-auth
-      - traefik.http.routers.n8n.service=n8n
+      - traefik.docker.network=root_default
+      # Middleware d'origine (en-têtes), inchangé
+      - traefik.http.middlewares.n8n.headers.SSLRedirect=true
+      - traefik.http.middlewares.n8n.headers.STSSeconds=315360000
+      - traefik.http.middlewares.n8n.headers.browserXSSFilter=true
+      - traefik.http.middlewares.n8n.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.n8n.headers.forceSTSHeader=true
+      - traefik.http.middlewares.n8n.headers.SSLHost=${DOMAIN_NAME}
+      - traefik.http.middlewares.n8n.headers.STSIncludeSubdomains=true
+      - traefik.http.middlewares.n8n.headers.STSPreload=true
+      # Nouveau : authentification devant l'éditeur
       - traefik.http.middlewares.n8n-auth.basicauth.users=mourad:$$apr1$$REMPLACER$$REMPLACER
       - traefik.http.middlewares.n8n-auth.basicauth.realm=n8n
+      # Webhooks publics : sans authentification (au cas où un service extérieur les appelle)
+      - traefik.http.routers.n8n-webhook.rule=Host(`${SUBDOMAIN}.${DOMAIN_NAME}`) && (PathPrefix(`/webhook/`) || PathPrefix(`/webhook-waiting/`) || PathPrefix(`/form/`))
+      - traefik.http.routers.n8n-webhook.entrypoints=web,websecure
+      - traefik.http.routers.n8n-webhook.tls=true
+      - traefik.http.routers.n8n-webhook.tls.certresolver=mytlschallenge
+      - traefik.http.routers.n8n-webhook.priority=100
+      - traefik.http.routers.n8n-webhook.middlewares=n8n@docker
+      - traefik.http.routers.n8n-webhook.service=n8n
+      # Éditeur et API : en-têtes + authentification
+      - traefik.http.routers.n8n.rule=Host(`${SUBDOMAIN}.${DOMAIN_NAME}`)
+      - traefik.http.routers.n8n.entrypoints=web,websecure
+      - traefik.http.routers.n8n.tls=true
+      - traefik.http.routers.n8n.tls.certresolver=mytlschallenge
+      - traefik.http.routers.n8n.priority=10
+      - traefik.http.routers.n8n.middlewares=n8n@docker,n8n-auth@docker
+      - traefik.http.routers.n8n.service=n8n
       - traefik.http.services.n8n.loadbalancer.server.port=5678
-# Après modification : cd /root && docker compose up -d n8n ; puis vérifier :
-#   curl -sI https://n8n.madigitalagency.net/ | head -1          -> 401
-#   curl -sI https://n8n.madigitalagency.net/webhook/x | head -1 -> 404 (joignable, pas d'auth)
-# Le formulaire du site principal continue de passer par /webhook/ : à tester après coup.
+# Puis : cd /root && docker compose up -d n8n
+# Vérifier depuis le PC :
+#   curl -sI https://n8n.srv1170093.hstgr.cloud/ | head -1                 -> HTTP/1.1 401
+#   curl -sI https://n8n.srv1170093.hstgr.cloud/webhook/inexistant | head -1  -> 404 (joignable, sans mot de passe)
+# Retour arrière : cp /root/docker-compose.yml.avant-protection /root/docker-compose.yml && docker compose up -d n8n

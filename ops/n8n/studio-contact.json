@@ -45,7 +45,7 @@
       "type": "n8n-nodes-base.emailSend",
       "typeVersion": 2.1,
       "position": [720, -120],
-      "credentials": { "smtp": { "id": "À_SÉLECTIONNER", "name": "SMTP du site principal" } }
+      "credentials": { "smtp": { "id": "À_SÉLECTIONNER", "name": "SMTP account" } }
     },
     {
       "parameters": {
