@@ -11,7 +11,7 @@
   "orientations": ["9:16"],
   "langues": ["fr"],
   "date_publication": "2026-10-08",
-  "statut": "programme",
+  "statut": "publie",
   "une": false, "roger": false, "annexe": false, "fiche": true, "vitrine": true,
   "media": { "poster": "poster-916", "v916": { "fr": "v916-fr" } },
   "sources_media": { "v916_fr": "03_INCUBATEUR/Hors Jeu/03_Production/BA_V1/HORS-JEU_teaser_20s_V1.mp4" },
