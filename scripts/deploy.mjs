@@ -38,7 +38,7 @@ if (faireTout || args.includes('--media')) {
   for (const f of fichiers) local[relative(racine, f).split('\\').join('/')] = createHash('sha256').update(readFileSync(f)).digest('hex');
   writeFileSync('work/media-manifest.json', JSON.stringify(local, null, 1));
   let distant = {};
-  const r = spawnSync('ssh', [HOTE, `cat ${BASE}/media/manifest.json 2>/dev/null || echo {}`], { encoding: 'utf8' });
+  const r = spawnSync('ssh', [HOTE, `cat ${BASE}/media-manifest.json 2>/dev/null || cat ${BASE}/media/manifest.json 2>/dev/null || echo {}`], { encoding: 'utf8' });
   try { distant = JSON.parse(r.stdout || '{}'); } catch { distant = {}; }
   const aEnvoyer = Object.keys(local).filter((k) => distant[k] !== local[k]);
   const aSupprimer = Object.keys(distant).filter((k) => !(k in local));
@@ -52,7 +52,9 @@ if (faireTout || args.includes('--media')) {
     ssh(`mkdir -p ${BASE}/media && tar -xzf ${BASE}/incoming/media.tgz -C ${BASE}/media && rm -f ${BASE}/incoming/media.tgz`);
   }
   if (aSupprimer.length) ssh(`cd ${BASE}/media && rm -f ${aSupprimer.map((k) => `'${k}'`).join(' ')}`);
-  sh(`scp work/media-manifest.json ${HOTE}:${BASE}/media/manifest.json`);
+  sh(`scp work/media-manifest.json ${HOTE}:${BASE}/media-manifest.json`);
+  // Ancien emplacement (dans /media/, donc servi publiquement) : retiré
+  ssh(`rm -f ${BASE}/media/manifest.json`);
 }
 
 // 3. Vérification en ligne
