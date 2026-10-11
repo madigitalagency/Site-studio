@@ -15,11 +15,11 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=root_default
-      - traefik.http.routers.studio.rule=Host(`studio.madigitalagency.net`)
-      - traefik.http.routers.studio.entrypoints=web,websecure
-      - traefik.http.routers.studio.tls=true
-      - traefik.http.routers.studio.tls.certresolver=mytlschallenge
-      - traefik.http.services.studio.loadbalancer.server.port=80
+      - traefik.http.routers.studio-web.rule=Host(`studio.madigitalagency.net`)
+      - traefik.http.routers.studio-web.entrypoints=web,websecure
+      - traefik.http.routers.studio-web.tls=true
+      - traefik.http.routers.studio-web.tls.certresolver=mytlschallenge
+      - traefik.http.services.studio-web.loadbalancer.server.port=80
 
 networks:
   root_default:
