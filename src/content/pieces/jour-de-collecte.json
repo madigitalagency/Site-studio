@@ -1,0 +1,101 @@
+{
+  "slug": "jour-de-collecte",
+  "titre": {
+    "fr": "Jour de collecte",
+    "en": "Collection Day"
+  },
+  "pitch": {
+    "fr": "Paris, 19 h 02, la lumière dorée d'une pub de parfum. Elle sort de chez elle comme pour un rendez-vous. Vingt-cinq secondes plus tard, on sait ce qu'elle tenait.",
+    "en": "Paris, 7:02 pm, the golden light of a perfume ad. She steps out as if for a date. Twenty-five seconds later, we know what she was holding."
+  },
+  "format": "pub",
+  "univers": [
+    "marque-produit",
+    "comedie-saynetes"
+  ],
+  "rendu": "cinematographique",
+  "duree_s": {
+    "fr": 24.9
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-11-12",
+  "statut": "brouillon",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": true,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": true
+  },
+  "sources_media": {
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/03_INCUBATEUR/Clips_Musicaux/04_MONTAGE_EXPORT/Jour_de_collecte/Jour_de_collecte_V2_master.mp4"
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Prendre tous les codes d'une pub de parfum, la rue haussmannienne, la lumière rasante, le manteau sur les épaules, le regard d'un homme en terrasse, et les mettre au service d'un geste du quotidien. Toute la pub tient sur une seule règle : on ne voit jamais sa main gauche avant la révélation.\n\n**Ce qui était difficile.** Tenir cette règle sur quatorze plans : le sac est caché par le cadre, une voiture garée, les chaises d'une terrasse, le pan du manteau. Les premières images montraient une main vide ; elles ont toutes été refaites. Même travail pour la géographie : la façade toujours du même côté, les poubelles toujours contre le même platane, le manteau toujours porté en cape. Trois plans ont été retournés au montage pour que la marche garde son sens.\n\n**Ce qu'on a appris.** Quatorze plans en vingt-cinq secondes, c'est trop : le gag tient, mais le montage hache. La prochaine pub tiendra en cinq à sept plans plus longs, et la bible de continuité (côté de l'objet, décor, tenue) s'écrit avant la première image.",
+      "en": "**The idea.** Take every code of a perfume ad, the Haussmann street, the low golden light, the coat worn over the shoulders, a man's stare from a café terrace, and spend them on an everyday chore. The whole ad rests on one rule: her left hand is never seen before the reveal.\n\n**What was hard.** Holding that rule across fourteen shots: the bag is hidden by the frame, a parked car, terrace chairs, the fold of the coat. The first images showed an empty hand; all of them were redone. Same work on geography: the façade always on the same side, the bins always against the same plane tree, the coat always worn as a cape. Three shots were flipped in the edit so the walk keeps its direction.\n\n**What we learned.** Fourteen shots in twenty-five seconds is too many: the gag works, but the cut feels choppy. The next ad will run on five to seven longer shots, and the continuity bible (which hand, which side of the street, which outfit) gets written before the first image."
+    },
+    "genere": {
+      "fr": [
+        "images",
+        "animation des plans"
+      ],
+      "en": [
+        "images",
+        "shot animation"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "idée et découpage",
+        "bible de continuité",
+        "contrôle image par image",
+        "montage au tempo",
+        "cartons"
+      ],
+      "en": [
+        "idea and shot list",
+        "continuity bible",
+        "frame-by-frame review",
+        "tempo editing",
+        "title cards"
+      ]
+    },
+    "images": [],
+    "chiffre": {
+      "fr": "14 plans, 48 images de départ générées pour en garder 14, révélation à 15,5 s.",
+      "en": "14 shots, 48 start frames generated to keep 14, reveal at 15.5 s."
+    }
+  },
+  "notions": [
+    "accroche",
+    "raccord",
+    "image-de-depart",
+    "decoupage-technique"
+  ],
+  "carnet": null,
+  "sources": [],
+  "transcription": {
+    "fr": "Carton d’ouverture : « Paris, 19 h 02. Ce soir, elle a rendez-vous. » Carton de fin : « Jour de collecte ». Pas de dialogue.",
+    "en": "Opening card: “Paris, 7:02 pm. Tonight, she has a date.” End card: “Collection Day”. No dialogue."
+  },
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et animation générées par IA. Pub fictive, aucune marque réelle.",
+    "en": "AI-generated images and animation. Fictional ad, no real brand."
+  }
+}
