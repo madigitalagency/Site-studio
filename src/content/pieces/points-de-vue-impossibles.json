@@ -1,0 +1,100 @@
+{
+  "slug": "points-de-vue-impossibles",
+  "titre": {
+    "fr": "Points de vue impossibles",
+    "en": "Impossible points of view"
+  },
+  "pitch": {
+    "fr": "Une caméra posée là où personne ne peut la poser : sur le dos d'une baleine qui sort de l'eau, dans le cockpit d'un biplan de 1925. Ce que la vidéo générative ouvre à une destination, un musée ou une marque.",
+    "en": "A camera placed where nobody can place one: on the back of a whale breaking the surface, in the cockpit of a 1925 biplane. What generative video opens up for a destination, a museum or a brand."
+  },
+  "format": "teaser",
+  "univers": [
+    "voyages-hospitalite",
+    "histoire-archives"
+  ],
+  "rendu": "photorealiste",
+  "duree_s": {
+    "fr": 18.6
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-11-19",
+  "statut": "brouillon",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": true,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4"
+  },
+  "sources_media": {
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/03_INCUBATEUR/Methode Dreamfall AI/Rushes_2026-08/Points_de_vue_impossibles_V1.mp4"
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Montrer en dix-huit secondes ce qu'aucun tournage ne peut ramener : un point de vue sur un animal sauvage sans le déranger, et un vol dans une époque disparue. Pour un office de tourisme, un musée, un constructeur ou une marque d'équipement, c'est un plan qui n'existait pas il y a deux ans.\n\n**Ce qui était difficile.** Rien n'a été raté, et c'est la leçon. Les deux plans ont tenu dès la première génération, parce que le réalisme ne vient pas du rendu mais de la grammaire d'une caméra d'action : très grand angle, objectif bas, déformation sur les bords. Les mains sont gantées ou coupées par le cadre, et la lumière est couverte : elle éteint les reflets sur l'eau, le cuir et le métal, là où l'image générée se trahit d'habitude.\n\n**Ce qu'on a appris.** Un point de vue impossible se décrit comme un plan réel, avec le matériel qu'on aurait emporté. Le spectateur croit ce qu'il a l'habitude de voir filmé par quelqu'un qui était là. Le son d'origine des deux plans, eau, vent et moteur, est gardé tel quel.",
+      "en": "**The idea.** Show in eighteen seconds what no shoot can bring back: a point of view on a wild animal without disturbing it, and a flight in a vanished era. For a tourist board, a museum, a manufacturer or an outdoor brand, it is a shot that did not exist two years ago.\n\n**What was hard.** Nothing failed, and that is the lesson. Both shots held from the first generation, because realism does not come from rendering but from the grammar of an action camera: ultra-wide lens, low position, distortion at the edges. Hands are gloved or cut by the frame, and the light is overcast: it kills reflections on water, leather and metal, where generated images usually give themselves away.\n\n**What we learned.** An impossible point of view is described like a real shot, with the gear you would have taken along. Viewers believe what they are used to seeing filmed by someone who was there. The original sound of both shots, water, wind and engine, is kept as it is."
+    },
+    "genere": {
+      "fr": [
+        "images",
+        "animation",
+        "son des plans"
+      ],
+      "en": [
+        "images",
+        "animation",
+        "shot sound"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "choix des deux points de vue",
+        "description en grammaire de caméra d’action",
+        "montage",
+        "légendes et carton"
+      ],
+      "en": [
+        "choice of the two points of view",
+        "action-camera shot description",
+        "editing",
+        "captions and title card"
+      ]
+    },
+    "images": [],
+    "chiffre": {
+      "fr": "Deux plans, deux générations, aucune reprise.",
+      "en": "Two shots, two generations, no retake."
+    }
+  },
+  "notions": [
+    "image-vers-video",
+    "focale-et-profondeur-de-champ",
+    "lumiere",
+    "mouvement-de-camera"
+  ],
+  "carnet": null,
+  "sources": [],
+  "transcription": {
+    "fr": "Pas de voix. Légendes : « Point de vue nº 1. Sur le dos d’une baleine à bosse, au moment où elle sort de l’eau. » « Point de vue nº 2. Dans le cockpit d’un biplan de 1925, au-dessus des nuages. » Carton : « Points de vue impossibles. Là où aucune caméra ne peut aller, ni aucune époque revenir. »",
+    "en": "No voice. Captions (French): “Point of view no. 1. On the back of a humpback whale, as it breaks the surface.” “Point of view no. 2. In the cockpit of a 1925 biplane, above the clouds.” Card: “Impossible points of view. Where no camera can go, and no era can return.”"
+  },
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images, animation et son générés par IA. Aucun animal n’a été approché, aucun avion n’a volé.",
+    "en": "Images, animation and sound generated by AI. No animal was approached, no plane flew."
+  }
+}
