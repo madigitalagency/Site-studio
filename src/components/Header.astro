@@ -3,6 +3,7 @@ import { ui, route, href, type Lang } from '../lib/i18n';
 interface Props { lang: Lang; alt: { fr: string; en: string }; current?: string }
 const { lang, alt, current } = Astro.props;
 const d = ui(lang);
+const agence = lang === 'en' ? 'https://madigitalagency.net/en/' : 'https://madigitalagency.net/';
 const liens = [
   ['films', d.nav.films],
   ['series', d.nav.series],
@@ -25,6 +26,7 @@ const liens = [
           <li><a href={route(lang, key)} aria-current={current === key ? 'page' : undefined}>{label}</a></li>
         ))}
       </ul>
+      <a class="nav__agence" href={agence}>{d.nav.agence}<span aria-hidden="true"> ↗</span></a>
       <div class="lang" aria-label="Langue">
         <a href={alt.fr} lang="fr" aria-current={lang === 'fr' ? 'true' : undefined} hreflang="fr">FR</a>
         <span aria-hidden="true">/</span>

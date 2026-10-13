@@ -3,6 +3,7 @@ import { ui, route, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = ui(lang);
+const agence = lang === 'en' ? 'https://madigitalagency.net/en/' : 'https://madigitalagency.net/';
 ---
 <footer class="footer">
   <div class="container">
@@ -10,7 +11,7 @@ const d = ui(lang);
       <div>
         <h2>{d.site.nom}</h2>
         <ul>
-          <li><a href="https://madigitalagency.net/" rel="noopener">{d.pied.activite}</a></li>
+          <li><a href={agence}>{d.pied.activite}</a></li>
           <li><a href="mailto:contact@madigitalagency.net">contact@madigitalagency.net</a></li>
         </ul>
       </div>
