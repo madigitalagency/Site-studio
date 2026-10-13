@@ -175,6 +175,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
 .serie-row__text { display: grid; gap: 4px; min-width: 0; }
 .serie-row__text h3 { font-size: 24px; letter-spacing: 0.04em; color: var(--serie-accent, var(--ink)); }
 .serie-row__text p { color: var(--ink-2); }
+.serie-row__text .serie-row__dernier { margin-top: 6px; font-size: 14px; color: var(--ink); }
+.serie-row__dernier .label { margin-right: 6px; }
 .serie-row__status { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; white-space: nowrap; }
 .serie-row:hover h3 { color: var(--accent-ink); }
 @media (max-width: 720px) {

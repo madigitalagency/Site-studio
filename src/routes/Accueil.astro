@@ -14,8 +14,9 @@ const d = ui(lang);
 const pieces = await catalogue();
 const une = pieces.find((p) => p.data.une) ?? pieces[0];
 const uneSerie = une ? await serieDe(une) : undefined;
-const dernieres = pieces.filter((p) => p !== une).slice(0, 6);
-const dernieresSeries = await Promise.all(dernieres.map(serieDe));
+// Accueil : une ligne par série (son dernier épisode y est cité) plutôt qu'une grille des dernières sorties,
+// qu'une série au rythme soutenu (VARENNE) finissait par occuper seule. Les films hors série gardent une petite grille.
+const horsSerie = pieces.filter((p) => p !== une && !p.data.serie).slice(0, 4);
 const series = await seriesActives();
 const univers = await universActifs();
 const vitrine = pieces.find((p) => p.data.vitrine && p.data.coulisses?.images?.some((i) => 'avant' in i));
@@ -66,22 +67,11 @@ const offres = lang === 'fr'
     </div>
   </section>
 
-  {dernieres.length > 0 && (
-    <section class="section container" aria-labelledby="dernieres-titre">
-      <div class="section__head">
-        <h2 id="dernieres-titre">{d.accueil.dernieres}</h2>
-        <a class="section__link" href={route(lang, 'films')}>{d.accueil.tout_catalogue}{compteurs ? ` · ${pieces.length} ${d.accueil.films}` : ''}</a>
-      </div>
-      <div class="grid-cards">
-        {dernieres.map((p, i) => <CartePiece piece={p} serie={dernieresSeries[i]} lang={lang} />)}
-      </div>
-    </section>
-  )}
-
   {series.length > 0 && (
     <section class="section container" aria-labelledby="series-titre">
       <div class="section__head">
         <h2 id="series-titre">{d.accueil.series}</h2>
+        <a class="section__link" href={route(lang, 'films')}>{d.accueil.tout_catalogue}{compteurs ? ` · ${pieces.length} ${d.accueil.films}` : ''}</a>
       </div>
       <div class="series-list">
         {series.map(({ serie, episodes, dernier }) => (
@@ -92,6 +82,7 @@ const offres = lang === 'fr'
             <span class="serie-row__text">
               <h3>{t(lang, serie.data.titre)}</h3>
               <p>{t(lang, serie.data.sous_titre)}</p>
+              {dernier && <p class="serie-row__dernier"><span class="label">{d.accueil.dernier_episode}</span> {numero(dernier.data.saison, dernier.data.episode)} · {t(lang, dernier.data.titre)}</p>}
             </span>
             <span class="serie-row__status">
               <span class="label label--ink">{episodes.length ? `${episodes.length} ${lang === 'fr' ? 'épisode' : 'episode'}${episodes.length > 1 ? 's' : ''}` : d.serie.en_preparation}</span>
@@ -99,6 +90,17 @@ const offres = lang === 'fr'
             </span>
           </a>
         ))}
+      </div>
+    </section>
+  )}
+
+  {horsSerie.length > 0 && (
+    <section class="section container" aria-labelledby="hors-serie-titre">
+      <div class="section__head">
+        <h2 id="hors-serie-titre">{d.accueil.hors_serie}</h2>
+      </div>
+      <div class="grid-cards">
+        {horsSerie.map((p) => <CartePiece piece={p} lang={lang} />)}
       </div>
     </section>
   )}
