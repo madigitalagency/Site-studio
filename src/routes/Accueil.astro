@@ -82,7 +82,7 @@ const offres = lang === 'fr'
             <span class="serie-row__text">
               <h3>{t(lang, serie.data.titre)}</h3>
               <p>{t(lang, serie.data.sous_titre)}</p>
-              {dernier && <p class="serie-row__dernier"><span class="label">{d.accueil.dernier_episode}</span> {numero(dernier.data.saison, dernier.data.episode)} · {t(lang, dernier.data.titre)}</p>}
+              {dernier && <p class="serie-row__dernier"><span class="label">{d.accueil.dernier_episode}</span> {dernier.data.episode ? `${numero(dernier.data.saison, dernier.data.episode)} · ` : ''}{t(lang, dernier.data.titre)}</p>}
             </span>
             <span class="serie-row__status">
               <span class="label label--ink">{episodes.length ? `${episodes.length} ${lang === 'fr' ? 'épisode' : 'episode'}${episodes.length > 1 ? 's' : ''}` : d.serie.en_preparation}</span>
