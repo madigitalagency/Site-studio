@@ -1,0 +1,105 @@
+{
+  "slug": "s1e10-ma-soeur",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 10,
+  "titre": {
+    "fr": "Ma sœur",
+    "en": "My sister"
+  },
+  "pitch": {
+    "fr": "VARENNE, saison 1, épisode 10.",
+    "en": "VARENNE, season 1, episode 10."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-11-04",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": false,
+    "planches": 10
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-10/varenne_ep10_reel_BO.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-10/carrousel-tiktok/",
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav",
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-10/varenne_ep10_reel_BO.mp4"
+  },
+  "notions": [
+    "raccord",
+    "valeur-de-plan",
+    "musique-generee"
+  ],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
+    "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Clara fait défiler des stories sans les regarder. Dans celle d'une inconnue, au fond d'une brasserie : sa sœur, en face d'Adrian Keller. Personne ne lui a rien dit.\n\n**Ce qui était difficile.** Une image dans l'image : une story crédible où le couple n'est qu'en arrière-plan, mais reconnaissable. Deux variantes ont été générées, et la seconde a été gardée pour le profil d'Adrian. Un zoom lent, posé au montage, resserre ensuite sur eux.\n\n**Ce qu'on a appris.** Le récit public commence ici, par une image que personne n'a voulue. Une relecture a aussi corrigé la chronologie : un simple « lundi » a été retiré de deux épisodes.",
+      "en": "**The idea.** Clara scrolls through stories without looking. In a stranger's, at the back of a brasserie: her sister, facing Adrian Keller. Nobody told her.\n\n**What was hard.** An image within an image: a believable story where the couple is only in the background, yet recognisable. Two variants were generated, and the second kept for Adrian's profile. A slow zoom, added in the edit, then closes in on them.\n\n**What we learned.** The public story starts here, with an image nobody wanted. A reread also fixed the timeline: a single \"Monday\" was removed from two episodes."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Une semaine plus tard. 22 h. Clara fait défiler des stories sans les regarder.",
+      "Une inconnue. Un steak-frites. Elle revient en arrière. Elle zoome. — Encadré : AU FOND, À GAUCHE : ÉLÉNA. EN FACE : ADRIAN KELLER.",
+      "Bureaux de Saulène, 18 h 50. — Inès : Un distributeur à New York veut nous voir en janvier. Sans qu'on lève un euro. — Nadia : Il faudrait qu'Éléna soit là pour l'entendre.",
+      "22 h 20. Éléna décroche à la deuxième sonnerie. — Clara : Tu dînes avec Adrian Keller. — Éléna : C'est ma vie privée. — Clara : J'ai fait son portrait, Éléna. À l'antenne. — Éléna : Je sais.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "23 h. Elle réécrit son message quatre fois. — Elle l'envoie. — Encadré : MESSAGE À ÉLÉNA — VU À 23 H 12",
+      "À suivre"
+    ]
+  }
+}

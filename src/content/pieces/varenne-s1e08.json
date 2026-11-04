@@ -1,0 +1,105 @@
+{
+  "slug": "s1e08-paris",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 8,
+  "titre": {
+    "fr": "Paris",
+    "en": "Paris"
+  },
+  "pitch": {
+    "fr": "VARENNE, saison 1, épisode 8.",
+    "en": "VARENNE, season 1, episode 8."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-10-27",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": false,
+    "planches": 10
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-08/varenne_ep8_reel_BO.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-08/carrousel-tiktok/",
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav",
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-08/varenne_ep8_reel_BO.mp4"
+  },
+  "notions": [
+    "raccord",
+    "valeur-de-plan",
+    "musique-generee"
+  ],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
+    "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Éléna vient prouver à Adrian qu'elle a réussi sans lui. Il lui pose une seule question, et pour la première fois de la série, elle répond la vérité.\n\n**Ce qui était difficile.** Tenir tout l'épisode sur une conversation à deux, dans un bistrot. Le plan où ils sont réunis était le plus risqué après l'échange de visages de l'épisode 6 : les deux variantes ont cette fois gardé chaque visage et chaque tenue à leur place.\n\n**Ce qu'on a appris.** Un retournement n'a pas besoin d'action. Après deux dernières répliques mensongères, une réponse sincère suffit à faire basculer la saison.",
+      "en": "**The idea.** Éléna comes to prove to Adrian that she succeeded without him. He asks a single question, and for the first time in the series, she tells the truth.\n\n**What was hard.** Holding a whole episode on one conversation in a bistro. The shot of them together was the riskiest after episode 6's face swap: this time both variants kept every face and outfit in place.\n\n**What we learned.** A turning point needs no action. After two closing lines that were lies, one honest answer is enough to tip the season."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Jeudi, 20 h 30. Elle a failli ne pas venir. — Encadré : RÉPONSE ENVOYÉE À A. K. — « D'accord. Pas longtemps. »",
+      "Il est déjà là. Il a choisi une table au milieu de la salle. — Adrian : Je n'ai pas réservé de salon privé. Je me suis dit que vous préféreriez du monde.",
+      "Cité Info, 21 h. Roger relit deux articles qui n'ont rien à voir. — Roger : Keller refuse Saulène. Trois mois plus tard, elle n'a plus besoin de personne. Ça, c'est une histoire. — Encadré : POST-IT POUR CLARA — PORTRAIT KELLER, LUNDI",
+      "21 h 10. Il n'a toujours pas parlé de Saulène. — Éléna : Allez-y. Demandez-moi si j'ai suivi vos conseils. — Adrian : Je le sais déjà. Vous dormez, en ce moment ? — Éléna : C'est une question d'investisseur ? — Adrian : Non. — Éléna : Pas beaucoup.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "23 h 15. Ils n'ont pas parlé de Saulène une seule fois. — Elle s'en rend compte seulement maintenant. — Encadré : A. KELLER — « Merci d'être venue. Dormez. »",
+      "À suivre"
+    ]
+  }
+}

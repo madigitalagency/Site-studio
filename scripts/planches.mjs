@@ -42,12 +42,12 @@ function lireTextes(md) {
 }
 
 for (const n of liste) {
-  const dossier = join(COFFRE, `Episode-0${n}`);
+  const dossier = join(COFFRE, `Episode-${String(n).padStart(2, "0")}`);
   const carrousel = join(dossier, 'carrousel-tiktok');
   const images = readdirSync(carrousel).filter((f) => /^\d{2}-.*\.(jpg|png)$/i.test(f)).sort();
-  const sortie = `public/media/varenne-s1e0${n}/planches`;
+  const sortie = `public/media/varenne-s1e${String(n).padStart(2, "0")}/planches`;
   mkdirSync(sortie, { recursive: true });
-  const textes = lireTextes(readFileSync(join(dossier, `ep0${n}-decoupage.md`), 'utf8'));
+  const textes = lireTextes(readFileSync(join(dossier, `ep${String(n).padStart(2, "0")}-decoupage.md`), 'utf8'));
   const dejaVu = new Set();
   const planches_texte = [];
   for (let i = 0; i < images.length; i++) {
@@ -66,7 +66,7 @@ for (const n of liste) {
     } else texte = `Planche ${i + 1}`;
     planches_texte.push(texte);
   }
-  const fichier = `src/content/pieces/varenne-s1e0${n}.json`;
+  const fichier = `src/content/pieces/varenne-s1e${String(n).padStart(2, "0")}.json`;
   const piece = JSON.parse(readFileSync(fichier, 'utf8'));
   piece.media.planches = images.length;
   piece.planches_texte = { fr: planches_texte };

@@ -1,0 +1,105 @@
+{
+  "slug": "s1e11-le-diner",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 11,
+  "titre": {
+    "fr": "Le dîner",
+    "en": "The dinner"
+  },
+  "pitch": {
+    "fr": "VARENNE, saison 1, épisode 11.",
+    "en": "VARENNE, season 1, episode 11."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-11-04",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": false,
+    "planches": 10
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-11/varenne_ep11_reel_BO.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-11/carrousel-tiktok/",
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav",
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-11/varenne_ep11_reel_BO.mp4"
+  },
+  "notions": [
+    "raccord",
+    "valeur-de-plan",
+    "musique-generee"
+  ],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
+    "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Adrian invite Clara pour arranger les choses, sans prévenir Éléna. Il propose son aide, jusqu'à parler à sa rédaction. Elle part avant le dessert.\n\n**Ce qui était difficile.** Une confrontation feutrée entre deux personnes polies, où rien ne doit éclater. Et un changement de méthode en cours de saison : le texte a été agrandi et sorti des zones d'interface des téléphones, pour rester lisible jusqu'au bout.\n\n**Ce qu'on a appris.** Le défaut d'un personnage fait une meilleure scène que ses qualités : Adrian règle les problèmes des autres à leur place, et c'est ce qui le perd ici.",
+      "en": "**The idea.** Adrian invites Clara to smooth things over, without telling Éléna. He offers help, even talking to her newsroom. She leaves before dessert.\n\n**What was hard.** A restrained confrontation between two polite people, where nothing may erupt. And a change of method mid-season: the text was enlarged and moved out of phone interface zones, to stay readable to the end.\n\n**What we learned.** A character's flaw makes a better scene than his qualities: Adrian solves other people's problems for them, and here it costs him."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Une semaine plus tard. Un numéro inconnu : « Adrian Keller. J'aimerais vous parler. » — Encadré : RÉSERVATION — 20 H — TABLE AU NOM DE KELLER",
+      "Il arrive à l'heure exacte. — Adrian : Éléna ne sait pas que je vous vois. Je voulais que vous l'entendiez de moi.",
+      "Cité Info, le même jour. — Encadré : ALERTE — LE MAGAZINE MIRELLE PRÉPARE UN SUJET SUR ÉLÉNA VARENNE — Roger : Si c'est public, on le traite. Même si c'est sa sœur.",
+      "21 h. Les assiettes n'ont pas été touchées. — Adrian : Je peux arranger les choses. Parler à votre rédaction, s'il le faut. — Clara : Vous entendez ce que vous dites ? — Adrian : Je voulais aider. — Clara : Non. Vous vouliez décider.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Elle est partie avant le dessert. — Il faudra le dire à Éléna. Maintenant. — Encadré : APPEL SORTANT — ÉLÉNA — 22 H 04",
+      "À suivre"
+    ]
+  }
+}

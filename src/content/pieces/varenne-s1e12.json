@@ -1,0 +1,106 @@
+{
+  "slug": "s1e12-exclusive",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 12,
+  "titre": {
+    "fr": "Exclusive",
+    "en": "Exclusive"
+  },
+  "pitch": {
+    "fr": "VARENNE, saison 1, épisode 12.",
+    "en": "VARENNE, season 1, episode 12."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 67
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-11-04",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": false,
+    "planches": 11
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-12/varenne_ep12_reel_BO.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-12/carrousel-tiktok/",
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav",
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-12/varenne_ep12_reel_BO.mp4"
+  },
+  "notions": [
+    "raccord",
+    "valeur-de-plan",
+    "musique-generee"
+  ],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
+    "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** La photo est en kiosque. Éléna retrouve sa sœur dans le café du premier épisode, et cette fois, c'est elle qui attend. Fin de la saison, sans suspense artificiel.\n\n**Ce qui était difficile.** Des mains. Les trois premières variantes ressemblaient à une poignée de main d'affaires. Il a fallu demander des doigts entrelacés, côte à côte, puis poser un gros plan au montage, car les mains tombaient dans la zone d'interface du téléphone.\n\n**Ce qu'on a appris.** Une fin se joue sur peu de chose. La planche de couple, volontairement sobre, récompense ceux qui ont suivi la saison sans la faire basculer dans le soap.",
+      "en": "**The idea.** The photo is on the newsstands. Éléna meets her sister in the café from episode one, and this time she is the one waiting. The end of the season, with no artificial cliffhanger.\n\n**What was hard.** Hands. The first three variants looked like a business handshake. It took asking for interlaced fingers, side by side, then adding a close-up in the edit, because the hands fell into the phone's interface zone.\n\n**What we learned.** An ending turns on very little. The deliberately sober couple panel rewards those who followed the season without tipping it into soap."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Jeudi, 7 h. *Mirelle* est en kiosque. La photo est partout. — Encadré : A. KELLER — « Je ne dirai rien à la presse. Sauf si vous me le demandez. »",
+      "Le café de la première fois. Cette fois, c'est elle qui attend. — Éléna : Tu avais raison. J'aurais dû te le dire avant.",
+      "Cité Info, 9 h. — Roger : Si c'est public, on le traite. Mais pas toi.",
+      "Elles restent jusqu'à midi. — Clara : Tu l'aimes ? — Éléna : Je ne sais pas encore. — Clara : C'est la première chose vraie que tu me dis depuis des mois. — Éléna : Alors tu seras la première à savoir.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "21 h. Devant la brasserie de la photo. — Adrian : Je peux m'éloigner le temps que ça passe. — Éléna : Non. Cette fois, c'est moi qui décide.",
+      "Planche 5, suite",
+      "Planche 11"
+    ]
+  }
+}

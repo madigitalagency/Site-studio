@@ -5,12 +5,12 @@
     "en": "VARENNE"
   },
   "sous_titre": {
-    "fr": "Un roman-photo",
-    "en": "A photo-novel"
+    "fr": "Un roman-photo en douze épisodes",
+    "en": "A photo-novel in twelve episodes"
   },
   "pitch": {
-    "fr": "Éléna Varenne a fondé Saulène, une marque de soins, après des années d'influence. Un article pose la question qu'on ne poserait pas à un fondateur : influenceuse ou entrepreneure ? Sa sœur Clara est journaliste. Une minute par épisode, en roman-photo.",
-    "en": "Éléna Varenne founded Saulène, a skincare brand, after years as an influencer. An article asks the question nobody would ask a male founder: influencer or entrepreneur? Her sister Clara is a journalist. One minute per episode, as a photo-novel."
+    "fr": "Éléna Varenne a fondé Saulène, une marque de soins, après des années d'influence. Un article pose la question qu'on ne poserait pas à un fondateur : influenceuse ou entrepreneure ? Sa sœur Clara est journaliste. Douze épisodes, une minute chacun, en roman-photo.",
+    "en": "Éléna Varenne founded Saulène, a skincare brand, after years as an influencer. An article asks the question nobody would ask a male founder: influencer or entrepreneur? Her sister Clara is a journalist. Twelve one-minute episodes, as a photo-novel."
   },
   "mention": {
     "fr": "Fiction. Les personnes, les marques et les médias n’existent pas. Musique originale générée.",
@@ -19,11 +19,11 @@
   "univers": "drame-pouvoir",
   "format_defaut": "roman-photo",
   "rendu": "roman-photo",
-  "statut": "en-cours",
+  "statut": "terminee",
   "episodes_titre_seul": true,
   "rythme": {
-    "fr": "Sept épisodes en ligne, diffusion en pause",
-    "en": "Seven episodes online, on pause"
+    "fr": "Saison 1 complète, à lire sur le site",
+    "en": "Complete season 1, on this site"
   },
   "identite": {
     "accent": "#9CC3A5"

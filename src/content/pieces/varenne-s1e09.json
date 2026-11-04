@@ -1,0 +1,105 @@
+{
+  "slug": "s1e09-sans-parler-business",
+  "serie": "varenne",
+  "saison": 1,
+  "episode": 9,
+  "titre": {
+    "fr": "Sans parler business",
+    "en": "No business talk"
+  },
+  "pitch": {
+    "fr": "VARENNE, saison 1, épisode 9.",
+    "en": "VARENNE, season 1, episode 9."
+  },
+  "format": "roman-photo",
+  "univers": [
+    "drame-pouvoir"
+  ],
+  "rendu": "roman-photo",
+  "duree_s": {
+    "fr": 63.5
+  },
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "date_publication": "2026-11-04",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": false,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4",
+    "muet": false,
+    "planches": 10
+  },
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-09/varenne_ep9_reel_BO.mp4",
+    "planches": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-09/carrousel-tiktok/",
+    "musique": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Nothing Shows-BO_Varenne.wav",
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/Varenne/Production/Episode-09/varenne_ep9_reel_BO.mp4"
+  },
+  "notions": [
+    "raccord",
+    "valeur-de-plan",
+    "musique-generee"
+  ],
+  "carnet": null,
+  "sources": [],
+  "liens": {
+    "instagram": null,
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et musique générées par IA. Fiction : personnes, marques et médias n’existent pas.",
+    "en": "AI-generated images and music. Fiction: people, brands and media do not exist."
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Trois dîners, une seule règle : pas un mot sur Saulène. Adrian, l'investisseur qui dit non, avoue la seule décision qu'il regrette : avoir vendu sa société.\n\n**Ce qui était difficile.** Montrer une intimité qui monte sans la dire. Le décor s'en charge : on quitte le bistrot bruyant pour une brasserie, banquette rouge, nappe et bougie, avec encore du monde autour et la largeur d'une table entre eux.\n\n**Ce qu'on a appris.** Le décor peut raconter la relation à la place des personnages. Et un homme sûr de lui devient intéressant le jour où il se trompe.",
+      "en": "**The idea.** Three dinners, one rule: not a word about Saulène. Adrian, the investor who says no, admits the one decision he regrets: selling his company.\n\n**What was hard.** Showing growing intimacy without stating it. The set does the work: from the noisy bistro to a brasserie with a red banquette, tablecloth and candle, still with people around and a table's width between them.\n\n**What we learned.** A set can tell the relationship in place of the characters. And a confident man becomes interesting the day he gets it wrong."
+    },
+    "genere": {
+      "fr": [
+        "images"
+      ],
+      "en": [
+        "images"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "planches et bulles",
+        "montage"
+      ],
+      "en": [
+        "writing",
+        "panels and balloons",
+        "editing"
+      ]
+    }
+  },
+  "planches_texte": {
+    "fr": [
+      "Couverture",
+      "Deux semaines plus tard. Troisième dîner. — Encadré : RÈGLE N° 1 : PAS UN MOT SUR SAULÈNE",
+      "Il a vu le portrait. Tout le monde l'a vu. — Adrian : Votre sœur a fait mon portrait. Vous ne lui avez rien dit ? — Éléna : Il n'y a rien à dire.",
+      "Bureaux de Saulène, 19 h. La porte vient de se refermer. — Nadia : Elle part à 19 h. Trois fois cette semaine. — Inès : Tant qu'elle ne nous dit rien, on ne sait rien.",
+      "23 h. Les cafés sont froids. — Éléna : « L'investisseur qui dit non. » C'est vrai ? — Adrian : Pas toujours. J'ai vendu Hauterel parce que je n'ai pas su dire non. — Éléna : Vous le regrettez ? — Adrian : Tous les jours.",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "Planche 4, suite",
+      "23 h 40. Encore pas un mot sur Saulène. — Elle publie une photo de ses flacons. Personne ne verra rien. — Encadré : @elena.saulene — PUBLIÉ",
+      "À suivre"
+    ]
+  }
+}
