@@ -24,9 +24,9 @@
   "langues": [
     "fr"
   ],
-  "date_publication": "2026-10-14",
+  "date_publication": "2026-10-17",
   "heure_publication": "19:00",
-  "statut": "programme",
+  "statut": "publie",
   "une": false,
   "roger": false,
   "annexe": true,
@@ -42,7 +42,7 @@
   "carnet": null,
   "sources": [],
   "liens": {
-    "instagram": null,
+    "instagram": "https://www.instagram.com/p/DemlHPsoIqS/",
     "tiktok": null
   },
   "mention_ia": {

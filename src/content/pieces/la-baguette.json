@@ -1,0 +1,94 @@
+{
+  "orientations": [
+    "9:16"
+  ],
+  "langues": [
+    "fr"
+  ],
+  "heure_publication": "19:00",
+  "statut": "publie",
+  "une": false,
+  "roger": false,
+  "annexe": false,
+  "fiche": true,
+  "vitrine": true,
+  "media": {
+    "poster": "poster-916",
+    "v916": {
+      "fr": "v916-fr"
+    },
+    "teaser": "teaser.mp4"
+  },
+  "carnet": null,
+  "sources": [],
+  "slug": "la-baguette",
+  "titre": {
+    "fr": "La Baguette",
+    "en": "The Baguette"
+  },
+  "pitch": {
+    "fr": "8 h du matin, dans la rue des grandes maisons. Louison Belcourt est habillée pour un couturier. Elle n'y va pas : le vrai luxe coûte 1,30 €.",
+    "en": "8 am, on the street of the great fashion houses. Louison Belcourt is dressed for a couturier. She is not going to one: true luxury costs €1.30."
+  },
+  "format": "pub",
+  "univers": [
+    "marque-produit",
+    "comedie-saynetes"
+  ],
+  "rendu": "cinematographique",
+  "duree_s": {
+    "fr": 20.8
+  },
+  "date_publication": "2026-11-03",
+  "sources_media": {
+    "v916_fr": "02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/La_Baguette/06_montage/La_Baguette_V10_1080p_final.mp4",
+    "v916-fr": "C:/Users/moura/Dropbox/Perso/Claude/Claude/02_DOMAINES_VIE/06_MA_Digital_Agency/Studio/La_Baguette/06_montage/La_Baguette_V10_1080p_final.mp4"
+  },
+  "coulisses": {
+    "texte": {
+      "fr": "**L'idée.** Filmer l'achat d'une baguette comme une pub de haute couture. Un portier tient la porte sans tourner la tête, une vitrine brille comme chez un joaillier, et le bip d'un distributeur remet tout à sa place. Sans dialogue : la chute passe par le son.\n\n**Ce qui était difficile.** Garder la même comédienne, la même tenue et le même geste d'un plan à l'autre, notamment le bras qui porte la baguette. Puis le bruit des pas : six essais pour qu'on croie à sa démarche sans que le son attire l'attention. Le nom de l'avenue a été retiré de la version finale, jugé trop cliché.\n\n**Ce qu'on a appris.** Une pub courte se joue au son autant qu'à l'image : on entend le croûton casser, on ne le voit pas. Et l'écart entre l'image et l'objet fait le gag, à condition de le tenir jusqu'au bout.",
+      "en": "**The idea.** Film the purchase of a baguette like a haute couture ad. A doorman holds the door without turning his head, a window gleams like a jeweller's, and the beep of a vending machine puts everything back in its place. No dialogue: the punchline comes through the sound.\n\n**What was hard.** Keeping the same actress, the same outfit and the same gesture from shot to shot, especially the arm carrying the baguette. Then the footsteps: six tries to make her walk believable without the sound drawing attention. The name of the avenue was removed from the final cut as too much of a cliché.\n\n**What we learned.** A short ad plays on sound as much as image: you hear the crust break, you do not see it. And the gap between the image and the object makes the joke, provided you hold it to the end."
+    },
+    "genere": {
+      "fr": [
+        "images",
+        "animation des plans"
+      ],
+      "en": [
+        "images",
+        "shot animation"
+      ]
+    },
+    "manuel": {
+      "fr": [
+        "écriture",
+        "mise en scène plan par plan",
+        "montage",
+        "bruitage et mixage"
+      ],
+      "en": [
+        "writing",
+        "shot-by-shot direction",
+        "editing",
+        "sound effects and mixing"
+      ]
+    },
+    "chiffre": {
+      "fr": "95 prises au journal, 10 versions de montage.",
+      "en": "95 logged takes, 10 cuts."
+    }
+  },
+  "notions": [
+    "raccord",
+    "image-de-depart",
+    "coherence-de-personnage"
+  ],
+  "liens": {
+    "instagram": "https://www.instagram.com/reel/DfSfED-iXDn/",
+    "tiktok": null
+  },
+  "mention_ia": {
+    "fr": "Images et animation générées par IA. Personnage, distributeur et marque fictifs.",
+    "en": "AI-generated images and animation. Fictional character, vending machine and brand."
+  }
+}

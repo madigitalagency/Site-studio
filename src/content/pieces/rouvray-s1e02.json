@@ -30,7 +30,7 @@
   "date_publication": "2026-10-11",
   "heure_publication": "19:00",
   "statut": "publie",
-  "une": true,
+  "une": false,
   "roger": false,
   "annexe": false,
   "fiche": true,
